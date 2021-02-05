@@ -1,0 +1,36 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "compile": "tsc && node dist/app.js",
+    "dev": "nodemon --watch src/ --exec \"npm run compile\" --verbose -e ts",
+    "test": "mocha -r ts-node/register \"src/**/*.spec.ts\"",
+    "prettier-format": "prettier --write \"**/*.ts\"",
+    "prettier-check": "prettier --check \"**/*.ts\"",
+    "lint": "eslint \"**/*.ts\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier-check && npm run lint"
+    }
+  },
+  "author": "Michael Pidgeon",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.13.41",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "chai": "^4.3.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.3.8",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "prettier": "1.19.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
