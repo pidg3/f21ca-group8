@@ -1,4 +1,4 @@
-# F21CA - Group 8i
+# F21CA - Group 8
 
 This is a monorepo containing the three parts of our code:
 
