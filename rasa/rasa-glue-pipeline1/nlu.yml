@@ -1,0 +1,71 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - good morning
+    - hi
+    - Hola
+- intent: inform
+  examples: |
+    - I’m in [Edinburgh](location) 
+    - I’m in [South Africa](location) 
+    - I’m in [Seattle](location) [USA](location)
+    - I’m in [Glasgow](location) [Scotland](location)
+    - I live in [Mumbai](location) [India](location)
+    - I’m a big [Pearl Jam](musical_artist) [fan](likes)
+    - I’m a [Pearl Jam](musical_artist) [fan](likes) 
+    - I’m a big [Godsmack](musical_artist) [fan](likes) 
+    - I am a [Godsmack](musical_artist) [fan](likes)
+    - I’m a big [Tool](musical_artist) [fan](likes)
+    - I am a [Tool](musical_artist) [fan](likes)
+    - I [like](likes) listening to [Megadeath](musical_artist)
+    - I [enjoy](likes) a bit of [Creed](muscial_artist) now and again
+    - I’m not too into [music](art_form) 
+    - I’m not into [music](art_form)
+    - I am not much into [films](art_form)
+    - I am not much into [movies](art_form) 
+    - I am not much into [rom coms](art_form) 
+    - I am not much into [romantic comedies](art_form) 
+    - It’s not really for me. I [prefer](likes) [films](art_form)
+    - It’s not really for me. I [prefer](likes) [classic movies](art_form) 
+    - It’s not really for me. I [prefer](likes) [action movies](art_form)
+    - I [prefer](likes) [classic movies](art_form) 
+    - I [like](likes) [fantasy movies](art_form)
+    - I [like](likes) [action movies](art_form)
+    - I [re-watched](likes) all the [Lord of the Rings](movie) films the other day
+    - I [re-watched](likes) all the [Twilight Saga](movie) films the other day
+    - I [re-watched](likes) all the [Back to the Future](movie) films the other day
+    - I [re-watched](likes) all the [Alvin and the Chipmunks](movie) films the other day
+    - I [re-watched](likes) all [Harry Potter](movie) films the other day
+    - I just can’t believe he played a football hooligan person in [Green Street](movie) weirdest casting ever
+    - He’s in [Deep Impact](movie) too I think, it’s he? that is one seriously underrated movie. 
+    - Nah it ain’t got nothing on [Armageddon](movie) 
+    - Nah it ain’t got nothing on [Tenet](movie) 
+    - Nah it ain’t got nothing on [Joker](movie) 
+- intent: affirm
+  examples: |
+    - let's do it
+    - i love that
+    - it's perfect
+    - that looks great
+    - yeah
+    - Yeah I’m 
+    - They are great 
+- intent: deny
+  examples: |
+    - no thank you
+    - do you have something else
+    - no this does not work for me
+    - no i don't like that
+    - no
+    - no thanks
+- intent: get_info
+  examples: |
+    - do you have its [address](info)
+    - what sort of [movies](info) are you [in to](likes)   
+- intent: thanking
+  examples: |
+    - you rock
+    - thanks
+    - thank you
