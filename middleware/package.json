@@ -11,11 +11,6 @@
     "prettier-check": "prettier --check \"**/*.ts\"",
     "lint": "eslint \"**/*.ts\""
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier-check && npm run lint"
-    }
-  },
   "author": "Michael Pidgeon",
   "license": "ISC",
   "devDependencies": {
