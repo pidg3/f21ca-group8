@@ -20,9 +20,6 @@ jobs:
           paths:
             - .
   deploy_project:
-    branches:
-        only:
-          - master
     executor: aws-cli/default
     steps:
       - attach_workspace:
@@ -34,10 +31,14 @@ jobs:
           command: aws s3 sync ./gui/build/ s3://glue-bot --delete
 workflows:
   version: 2
-  build:
+  build_deploy:
     jobs:
       - build_project
+        # TODO: add tests
       - deploy_project:
+          filters:
+            branches:
+              only: master
           requires:
             - build_project
           context: aws-context
