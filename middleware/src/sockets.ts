@@ -1,8 +1,13 @@
-// https://flaviocopes.com/node-websockets/
 const fetch = require('node-fetch');
 import WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 8080 })
+const wss = new WebSocket.Server({ port: 8080 });
+
+const alanaBody = {
+    'user_id': 'test-5827465823641856215',
+    'session_id': 'CLI-1100004',
+    'projectId': 'CA2020'
+};
 
 export default () => {
     console.log('Sockets server set up on ws://localhost:8080');
@@ -13,18 +18,17 @@ export default () => {
 
         ws.on('message', data => {
             console.log(`Received message: ${data}`);
-            fetch('https://icanhazdadjoke.com/', {
+            fetch('http://52.56.181.83:5000', {
+                method: 'POST',
+                body: JSON.stringify({...alanaBody, question: data}),
                 headers: {
-                    'accept': 'application/json'
+                    'Content-Type': 'application/json'
                 }
             })
                 .then((res:any) => res.json())
-                .then((json:any) => {
-                    ws.send(`Thanks for the message: ${data}`)
-                    ws.send(`Here is a joke: ${json.joke}`)
-
-                });
-            
+                .then((json: any) => {
+                    ws.send(json.result);
+                })
         });
 
         ws.on('close', function close() {

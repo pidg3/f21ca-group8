@@ -22,6 +22,7 @@ class App extends React.Component {
   }
 
   sendMessage(message) {
+    this.setState({ serverMessages: [...this.state.serverMessages, message] });
     connection.send(message);
   }
 
@@ -36,7 +37,6 @@ class App extends React.Component {
         <ChatInput sendMessage={(message) => this.sendMessage(message)} />
       </div>
     );
-
   }
 }
 
