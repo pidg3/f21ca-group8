@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ChatInput from './chat/ChatInput';
+import ChatWindow from './chat/ChatWindow';
+
+const url = 'ws://localhost:8080';
+const connection = new WebSocket(url);
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { serverMessages: [] };
+
+    connection.onmessage = (msg) => {
+      this.receiveMessage(msg);
+    }
+
+    this.sendMessage = this.sendMessage.bind(this);
+    this.receiveMessage = this.receiveMessage.bind(this);
+  }
+
+  sendMessage(message) {
+    connection.send(message);
+  }
+
+  receiveMessage(message) {
+    this.setState({ serverMessages: [...this.state.serverMessages, message.data]});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <ChatWindow messages={this.state.serverMessages} />
+        <ChatInput sendMessage={(message) => this.sendMessage(message)} />
+      </div>
+    );
+
+  }
 }
 
 export default App;
