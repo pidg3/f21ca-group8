@@ -17,6 +17,8 @@
     "@types/chai": "^4.2.14",
     "@types/mocha": "^7.0.1",
     "@types/node": "^13.13.41",
+    "@types/node-fetch": "^2.5.8",
+    "@types/ws": "^7.4.0",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "chai": "^4.3.0",
@@ -29,6 +31,8 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "fastify": "^3.11.0"
+    "fastify": "^3.11.0",
+    "node-fetch": "^2.6.1",
+    "ws": "^7.4.3"
   }
 }

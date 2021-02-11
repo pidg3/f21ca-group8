@@ -1,0 +1,5 @@
+.git
+gui/node_modules/
+middleware/node_modules/
+middleware/dist/
+npm-debug.log
