@@ -20,18 +20,8 @@ const opts: RouteShorthandOptions = {
 };
 
 server.get('/ping', opts, async (request, reply) => {
-  return { resp: 'it worked!' };
+  return { ping: 'OK!' };
 });
-
-server.get('/new', opts, async (request, reply) => {
-  return { resp: 'circleci working!' };
-});
-
-
-server.get('/', opts, async (request, reply) => {
-  return { resp: 'root!' };
-});
-
 
 const start = async () => {
   try {
