@@ -299,4 +299,12 @@ nlu:
     - interesting
     - i hadn't thought about it like that before
     - oh i dont know
-
+- intent: exit
+  examples: |
+    - bye
+    - I will leave now
+    - I am going to go now
+    - goodbye
+    - cya
+    - talk to you later
+    - till we meet next time
