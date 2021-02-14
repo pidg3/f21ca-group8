@@ -8,13 +8,6 @@ intents:
   - deny  
   - thanking
   - exit
-  - make_reservation
-  - repair_inform
-  - movieQuiz_game
-  - capitalCityQuiz_game
-  - musicQuiz_game
-  - bookQuiz_game
-  - wouldYouRather_game
 
 entities:
   - location
@@ -23,34 +16,6 @@ entities:
   - art_form
   - musical_artist
   - info
-  - name
-  - cuisine
-  - price
-  - number
-  - phone_number
-  - workweek and weekend
-  - dislike
-  - MusicArtist
-  - academic subject
-  - food
-  - politician
-  - athelete
-  - genre 
-  - film
-  - actor
-  - shop
-  - titleEIDR
-  - weather
-  - BodyOfWater
-  - sport
-  - poetry
-  - like
-  - natural place
-  - plant
-  - date
-  - likes
-  - incorrect
-  - correct
 
 actions:
   - utter_greet
@@ -60,7 +25,13 @@ actions:
  
 slots:
   location:
-    type: text
+    type: any
+  MusicArtist:
+    type: any
+  likes:
+    type: bool
+  film:
+    type: any
 
 responses:
   utter_greet:
@@ -77,20 +48,9 @@ responses:
 
   utter_welcome:
   - text: "You are most welcome"
- 
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-
-  utter_custom_response :
-  - text: "I am going to inform you on something related to what you like"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_welcome:
-  - text: "You are most welcome"
+  utter_blank_string:
+  - text: ""
  
 
 session_config:
