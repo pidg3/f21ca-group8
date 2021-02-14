@@ -13,13 +13,13 @@ stories:
 #  - checkpoint: check_said_glue
   - intent: inform
   - slot_was_set: 
-    - location_1: slot_1
+    - location: london
   - action: utter_blank_string
 #  - checkpoint: check_said_glue
   - intent: inform
   - slot_was_set: 
-    - location_2: slot_2
-    - location_3: slot_3
+    - location: london
+    - location: london
   - action: utter_custom_response 
 
 - story: approval
@@ -30,8 +30,8 @@ stories:
 #  - checkpoint: check_not_said_glue
   - intent: inform
   - slot_was_set: 
-    - musicical_artist_1: slot_4
-    - likes_1: true
+    - MusicArtist: metallica
+    - likes: true
   - action: utter_blank_string
 
 - story: denial
@@ -42,10 +42,8 @@ stories:
 #  - checkpoint: check_not_said_glue
   - intent: inform
   - slot_was_set: 
-    - art_form_1: slot_5
-    - likes_2: false
-    - likes_3: true
-    - art_form_2: slot_6
+    - likes: false
+    - likes: true
   - action: utter_blank_string
 
 - story: response to questions between users 1 
@@ -56,10 +54,9 @@ stories:
 #  - checkpoint: check_not_said_glue
   - intent: inform
   - slot_was_set:
-    - likes_4: true
-    - art_form_3: slot_7
-    - likes_5: true
-    - movie_1: slot_8
+    - likes: true
+    - likes: true
+    - film: movie
   - action: utter_blank_string
 
 - story: pause in conversation
@@ -70,18 +67,18 @@ stories:
 #  - checkpoint: check_flow_finished
   - action: utter_custom_response
 
-- story: exchange between users
-  steps:
+#- story: exchange between users
+#  steps:
 #  - checkpoint: check_not_said_glue
-  - intent: inform
-  - slot_was_set:
-    - my_slot_x: slot_x
-  - action: utter_blank_string
+#  - intent: inform
+#  - slot_was_set:
+#    - my_slot_x: slot_x
+#  - action: utter_blank_string
 #  - checkpoint: check_not_said_glue
-  - intent: inform
-  - slot_was_set:
-    - my_slot_x: slot_x
-  - action: utter_blank_string
+#  - intent: inform
+#  - slot_was_set:
+#    - my_slot_x: slot_x
+#  - action: utter_blank_string
 
 - story: manners
   steps:
@@ -103,4 +100,3 @@ stories:
   - action: custom_listen
   - checkpoint: thanking
   - action: custom_listen
-
