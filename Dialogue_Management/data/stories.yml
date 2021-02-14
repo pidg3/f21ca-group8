@@ -1,0 +1,106 @@
+version: "2.0"
+
+stories:
+
+- story: greet
+  steps:
+  - checkpoint: check_said_glue
+  - intent: greet
+  - action: utter_greet
+
+- story: collect information from both
+  steps:
+#  - checkpoint: check_said_glue
+  - intent: inform
+  - slot_was_set: 
+    - location_1: slot_1
+  - action: utter_blank_string
+#  - checkpoint: check_said_glue
+  - intent: inform
+  - slot_was_set: 
+    - location_2: slot_2
+    - location_3: slot_3
+  - action: utter_custom_response 
+
+- story: approval
+  steps:
+#  - checkpoint: check_not_said_glue
+  - intent: affirm
+  - action: utter_blank_string
+#  - checkpoint: check_not_said_glue
+  - intent: inform
+  - slot_was_set: 
+    - musicical_artist_1: slot_4
+    - likes_1: true
+  - action: utter_blank_string
+
+- story: denial
+  steps:
+#  - checkpoint: check_not_said_glue
+  - intent: deny
+  - action: utter_blank_string
+#  - checkpoint: check_not_said_glue
+  - intent: inform
+  - slot_was_set: 
+    - art_form_1: slot_5
+    - likes_2: false
+    - likes_3: true
+    - art_form_2: slot_6
+  - action: utter_blank_string
+
+- story: response to questions between users 1 
+  steps:
+#  - checkpoint: check_not_said_glue
+  - intent: get_info
+  - action: utter_blank_string
+#  - checkpoint: check_not_said_glue
+  - intent: inform
+  - slot_was_set:
+    - likes_4: true
+    - art_form_3: slot_7
+    - likes_5: true
+    - movie_1: slot_8
+  - action: utter_blank_string
+
+- story: pause in conversation
+  steps:
+#  - checkpoint: check_not_said_glue
+  - intent: get_info
+  - action: utter_blank_string
+#  - checkpoint: check_flow_finished
+  - action: utter_custom_response
+
+- story: exchange between users
+  steps:
+#  - checkpoint: check_not_said_glue
+  - intent: inform
+  - slot_was_set:
+    - my_slot_x: slot_x
+  - action: utter_blank_string
+#  - checkpoint: check_not_said_glue
+  - intent: inform
+  - slot_was_set:
+    - my_slot_x: slot_x
+  - action: utter_blank_string
+
+- story: manners
+  steps:
+#  - checkpoint: check_said_glue
+  - intent: thanking
+  - action: utter_welcome
+  - intent: thanking
+  - action: utter_blank_string
+
+- story: good byes
+  steps:
+  - intent: exit
+  - action: utter_goodbye
+
+
+- story: test
+  steps:
+  - intent: thanking
+  - action: custom_listen
+  - checkpoint: thanking
+  - action: custom_listen
+
