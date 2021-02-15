@@ -1,4 +1,10 @@
-import sockets from './sockets';
-sockets();
+import expressApp from './express';
+import socketsApp from './sockets';
 
-// Fastify will be used to give us HTTP endpoints e.g. for name submission, end chat
+// This pattern is very nasty but will do for now...
+let state = {
+    externalBotUrl: ''
+};
+
+expressApp(state);
+socketsApp(state);
