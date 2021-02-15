@@ -13,19 +13,20 @@ class ChatInput extends React.Component {
         this.setState({ value: event.target.value });
     }
 
-    handleSend() {
+    handleSend(e) {
+        e.preventDefault();
         this.props.sendMessage(this.state.value);
         this.setState({ value: '' });
     }
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSend}>
                 <label>
                     Message:
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
-                <button type="button" value="Send" onClick={this.handleSend}>
+                <button type="submit" value="Send">
                     Send Message
                 </button>
             </form>

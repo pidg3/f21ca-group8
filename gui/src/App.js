@@ -8,6 +8,8 @@ import ChatWindow from './chat/ChatWindow';
 const url = 'ws://localhost:8080';
 const connection = new WebSocket(url);
 
+const USERNAME = 'Testy McTest'; // temporary, till user can enter name
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -22,12 +24,12 @@ class App extends React.Component {
   }
 
   sendMessage(message) {
-    this.setState({ serverMessages: [...this.state.serverMessages, message] });
+    this.setState({ serverMessages: [...this.state.serverMessages, `${USERNAME}: ${message}`] });
     connection.send(message);
   }
 
   receiveMessage(message) {
-    this.setState({ serverMessages: [...this.state.serverMessages, message.data]});
+    this.setState({ serverMessages: [...this.state.serverMessages, `Alana: ${message.data}` ]});
   }
 
   render() {

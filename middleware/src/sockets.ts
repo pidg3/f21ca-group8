@@ -5,7 +5,7 @@ const wss = new WebSocket.Server({ port: 8080 });
 
 const alanaBody = {
     'user_id': 'test-5827465823641856215',
-    'session_id': 'CLI-1100004',
+    'session_id': 'Group8-Dev-1',
     'projectId': 'CA2020'
 };
 
@@ -27,6 +27,8 @@ export default () => {
             })
                 .then((res:any) => res.json())
                 .then((json: any) => {
+                    console.log(json);
+                    
                     ws.send(json.result);
                 })
         });
