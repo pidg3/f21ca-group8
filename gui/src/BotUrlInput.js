@@ -24,7 +24,7 @@ class BotUrlInput extends React.Component {
         return (
             <form onSubmit={this.handleSend}>
                 <label>
-                    Update External Bot URL:
+                    Set External Bot URL (leave empty for vanilla Alana):
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
                 <button type="submit" value="Send">

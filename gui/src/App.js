@@ -8,7 +8,7 @@ import BotUrlInput from './BotUrlInput';
 
 const WS_URL = 'ws://localhost:8080';
 
-const USERNAME = 'Testy McTest'; // temporary, till user can enter name
+const USERNAME = 'Me'; // temporary, till user can enter name
 
 class App extends React.Component {
   constructor(props) {
@@ -36,10 +36,10 @@ class App extends React.Component {
 
   receiveMessage(message) {
     console.log(message);
-    if (message === '~CONNECTED~') {
+    if (message.data === '~CONNECTED~') {
       this.appendMessage('Helper Bot: connected to Alana!');
     } else {
-      this.appendMessage(`Alana: ${message.data}`);
+      this.appendMessage(message.data);
     }
   }
 
