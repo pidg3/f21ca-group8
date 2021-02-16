@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import nameGenerator from './nameGenerator';
 
+const ALANA_URL = 'http://52.56.181.83:5000';
+
 interface ExtWebSocket extends WebSocket {
     id: string;
     userName: string;
@@ -36,7 +38,7 @@ const broadcastMessage = (message: WebSocket.Data, sourceWs?: ExtWebSocket) => {
 export default (state:any) => {
 
 
-    console.log('Sockets server set up on ws://localhost:8080');
+    console.log('Sockets server set up on port 8080');
     
     wss.on('connection', (ws: ExtWebSocket, req) => {
 
@@ -60,7 +62,7 @@ export default (state:any) => {
                     PRIORITY_BOTS: ['glue']
                 };
             }
-            fetch('http://52.56.181.83:5000', {
+            fetch(ALANA_URL, {
                 method: 'POST',
                 body: JSON.stringify({ ...appendedBody, question: data}),
                 headers: {

@@ -6,7 +6,10 @@ import ChatInput from './chat/ChatInput';
 import ChatWindow from './chat/ChatWindow';
 import BotUrlInput from './BotUrlInput';
 
-const WS_URL = 'ws://localhost:8080';
+// Swap over the below lines for local developmenet
+
+const SERVER_URL = 'glue-middleware.eu-west-2.elasticbeanstalk.com';
+// const SERVER_URL = 'localhost';
 
 const USERNAME = 'Me'; // temporary, till user can enter name
 
@@ -44,7 +47,7 @@ class App extends React.Component {
   }
 
   async setUrl(url) {
-    const response = await fetch('http://localhost:8090/setExternalBotUrl', {
+    const response = await fetch(`http://${SERVER_URL}/setExternalBotUrl`, {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',
@@ -54,7 +57,7 @@ class App extends React.Component {
       body: JSON.stringify({ externalBotUrl: url})
     });
     console.log(response);
-    this.connection = new WebSocket(WS_URL);
+    this.connection = new WebSocket(`ws://${SERVER_URL}:8080`);
 
     this.connection.onmessage = (msg) => {
       this.receiveMessage(msg);
