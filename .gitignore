@@ -2,4 +2,5 @@
 gui/node_modules/
 middleware/node_modules/
 middleware/dist/
+middleware/middleware-bundle.zip
 npm-debug.log

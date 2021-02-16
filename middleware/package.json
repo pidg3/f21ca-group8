@@ -11,7 +11,7 @@
     "prettier-check": "prettier --check \"**/*.ts\"",
     "lint": "eslint \"**/*.ts\"",
     "compile": "tsc",
-    "bundle": "tsc && zip -r middleware-bundle.zip dist/ package.json package-lock.json Procfile"
+    "bundle": "tsc && zip -r middleware-bundle.zip dist/ .ebextensions/ package.json package-lock.json Procfile"
   },
   "author": "Michael Pidgeon",
   "license": "ISC",
