@@ -27,3 +27,6 @@ For local development, you need to swap over the `SERVER_URL` values at the top 
 8) Add waiting state
 9) Add multi-modal input for quiz/games
 10) (Nice to have) Add ASR
+11) (Nice to have) Add a more sophisticated timing service:
+    - Can we detect a question, and give the user more time?
+    - Can we detect when a user is typing, and give them more time?
