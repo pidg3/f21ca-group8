@@ -4,12 +4,14 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "compile": "tsc && node dist/app.js",
+    "start": "tsc && node dist/app.js",
     "dev": "nodemon --watch src/ --exec \"npm run compile\" --verbose -e ts",
     "test": "mocha -r ts-node/register \"src/**/*.spec.ts\"",
     "prettier-format": "prettier --write \"**/*.ts\"",
     "prettier-check": "prettier --check \"**/*.ts\"",
-    "lint": "eslint \"**/*.ts\""
+    "lint": "eslint \"**/*.ts\"",
+    "compile": "tsc",
+    "bundle": "tsc && zip -r middleware-bundle.zip dist/ package.json package-lock.json Procfile"
   },
   "author": "Michael Pidgeon",
   "license": "ISC",
