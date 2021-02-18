@@ -25,13 +25,17 @@ actions:
  
 slots:
   location:
-    type: any
+    type: text
+    influence_conversation: true
   MusicArtist:
-    type: any
+    type: text
+    influence_conversation: true
   likes:
-    type: bool
+    type: text
+    influence_conversation: true
   film:
-    type: any
+    type: text
+    influence_conversation: true
 
 responses:
   utter_greet:
