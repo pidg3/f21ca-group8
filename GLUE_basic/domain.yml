@@ -16,7 +16,7 @@ entities:
   - movie
   - likes
   - art_form
-  - musical_artist
+  -MusicArtist
   - info
   - key
   - film
@@ -32,6 +32,16 @@ actions:
 slots:
   location:
     type: text
+    influence_conversation: true
+  MusicArtist:
+    type: text
+    influence_conversation: true
+  likes:
+    type: text
+    influence_conversation: true
+  film:
+    type: text
+    influence_conversation: true
 
 responses:
   utter_greet:
