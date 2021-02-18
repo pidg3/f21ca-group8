@@ -1,0 +1,55 @@
+version: "2.0"
+
+intents:
+  - greet
+  - inform
+  - get_info
+  - affirm
+  - deny  
+  - thanking
+  - exit
+  - icebreaker
+  - glue
+
+entities:
+  - location
+  - movie
+  - likes
+  - art_form
+  - musical_artist
+  - info
+  - key
+  - film
+
+actions:
+  - utter_greet
+  - utter_custom_listen
+  - utter_custom_response
+  - utter_welcome
+  - utter_goodbye
+  - action_no_response
+ 
+slots:
+  location:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Hi! I’m GLUE, a social-bot. I’m looking forward to talking to you today. Where are you both right now?"
+
+  utter_custom_listen:
+  - text: "......................."
+
+  utter_custom_response :
+  - text: "What -key-value- pair do you like?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_welcome:
+  - text: "You are most welcome"
+ 
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

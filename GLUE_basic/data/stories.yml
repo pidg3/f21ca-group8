@@ -1,0 +1,48 @@
+version: "2.0"
+
+stories:
+
+- story: openning greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+ 
+- story: collect information
+  steps:
+  - intent: inform
+  - action: utter_custom_listen
+
+- story: icebreaker
+  steps:
+  - intent: icebreaker
+  - action: utter_custom_response
+
+- story: approval
+  steps:
+  - intent: affirm
+  - action: utter_custom_listen
+  - intent: affirm
+  - action: utter_custom_response 
+
+- story: denial
+  steps:
+  - intent: deny
+  - action: utter_custom_listen
+  - intent: deny
+  - action: utter_custom_response
+
+- story: questions
+  steps:
+  - intent: get_info
+  - action: utter_custom_listen
+
+- story: manners
+  steps:
+  - intent: thanking
+  - action: utter_custom_listen
+
+- story: goodbyes
+  steps:
+  - intent: exit
+  - action: utter_goodbye
+
