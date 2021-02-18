@@ -16,7 +16,7 @@ entities:
   - movie
   - likes
   - art_form
-  -MusicArtist
+  - MusicArtist
   - info
   - key
   - film
