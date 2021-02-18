@@ -1,0 +1,458 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - [glue respond](key) hello
+    - [glue respond](key) greetings
+    - [glue respond](key) good morning
+    - [glue respond](key) good afternoon
+    - [glue respond](key) good evening
+    - [glue respond](key) hi
+    - [glue respond](key) hi im [alice](name)
+    - [glue respond](key) hi im [bob smith](name)
+    - [glue respond](key) hello im [adam](name)
+    - [glue respond](key) hello im [ella fisher](name)
+    - [glue respond](key) greetings glue, im [sarah sylvester](name)
+- intent: affirm
+  examples: |
+    - lets do it
+    - i love that
+    - its perfect
+    - that looks great
+    - yes
+    - yes of course
+    - yup
+    - yay
+    - awesome
+    - sure
+    - lets go
+    - yeah
+- intent: deny
+  examples: |
+    - no thank you
+    - do you have something else
+    - no this does not work for me
+    - no i dont like that
+    - no
+    - no thanks
+    - nope
+    - dont like
+    - no thanks
+    - nah
+    - absolutely not
+    - please no
+- intent: inform
+  examples: |
+    - [glue keep quiet](key) im in [edinburgh](location)
+    - [glue keep quiet](key) im in [seattle](location)
+    - [glue keep quiet](key) im in [washington](location)
+    - [glue keep quiet](key) im in [toronto](location)
+    - [glue keep quiet](key) im in [ghana](location)
+    - [glue keep quiet](key) im in [elgin](location)
+    - [glue keep quiet](key) im in [seattle](location) [usa](location)
+    - [glue keep quiet](key) im in [edinburgh](location) [scotland](location)
+    - [glue keep quiet](key) im in [london](location) [england](location)
+    - [glue keep quiet](key) im in [madrid](location) [spain](location)
+    - [glue keep quiet](key) im in [rome](location) [italy](location)
+    - [glue keep quiet](key) [weekend](workweek and weekend)
+    - [glue keep quiet](key) [weekday](workweek and weekend)
+    - [glue keep quiet](key) [workweek] (workweek and weekend)
+    - [glue keep quiet](key) i [dont like](dislike) [travis](MusicArtist)
+    - [glue keep quiet](key) i [dont like](dislike) [maths](academic subject)
+    - [glue keep quiet](key) i [dont like](dislike) [broccoli](food)
+    - [glue keep quiet](key) i [dont like](dislike) [david cameron](politician)
+    - [glue keep quiet](key) i [dont like](dislike) [serena williams](athlete)
+    - [glue keep quiet](key) i [dont like](dislike) [kung-fu](genre) [movies](film)
+    - [glue keep quiet](key) i [hate](dislike) [bombay bicycle club](MusicArtist)
+    - [glue keep quiet](key) i [hate](dislike) [boris johnson](politician)
+    - [glue keep quiet](key) i [hate](dislike) [benedict cumberbatch](actor)
+    - [glue keep quiet](key) i [hate](dislike) [morrisons](shop)
+    - [glue keep quiet](key) i [hate](dislike) [star wars](titleEIDR)
+    - [glue keep quiet](key) i [hate](dislike) [kate windslet](actor)
+    - [glue keep quiet](key) im [not a fan of](dislike) [rain](weather)
+    - [glue keep quiet](key) im [not a fan of](dislike) [hail](weather)
+    - [glue keep quiet](key) im [not a fan of](dislike) [flood](weather)
+    - [glue keep quiet](key) i [dislike](dislike) [lake](BodyOfWater)
+    - [glue keep quiet](key) i [dislike](dislike) [chris nolan](actor)
+    - [glue keep quiet](key) i [dislike](dislike) [boris johnson](politician)
+    - [glue keep quiet](key) [not really into](dislike) [pepper](food)
+    - [glue keep quiet](key) [not really into](dislike) [pandemic](food)
+    - [glue keep quiet](key) [not really into](dislike) [biology](academic subject)
+    - [glue keep quiet](key) [not really into](dislike) [pandemic](food)
+    - [glue keep quiet](key) [not into](dislike) [football](sport)
+    - [glue keep quiet](key) [not into](dislike) [shinty](sport)
+    - [glue keep quiet](key) [not into](dislike) [shakespear poetry](poetry)
+    - [glue keep quiet](key) [not really into](dislike) [bond films](titleEIDR)
+    - [glue keep quiet](key) [not really into](dislike) [bond films](titleEIDR)
+    - [glue keep quiet](key) [not really into](dislike) [bond films](titleEIDR)
+    - [glue keep quiet](key) dull
+    - [glue keep quiet](key) [lake windermere](BodyOfWater) [was dull](dislike)
+    - [glue keep quiet](key) [i prefer](like) [18th century](date) [slavic poetry](poetry)
+    - [glue keep quiet](key) [i adore](like) [mountains](natural place)
+    - [glue keep quiet](key) [i adore](like) [chocolate](food)
+    - [glue keep quiet](key) [i adore](like) [physics](academic subject)
+    - [glue keep quiet](key) [i adore](like) [biscuits](food)
+    - [glue keep quiet](key) [i adore](like) [monsoon](weather)
+    - [glue keep quiet](key) [i adore](like) [wind](weather)
+    - [glue keep quiet](key) [i adore](like) [fantacy](genre) [movies](film)
+    - [glue keep quiet](key) [i love](like) [glaciers](natural place)
+    - [glue keep quiet](key) [i love](like) [potatoes](food)
+    - [glue keep quiet](key) [i love](like) [green day](MusicArtist)
+    - [glue keep quiet](key) [i love](like) [carnations](plant)
+    - [glue keep quiet](key) [i love](like) [pingpong](sport)
+    - [glue keep quiet](key) [i love](like) [graphic communication](academic subject)
+    - [glue keep quiet](key) [i love](like) [spanish](cuisine) food
+    - [glue keep quiet](key) [im a fan of](like) [rugby](sport)
+    - [glue keep quiet](key) [im a fan of](like) [eliud kipchoge](athlete)
+    - [glue keep quiet](key) [im a fan of](like) [lionel messi](athlete)
+    - [glue keep quiet](key) [im a fan of](like) [andy murray](athlete)
+    - [glue keep quiet](key) [im a fan of](like) [asda](shop)
+    - [glue keep quiet](key) [im a fan of](like) [snow](weather)
+    - [glue keep quiet](key) [im a fan of](like) [action](genre) (movies)[film]
+    - [glue keep quiet](key) [i like](like) [scarlett johanson](actor)
+    - [glue keep quiet](key) [i like](like) [pearl jam](MusicArtist)
+    - [glue keep quiet](key) [i like](like) [passenger](MusicArtist)
+    - [glue keep quiet](key) [i like](like) [metallica](MusicArtist)
+    - [glue keep quiet](key) [i like](like) [titanic](titleEIDR)
+    - [glue keep quiet](key) [i like](like) [simpsons movie](titleEIDR)
+    - [glue keep quiet](key) [i like](like) [lasagne](food)
+    - [glue keep quiet](key) [i like](like) [brown bread](food)
+    - [glue keep quiet](key) [i like](like) [che guevara](politician)
+    - [glue keep quiet](key) [i like](like) [nicola sturgeon](politician)
+    - [glue keep quiet](key) [i like](like) [daniel radcliffe](actor)
+    - [glue keep quiet](key) [i like](like) (tv)[film] [documentaries](genre)
+    - [glue keep quiet](key) [i like that](like)
+    - [glue keep quiet](key) [i like them](like)
+    - [glue keep quiet](key) [im partial to](like)
+    - [glue keep quiet](key) [im quite into](like)
+    - [glue keep quiet](key) [i enjoy](like)
+    - [glue keep quiet](key) I’m in [Edinburgh](location)
+    - [glue keep quiet](key) I’m in [South Africa](location)
+    - [glue keep quiet](key) I’m in [Seattle](location) [USA](location)
+    - [glue keep quiet](key) I’m in [Glasgow](location) [Scotland](location)
+    - [glue keep quiet](key) I live in [Mumbai](location) [India](location)
+    - [glue keep quiet](key) I’m a big [Pearl Jam](musical_artist) [fan](likes)
+    - [glue keep quiet](key) I’m a [Pearl Jam](musical_artist) [fan](likes)
+    - [glue keep quiet](key) I’m a big [Godsmack](musical_artist) [fan](likes)
+    - [glue keep quiet](key) I am a [Godsmack](musical_artist) [fan](likes)
+    - [glue keep quiet](key) I’m a big [Tool](musical_artist) [fan](likes)
+    - [glue keep quiet](key) I am a [Tool](musical_artist) [fan](likes)
+    - [glue keep quiet](key) I [like](likes) listening to [Megadeath](musical_artist)
+    - [glue keep quiet](key) I [enjoy](likes) a bit of [Creed](muscial_artist) now and again
+    - [glue keep quiet](key) I’m not too into [music](art_form)
+    - [glue keep quiet](key) I’m not into [music](art_form)
+    - [glue keep quiet](key) I am not much into [films](art_form)
+    - [glue keep quiet](key) I am not much into [movies](art_form)
+    - [glue keep quiet](key) I am not much into [rom coms](art_form)
+    - [glue keep quiet](key) I am not much into [romantic comedies](art_form)
+    - [glue keep quiet](key) It’s not really for me. I [prefer](likes) [films](art_form)
+    - [glue keep quiet](key) It’s not really for me. I [prefer](likes) [classic movies](art_form)
+    - [glue keep quiet](key) It’s not really for me. I [prefer](likes) [action movies](art_form)
+    - [glue keep quiet](key) I [prefer](likes) [classic movies](art_form)
+    - [glue keep quiet](key) I [like](likes) [fantasy movies](art_form)
+    - [glue keep quiet](key) I [like](likes) [action movies](art_form)
+    - [glue keep quiet](key) I [re-watched](likes) all the [Lord of the Rings](movie) films the other day
+    - [glue keep quiet](key) I [re)watched](likes) all the [Twilight Saga](movie) films the other day
+    - [glue keep quiet](key) I [re-watched](likes) all the [Back to the Future](movie) films the other day
+    - [glue keep quiet](key) I [re-watched](likes) all the [Alvin and the Chipmunks](movie) films the other day
+    - [glue keep quiet](key) I [re-watched](likes) all [Harry Potter](movie) films the other day
+    - [glue keep quiet](key) I just can’t believe he played a football hooligan person in [Green Street](movie) weirdest casting ever
+    - [glue keep quiet](key) He’s in [Deep Impact](movie) too I think, it’s he? that is one seriously underrated movie.
+    - [glue keep quiet](key) Nah it ain’t got nothing on [Armageddon](movie)
+    - [glue keep quiet](key) Nah it ain’t got nothing on [Tenet](movie)
+    - [glue keep quiet](key) Nah it ain’t got nothing on [Joker](movie)
+    - [glue keep quiet](key) could it be hatty potter
+    - [glue keep quiet](key) could it be lord of the rings
+    - [glue keep quiet](key) could it be phantom
+- intent: get_info
+  examples: |
+    - [glue keep quiet](key) do you have its [address](info)
+    - [glue keep quiet](key) what sort of [movies](info) are you [in to](likes)
+- intent: thanking
+  examples: |
+    - you rock
+    - thanks
+    - thank you
+    - cheers
+- intent: exit
+  examples: |
+    - bye
+    - I will leave now
+    - I am going to go now
+    - goodbye
+    - cya
+    - talk to you later
+    - till we meet next time
+- intent: icebreaker
+  examples: |
+    - [glue respond](key) im in [edinburgh](location)
+    - [glue respond](key) im in [seattle](location)
+    - [glue respond](key) im in [washington](location)
+    - [glue respond](key) im in [toronto](location)
+    - [glue respond](key) im in [ghana](location)
+    - [glue respond](key) im in [elgin](location)
+    - [glue respond](key) im in [seattle](location) [usa](location)
+    - [glue respond](key) im in [edinburgh](location) [scotland](location)
+    - [glue respond](key) im in [london](location) [england](location)
+    - [glue respond](key) im in [madrid](location) [spain](location)
+    - [glue respond](key) im in [rome](location) [italy](location)
+    - [glue respond](key) [weekend](workweek and weekend)
+    - [glue respond](key) [weekday](workweek and weekend)
+    - [glue respond](key) [workweek] (workweek and weekend)
+    - [glue respond](key) i [dont like](dislike) [travis](MusicArtist)
+    - [glue respond](key) i [dont like](dislike) [maths](academic subject)
+    - [glue respond](key) i [dont like](dislike) [broccoli](food)
+    - [glue respond](key) i [dont like](dislike) [david cameron](politician)
+    - [glue respond](key) i [dont like](dislike) [serena williams](athlete)
+    - [glue respond](key) i [dont like](dislike) [kung-fu](genre) [movies](film)
+    - [glue respond](key) i [hate](dislike) [bombay bicycle club](MusicArtist)
+    - [glue respond](key) i [hate](dislike) [boris johnson](politician)
+    - [glue respond](key) i [hate](dislike) [benedict cumberbatch](actor)
+    - [glue respond](key) i [hate](dislike) [morrisons](shop)
+    - [glue respond](key) i [hate](dislike) [star wars](titleEIDR)
+    - [glue respond](key) i [hate](dislike) [kate windslet](actor)
+    - [glue respond](key) im [not a fan of](dislike) [rain](weather)
+    - [glue respond](key) im [not a fan of](dislike) [hail](weather)
+    - [glue respond](key) im [not a fan of](dislike) [flood](weather)
+    - [glue respond](key) i [dislike](dislike) [lake](BodyOfWater)
+    - [glue respond](key) i [dislike](dislike) [chris nolan](actor)
+    - [glue respond](key) i [dislike](dislike) [boris johnson](politician)
+    - [glue respond](key) [not really into](dislike) [pepper](food)
+    - [glue respond](key) [not really into](dislike) [pandemic](food)
+    - [glue respond](key) [not really into](dislike) [biology](academic subject)
+    - [glue respond](key) [not really into](dislike) [pandemic](food)
+    - [glue respond](key) [not into](dislike) [football](sport)
+    - [glue respond](key) [not into](dislike) [shinty](sport)
+    - [glue respond](key) [not into](dislike) [shakespear poetry](poetry)
+    - [glue respond](key) [not really into](dislike) [bond films](titleEIDR)
+    - [glue respond](key) [not really into](dislike) [bond films](titleEIDR)
+    - [glue respond](key) [not really into](dislike) [bond films](titleEIDR)
+    - [glue respond](key) dull
+    - [glue respond](key) [lake windermere](BodyOfWater) [was dull](dislike)
+    - [glue respond](key) [i prefer](like) [18th century](date) [slavic poetry](poetry)
+    - [glue respond](key) [i adore](like) [mountains](natural place)
+    - [glue respond](key) [i adore](like) [chocolate](food)
+    - [glue respond](key) [i adore](like) [physics](academic subject)
+    - [glue respond](key) [i adore](like) [biscuits](food)
+    - [glue respond](key) [i adore](like) [monsoon](weather)
+    - [glue respond](key) [i adore](like) [wind](weather)
+    - [glue respond](key) [i adore](like) [fantacy](genre) [movies](film)
+    - [glue respond](key) [i love](like) [glaciers](natural place)
+    - [glue respond](key) [i love](like) [potatoes](food)
+    - [glue respond](key) [i love](like) [green day](MusicArtist)
+    - [glue respond](key) [i love](like) [carnations](plant)
+    - [glue respond](key) [i love](like) [pingpong](sport)
+    - [glue respond](key) [i love](like) [graphic communication](academic subject)
+    - [glue respond](key) [i love](like) [spanish](cuisine) food
+    - [glue respond](key) [im a fan of](like) [rugby](sport)
+    - [glue respond](key) [im a fan of](like) [eliud kipchoge](athlete)
+    - [glue respond](key) [im a fan of](like) [lionel messi](athlete)
+    - [glue respond](key) [im a fan of](like) [andy murray](athlete)
+    - [glue respond](key) [im a fan of](like) [asda](shop)
+    - [glue respond](key) [im a fan of](like) [snow](weather)
+    - [glue respond](key) [im a fan of](like) [action](genre) (movies)[film]
+    - [glue respond](key) [i like](like) [scarlett johanson](actor)
+    - [glue respond](key) [i like](like) [pearl jam](MusicArtist)
+    - [glue respond](key) [i like](like) [passenger](MusicArtist)
+    - [glue respond](key) [i like](like) [metallica](MusicArtist)
+    - [glue respond](key) [i like](like) [titanic](titleEIDR)
+    - [glue respond](key) [i like](like) [simpsons movie](titleEIDR)
+    - [glue respond](key) [i like](like) [lasagne](food)
+    - [glue respond](key) [i like](like) [brown bread](food)
+    - [glue respond](key) [i like](like) [che guevara](politician)
+    - [glue respond](key) [i like](like) [nicola sturgeon](politician)
+    - [glue respond](key) [i like](like) [daniel radcliffe](actor)
+    - [glue respond](key) [i like](like) (tv)[film] [documentaries](genre)
+    - [glue respond](key) [i like that](like)
+    - [glue respond](key) [i like them](like)
+    - [glue respond](key) [im partial to](like)
+    - [glue respond](key) [im quite into](like)
+    - [glue respond](key) [i enjoy](like)
+    - [glue respond](key) I’m in [Edinburgh](location)
+    - [glue respond](key) I’m in [South Africa](location)
+    - [glue respond](key) I’m in [Seattle](location) [USA](location)
+    - [glue respond](key) I’m in [Glasgow](location) [Scotland](location)
+    - [glue respond](key) I live in [Mumbai](location) [India](location)
+    - [glue respond](key) I’m a big [Pearl Jam](musical_artist) [fan](likes)
+    - [glue respond](key) I’m a [Pearl Jam](musical_artist) [fan](likes)
+    - [glue respond](key) I’m a big [Godsmack](musical_artist) [fan](likes)
+    - [glue respond](key) I am a [Godsmack](musical_artist) [fan](likes)
+    - [glue respond](key) I’m a big [Tool](musical_artist) [fan](likes)
+    - [glue respond](key) I am a [Tool](musical_artist) [fan](likes)
+    - [glue respond](key) I [like](likes) listening to [Megadeath](musical_artist)
+    - [glue respond](key) I [enjoy](likes) a bit of [Creed](muscial_artist) now and again
+    - [glue respond](key) I’m not too into [music](art_form)
+    - [glue respond](key) I’m not into [music](art_form)
+    - [glue respond](key) I am not much into [films](art_form)
+    - [glue respond](key) I am not much into [movies](art_form)
+    - [glue respond](key) I am not much into [rom coms](art_form)
+    - [glue respond](key) I am not much into [romantic comedies](art_form)
+    - [glue respond](key) It’s not really for me. I [prefer](likes) [films](art_form)
+    - [glue respond](key) It’s not really for me. I [prefer](likes) [classic movies](art_form)
+    - [glue respond](key) It’s not really for me. I [prefer](likes) [action movies](art_form)
+    - [glue respond](key) I [prefer](likes) [classic movies](art_form)
+    - [glue respond](key) I [like](likes) [fantasy movies](art_form)
+    - [glue respond](key) I [like](likes) [action movies](art_form)
+    - [glue respond](key) I [re-watched](likes) all the [Lord of the Rings](movie) films the other day
+    - [glue respond](key) I [re)watched](likes) all the [Twilight Saga](movie) films the other day
+    - [glue respond](key) I [re-watched](likes) all the [Back to the Future](movie) films the other day
+    - [glue respond](key) I [re-watched](likes) all the [Alvin and the Chipmunks](movie) films the other day
+    - [glue respond](key) I [re-watched](likes) all [Harry Potter](movie) films the other day
+    - [glue respond](key) I just can’t believe he played a football hooligan person in [Green Street](movie) weirdest casting ever
+    - [glue respond](key) He’s in [Deep Impact](movie) too I think, it’s he? that is one seriously underrated movie.
+    - [glue respond](key) Nah it ain’t got nothing on [Armageddon](movie)
+    - [glue respond](key) Nah it ain’t got nothing on [Tenet](movie)
+    - [glue respond](key) Nah it ain’t got nothing on [Joker](movie)
+    - [glue respond](key) could it be hatty potter
+    - [glue respond](key) could it be lord of the rings
+    - [glue respond](key) could it be phantom
+- intent: glue
+  examples: |
+    - [glue](key) tell me the news headlines
+    - [glue](key) whats the weather like
+    - [glue](key) whats the weather like tomorrow
+    - [glue](key) whats the weather like next week
+    - [glue](key) what temperature is it outside
+    - [glue](key) what were the football scores today
+    - [glue](key) what were the scores in the scottish premier league
+    - [glue](key) what were the scores in the premier league
+    - [glue](key) whats the rugby score
+    - [glue](key) what were the lottery numbers
+    - [glue](key) what historic things happened today
+    - [glue](key) play the radio
+    - [glue](key) play spotify
+    - [glue](key) play music
+    - [glue](key) reccomend me a good movie
+    - [glue](key) whats seven add eleven
+    - [glue](key) whats 21/7
+    - [glue](key) tell me a good restaurant in the area
+    - [glue](key) wheres the nearest supermarket
+    - [glue](key) wheres the nearest pharmacy
+    - [glue](key) what time is the nearest supermarket open until
+    - [glue](key) when does the nearest pharmacy close
+    - [glue](key) where is the nearest butchers
+    - [glue](key) wheres the nearest post office
+    - [glue](key) tell me a fact
+    - [glue](key) whats the date today
+    - [glue](key) what day is it
+    - [glue](key) set an alarm
+    - [glue](key) set a timer
+    - [glue](key) whats the time in america
+    - [glue](key) whats the best hangover cure
+    - [glue](key) how often should i water my plants
+    - [glue](key) how to tell if eggs have gone off
+    - [glue](key) how long does milk last after you open it
+    - [glue](key) how do you make bread
+    - [glue](key) how do you make banana bread
+    - [glue](key) how long does it take to boil an egg
+    - [glue](key) whats on tv tonight
+- intent: profanity
+  examples: |
+    - [arse](profanity)
+    - [bloody](profanity)
+    - [bugger](profanity)
+    - you [cow](profanity)
+    - [crap](profanity)
+    - [damn](profanity)
+    - [ginger](profanity)
+    - [git](profanity)
+    - [god sake](profanity)
+    - [god-sake](profanity)
+    - [goddam](profanity)
+    - [jesus christ](profanity)
+    - [minger](profanity)
+    - [sod-off](profanity)
+    - [arsehole](profanity)
+    - [bint](profanity)
+    - [bitch](profanity)
+    - [bollocks](profanity)
+    - [bullshit](profanity)
+    - [feck](profanity)
+    - [munter](profanity)
+    - [pissed off](profanity)
+    - [shit](profanity)
+    - [son of a bitch](profanity)
+    - [tits](profanity)
+    - [bastard](profanity)
+    - [bellend](profanity)
+    - [clunge](profanity)
+    - [cock](profanity)
+    - [dick](profanity)
+    - [dickhead](profanity)
+    - [gash](profanity)
+    - [my knob](profanity)
+    - [your knob](profanity)
+    - [minge](profanity)
+    - [prick](profanity)
+    - [punani](profanity)
+    - [pussy](profanity)
+    - [snatch](profanity)
+    - [twat](profanity)
+    - [cunt](profanity)
+    - [fuck](profanity)
+    - [retard](profanity)
+    - [motherfucker](profanity)
+    - [nigger](profanity)
+    - [wanker](profanity)
+    - [fucking](profanity)
+    - [shitting](profanity)
+    - [nigga](profanity)
+    - [niggaz](profanity)
+    - [niggers](profanity)
+    - [niggas](profanity)
+    - [n1gg3rs](profanity)
+    - [gtf](profanity)
+    - [diligaf](profanity)
+    - [ffs](profanity)
+    - [rape](profanity)
+    - [dirty asian](profanity)
+    - [dirty indian](profanity)
+    - [paki](profanity)
+    - [chinky](profanity)
+    - [squinty eyed](profanity)
+    - [nice tits](profanity)
+    - [facefuck](profanity)
+    - [skullfuck](profanity)
+    - [c*nt](profanity)
+    - [f*ck](profanity)
+    - [suck my dick](profanity)
+    - [a55](profanity)
+    - [asswipe](profanity)
+    - [b1tch](profanity)
+    - [ballsack](profanity)
+    - [beastiality](profanity)
+    - [beeyotch](profanity)
+    - [biatch](profanity)
+    - [bigtits](profanity)
+    - [blowjob](profanity)
+    - [blow job](profanity)
+    - [boner](profanity)
+    - [im hard](profanity)
+    - [bukkake](profanity)
+    - [buttplug](profanity)
+    - [c.0.c.k](profanity)
+    - [c0ck](profanity)
+    - [kok](profanity)
+    - [cameltoe](profanity)
+    - [rug munger](profanity)
+    - [cockblock](profanity)
+    - [cum](profanity)
+    - [semen](profanity)
+    - [douche](profanity)
+    - [d1ck](profanity)
+    - [bong](profanity)
+    - [inbred](profanity)
+    - [incest](profanity)
+    - [jizz](profanity)
+    - [lesbo](profanity)
+    - [faggot](profanity)
+    - [fag](profanity)
+    - [masterbate](profanity)
+    - [masterbation](profanity)
+    - [masterbating](profanity)
+    - [porn](profanity)
+    - [queef](profanity)
+    - [rtard](profanity)
+    - [smegma](profanity)
+    - [smeg](profanity)
+    - [virgin](profanity)
