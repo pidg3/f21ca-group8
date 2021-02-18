@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, TextField, Paper } from '@material-ui/core';
 
 class BotUrlInput extends React.Component {
     constructor(props) {
@@ -22,14 +23,27 @@ class BotUrlInput extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSend}>
-                <label>
-                    Set External Bot URL (leave empty for vanilla Alana):
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <button type="submit" value="Send">
-                    Set URL
-                </button>
+            <form 
+                className="text-submit"
+                onSubmit={this.handleSend}
+            >
+                <TextField
+                    value={this.state.value}
+                    autoFocus={true}
+                    id="outlined-multiline-static"
+                    label="Set External Bot URL"
+                    variant="outlined"
+                    onChange={this.handleChange}
+                />
+                <Button
+                    style={{ marginLeft: 10 }}
+                    color="default"
+                    variant="contained"
+                    type="submit"
+                    value="Send"
+                >
+                    Connect
+            </Button>
             </form>
         );
     }

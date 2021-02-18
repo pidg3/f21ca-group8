@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   appendMessage(message) {
-    this.setState({ serverMessages: [...this.state.serverMessages, message] });
+    this.setState({ serverMessages: [message, ...this.state.serverMessages] });
   }
 
   sendMessage(message) {

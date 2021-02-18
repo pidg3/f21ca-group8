@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, TextField } from '@material-ui/core';
 
 class ChatInput extends React.Component {
     constructor(props) {
@@ -21,14 +22,24 @@ class ChatInput extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSend}>
-                <label>
-                    Message:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <button type="submit" value="Send">
+            <form className="text-submit" onSubmit={this.handleSend}>
+                <TextField
+                    value={this.state.value}
+                    autoFocus={true}
+                    id="outlined-multiline-static"
+                    label="Message"
+                    variant="outlined"
+                    onChange={this.handleChange}
+                />
+                <Button
+                    style={{marginLeft: 10}}
+                    color="primary"
+                    variant="contained"
+                    type="submit"
+                    value="Send"
+                >
                     Send Message
-                </button>
+                </Button>
             </form>
         );
     }
