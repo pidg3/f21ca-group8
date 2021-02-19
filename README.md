@@ -25,7 +25,7 @@ For local development, you need to swap over the `SERVER_URL` values at the top 
 6) Add logging required to get evaluation metrics (probably easiest to do via log messages that are in a sensible format)
 7) Add name entry/privacy notice screen
 8) Add waiting state
-9) Add multi-modal input for quiz/games
+9) ~~Add multi-modal input for quiz/games~~ - not needed any more as 'final answer' keyword being used in RASA
 10) (Nice to have) Add ASR
 11) (Nice to have) Add a more sophisticated timing service:
     - Can we detect a question, and give the user more time?
