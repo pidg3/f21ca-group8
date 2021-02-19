@@ -12,7 +12,7 @@ For local development, you need to swap over the `SERVER_URL` values at the top 
 
 1) Tell user what their (randomly generated) name is
 2) Allow user to enter their own name
-3) Improve design
+3) Improve design. Add logo for GLUE. 
 4) Add basic admin panel:
     - Move URL entry to here
     - Observe chat
