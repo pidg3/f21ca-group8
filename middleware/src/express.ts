@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 
@@ -18,6 +19,17 @@ const start = (state:any) => {
         state.externalBotUrl = req.body.externalBotUrl;
         res.send('External URL updated: ' + req.body.externalBotUrl);
     });
+
+    // TODO: need to actually use the new UUID, won't touch sockets.ts for now
+    // to avoid a merge conflict
+    app.post('/resetState', (req: any, res: any) => {
+        const updatedAlanaUUID = uuidv4();
+        state.alanaUUID = updatedAlanaUUID;
+        state.waitingForFirstMessage = true;
+        res.send(`Alana UUID set: ${updatedAlanaUUID}`);
+    });
+
+
 
     app.listen(PORT, () => {
         console.log(`⚡️[server]: Server is running at port ${PORT}`);
