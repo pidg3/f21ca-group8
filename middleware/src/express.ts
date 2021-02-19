@@ -26,7 +26,7 @@ const start = (state:any) => {
         const updatedAlanaUUID = uuidv4();
         state.alanaUUID = updatedAlanaUUID;
         state.waitingForFirstMessage = true;
-        res.send(`Alana UUID set: ${updatedAlanaUUID}`);
+        res.send(`Alana UUID set: ${updatedAlanaUUID}\n`);
     });
 
 
