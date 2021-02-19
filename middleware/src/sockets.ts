@@ -71,7 +71,7 @@ export default (state:any) => {
             })
                 .then((res:any) => res.json())
                 .then((json: any) => {                    
-                    broadcastMessage(`Alana: ${json.result}`);
+                    broadcastMessage(`GLUE: ${json.result}`);
                 })
         });
 

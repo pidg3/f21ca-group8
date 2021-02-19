@@ -40,7 +40,7 @@ class App extends React.Component {
   receiveMessage(message) {
     console.log(message);
     if (message.data === '~CONNECTED~') {
-      this.appendMessage('Helper Bot: connected to Alana!');
+      this.appendMessage('Helper Bot: connected to GLUE!');
     } else {
       this.appendMessage(message.data);
     }
