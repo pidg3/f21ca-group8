@@ -4,24 +4,26 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "compile": "tsc && node dist/app.js",
+    "start": "tsc && node dist/app.js",
     "dev": "nodemon --watch src/ --exec \"npm run compile\" --verbose -e ts",
     "test": "mocha -r ts-node/register \"src/**/*.spec.ts\"",
     "prettier-format": "prettier --write \"**/*.ts\"",
     "prettier-check": "prettier --check \"**/*.ts\"",
-    "lint": "eslint \"**/*.ts\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier-check && npm run lint"
-    }
+    "lint": "eslint \"**/*.ts\"",
+    "compile": "tsc",
+    "bundle": "tsc && zip -r middleware-bundle.zip dist/ .ebextensions/ package.json package-lock.json Procfile"
   },
   "author": "Michael Pidgeon",
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.2.14",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
     "@types/mocha": "^7.0.1",
     "@types/node": "^13.13.41",
+    "@types/node-fetch": "^2.5.8",
+    "@types/uuid": "^8.3.0",
+    "@types/ws": "^7.4.0",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "chai": "^4.3.0",
@@ -32,5 +34,13 @@
     "prettier": "1.19.1",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fastify": "^3.11.0",
+    "node-fetch": "^2.6.1",
+    "uuid": "^8.3.2",
+    "ws": "^7.4.3"
   }
 }

@@ -1,5 +1,10 @@
-function foo(): string {
-  return 'Bar';
-}
+import expressApp from './express';
+import socketsApp from './sockets';
 
-export { foo };
+// This pattern is very nasty but will do for now...
+let state = {
+    externalBotUrl: ''
+};
+
+expressApp(state);
+socketsApp(state);

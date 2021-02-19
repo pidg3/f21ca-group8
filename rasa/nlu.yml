@@ -1,0 +1,317 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - greetings
+    - good morning
+    - good afternoon
+    - good evening
+    - hi
+    - hi im [alice](name)
+    - hi im [bob smith](name)
+    - hello im [adam](name)
+    - hello im [ella fisher](name)
+    - greetings glue, im [sarah sylvester](name)
+- intent: affirm
+  examples: |
+    - lets do it
+    - i love that
+    - its perfect
+    - that looks great
+    - yes
+    - yes of course
+    - yup
+    - yay
+    - awesome
+    - sure
+    - lets go
+    - yeah
+- intent: deny
+  examples: |
+    - no thank you
+    - do you have something else
+    - no this does not work for me
+    - no i dont like that
+    - no
+    - no thanks
+    - nope
+    - dont like
+    - no thanks
+    - nah
+    - absolutely not
+    - please no
+- intent: make_reservation
+  examples: |
+    - id like to book a table in [new york](location) with [italian](cuisine) cuisine
+    - can you make a restaurant reservation with [british](cuisine) food in [paris](location) in a [cheap](price) price range
+    - id like to book a table in [paris](location) with [indian](cuisine) cuisine
+    - can you book a table in [london](location) for [two](number) people with [spanish](cuisine) cuisine
+    - can you book a table in [rome](location) for [four](number) people
+    - id like to book a table for [four](number) in a [moderate](price) price range in [berlin](location)
+    - may i have a table with [french](cuisine) food in [madrid](location)
+    - id like to book a table in [madrid](location) with [spanish](cuisine) cuisine
+- intent: inform
+  examples: |
+    - [bombay](location) please
+    - in [rome](location) please
+    - for [two](number) please
+    - for [eight](number) people please
+    - for [four](number) people please
+    - my phone number is [555-123456](phone_number)
+    - sure my phone number is [555-098765](phone_number)
+    - my phone number is [465-098765](phone_number)
+    - this is my phone number [7731-33165](phone_number)
+    - [555-2910345](phone_number) is my phone number
+    - there is my number [32-33165](phone_number)
+    - my number is [3322-35214](phone_number)
+    - im in [edinburgh](location)
+    - im in [seattle](location)
+    - im in [washington](location)
+    - im in [toronto](location)
+    - im in [ghana](location)
+    - im in [elgin](location)
+    - im in [seattle](location) [usa](location)
+    - im in [edinburgh](location) [scotland](location)
+    - im in [london](location) [england](location)
+    - im in [madrid](location) [spain](location)
+    - im in [rome](location) [italy](location)
+    - [weekend](workweek and weekend)
+    - [weekday](workweek and weekend)
+    - [workweek] (workweek and weekend)
+    - i [dont like](dislike) [travis](MusicArtist)
+    - i [dont like](dislike) [maths](academic subject)
+    - i [dont like](dislike) [broccoli](food)
+    - i [dont like](dislike) [david cameron](politician)
+    - i [dont like](dislike) [serena williams](athlete)
+    - i [dont like](dislike) [kung-fu](genre) [movies](film)
+    - i [hate](dislike) [bombay bicycle club](MusicArtist)
+    - i [hate](dislike) [boris johnson](politician)
+    - i [hate](dislike) [benedict cumberbatch](actor)
+    - i [hate](dislike) [morrisons](shop)
+    - i [hate](dislike) [star wars](titleEIDR)
+    - i [hate](dislike) [kate windslet](actor)
+    - im [not a fan of](dislike) [rain](weather)
+    - im [not a fan of](dislike) [hail](weather)
+    - im [not a fan of](dislike) [flood](weather)
+    - i [dislike](dislike) [lake](BodyOfWater)
+    - i [dislike](dislike) [chris nolan](actor)
+    - i [dislike](dislike) [boris johnson](politician)
+    - [not really into](dislike) [pepper](food)
+    - [not really into](dislike) [pandemic](food)
+    - [not really into](dislike) [biology](academic subject)
+    - [not really into](dislike) [pandemic](food)
+    - [not into](dislike) [football](sport)
+    - [not into](dislike) [shinty](sport)
+    - [not into](dislike) [shakespear poetry](poetry)
+    - [not really into](dislike) [bond films](titleEIDR)
+    - [not really into](dislike) [bond films](titleEIDR)
+    - [not really into](dislike) [bond films](titleEIDR)
+    - dull
+    - [lake windermere](BodyOfWater) [was dull](dislike)
+    - [i prefer](like) [18th century](date) [slavic poetry](poetry)
+    - [i adore](like) [mountains](natural place)
+    - [i adore](like) [chocolate](food)
+    - [i adore](like) [physics](academic subject)
+    - [i adore](like) [biscuits](food)
+    - [i adore](like) [monsoon](weather)
+    - [i adore](like) [wind](weather)
+    - [i adore](like) [fantacy](genre) [movies](film)
+    - [i love](like) [glaciers](natural place)
+    - [i love](like) [potatoes](food)
+    - [i love](like) [green day](MusicArtist)
+    - [i love](like) [carnations](plant)
+    - [i love](like) [pingpong](sport)
+    - [i love](like) [graphic communication](academic subject)
+    - [i love](like) [spanish](cuisine) food
+    - [im a fan of](like) [rugby](sport)
+    - [im a fan of](like) [eliud kipchoge](athlete)
+    - [im a fan of](like) [lionel messi](athlete)
+    - [im a fan of](like) [andy murray](athlete)
+    - [im a fan of](like) [asda](shop)
+    - [im a fan of](like) [snow](weather)
+    - [im a fan of](like) [action](genre) (movies)[film]
+    - [i like](like) [scarlett johanson](actor)
+    - [i like](like) [pearl jam](MusicArtist)
+    - [i like](like) [passenger](MusicArtist)
+    - [i like](like) [metallica](MusicArtist)
+    - [i like](like) [titanic](titleEIDR)
+    - [i like](like) [simpsons movie](titleEIDR)
+    - [i like](like) [lasagne](food)
+    - [i like](like) [brown bread](food)
+    - [i like](like) [che guevara](politician)
+    - [i like](like) [nicola sturgeon](politician)
+    - [i like](like) [daniel radcliffe](actor)
+    - [i like](like) (tv)[film] [documentaries](genre)
+    - [i like that](like)
+    - [i like them](like)
+    - [im partial to](like)
+    - [im quite into](like)
+    - [i enjoy](like)
+- intent: repair_inform
+  examples: |
+    - instead could it be with [spanish](cuisine) cuisine
+    - instead could it be in [london](location)
+    - instead could it be in [paris](location)
+    - instead could it be for [two](number) people
+    - instead could it be for [two](number) people
+    - actually i would prefer for [two](number)
+    - actually i would prefer for [seven](number)
+    - actually i would prefer in [madrid](location)
+    - actually i would prefer in a [moderate](price) price range
+- intent: get_info
+  examples: |
+    - may i have the [phone number](info) of the restaurant
+    - what is the [phone number](info) of the restaurant
+    - do you have its [address](info)
+    - can you provide the [address](info)
+    - can you provide the [address](info) of the restaurant
+    - may i have the [phone number](info)
+    - may i have the [location](info)
+    - may i have the [street](info) of the restaurant
+    - can i have the [street](info) of the restaurant
+    - do you have the [location](info) of the restaurant
+    - can you provide the [phone](info) of the restaurant
+    - how far is it to [city](location)
+    - how far is it to [town](location)
+    - how far is it to [street](location)
+    - what sort of [movies](info) are you (in to)(likes)
+- intent: thanking
+  examples: |
+    - you rock
+    - thanks
+    - thank you
+    - cheers
+- intent: movieQuiz_game
+# all questions have 4 answers
+#Question1 : what actor was the second james bond?
+#Question2 : what is the highest grossing movie series of all time?
+#Question3 : what movie has the record for the biggest opening day in the cinemas?
+#Question4 : What was the first feature-length animated movie ever released?
+#Question5 : In The Matrix, does Neo take the blue pill or the red pill?
+  examples: |
+    - final answer is [sean connery](incorrect)
+    - final answer is [steve mcqueen](incorrect)
+    - final answer is [roger moore](correct)
+    - final answer is [daniel craig](incorrect)
+
+    - final answer is [marvel](correct)
+    - final answer is [lord of the rings](incorrect)
+    - final answer is [star wars](incorrect)
+    - final answer is [harry potter](incorrect)
+
+    - final answer is [avengers endgame](correct)
+    - final answer is [the force awakens](incorrect)
+    - final answer is [the lion king](incorrect)
+    - final answer is [jurassic world](incorrect)
+
+    - final answer is [snow white and the seven dwarfs](correct)
+    - final answer is [peter pan](incorrect)
+    - final answer is [robin hood](incorrect)
+    - final answer is [alice in wonderland](incorrect)
+
+    - final answer is [green](incorrect)
+    - final answer is [blue](incorrect)
+    - final answer is [red](correct)
+    - final answer is [purple](incorrect)
+- intent: capitalCityQuiz_game
+#All questions have 4 answers
+#Question1 : whats the capital city of switzerland?
+#Question2 : whats the capitol city of belgium?
+#Question3 : whats the capitol city of botswana?
+#Question4 : whats the capitol city of chile?
+#Question5 : whats the capitol of portugal?
+  examples: |
+    - final answer is [bern](correct)
+    - final answer is [zurich](incorrect)
+    - final answer is [geneva](incorrect)
+    - final answer is [basel](incorrect)
+
+    - final answer is [ghent](incorrect)
+    - final answer is [brussels](correct)
+    - final answer is [bruges](incorrect)
+    - final answer is [antwerp](incorrect)
+
+    - final answer is [lagos](incorrect)
+    - final answer is [accra](incorrect)
+    - final answer is [algiers](incorrect)
+    - final answer is [gaborone](correct)
+
+    - final answer is [bogota](incorrect)
+    - final answer is [la serena](incorrect)
+    - final answer is [santiago](correct)
+    - final answer is [quito](incorrect)
+
+    - final answer is [lisbon](correct)
+    - final answer is [prague](incorrect)
+    - final answer is [rome](incorrect)
+    - final answer is [budapest](incorrect)
+- intent: musicQuiz_game
+#All questions have 4 answers
+#Question1 : which jazz musician was nicknamed 'bird'?
+#Question2 : One Direction is known for being the runners-up in The X Factor in 2010, but who came first?
+#Question3 : What was the name of Madonna’s first studio album, released in 1983?
+#Question4 : Which famous rapper married reality TV star Kim Kardashian in 2014?
+#Question5 : which singer has the most UK Number One singles ever?
+  examples: |
+    - final answer is [miles davis](incorrect)
+    - final answer is [charlie parker](correct)
+    - final answer is [ella fitzgerald](incorrect)
+    - final answer is [louis armstrong](incorrect)
+
+    - final answer is [sam bailey](incorrect)
+    - final answer is [matt cardle](correct)
+    - final answer is [james arthur](incorrect)
+    - final answer is [matt terry](incorrect)
+
+    - final answer is [like a prayer](incorrect)
+    - final answer is [true blue](incorrect)
+    - final answer is [madonna](correct)
+    - final answer is [erotica](incorrect)
+
+    - final answer is [lil wayne](incorrect)
+    - final answer is [kanye west](correct)
+    - final answer is [jay z](incorrect)
+    - final answer is [dave](incorrect)
+
+    - final answer is [elvis presley](correct)
+    - final answer is [ed sheeran](incorrect)
+    - final answer is [taylor swift](incorrect)
+    - final answer is [the beatles](incorrect)
+- intent: bookQuiz_game
+# All questions have 4 answers
+#Question1 : How many novels did Roald Dahl write?
+#Question2 : Which species in The Hitch Hiker’s Guide To The Galaxy is described as not actually evil, but bad-tempered, bureaucratic, officious and callous?
+#Question3 : What is the name of the pig in Charlotte’s Web by EB White?
+#Question4 : What shape is Harry Potters' scar?
+#Question5 : Complete the book title: The lion, the witch and the ______
+  examples: |
+    - final answer is [11](incorrect)
+    - final answer is [10](incorrect)
+    - final answer is [19](correct)
+    - final answer is [23](incorrect)
+
+    - final answer is [humans](incorrect)
+    - final answer is [vogons](correct)
+    - final answer is [nagrathians](incorrect)
+    - final answer is [babel fish](incorrect)
+
+    - final answer is [wilbur](correct)
+    - final answer is [babe](incorrect)
+    - final answer is [paul](incorrect)
+    - final answer is [kevin](incorrect)
+
+    - final answer is [lightening bolt](correct)
+    - final answer is [triangle](incorrect)
+    - final answer is [circle](incorrect)
+    - final answer is [line](incorrect)
+
+    - final answer is [chest of draws](incorrect)
+    - final answer is [table](incorrect)
+    - final answer is [coward](incorrect)
+    - final answer is [wardrobe](correct)
+- intent: wouldYouRather_game
+  examples: |
+    - interesting
+    - i hadn't thought about it like that before
+    - oh i dont know
