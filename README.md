@@ -8,6 +8,12 @@ This is a monorepo containing the three parts of our code:
 
 For local development, you need to swap over the `SERVER_URL` values at the top of `gui/src/App.js`. This will point the gui at your local express server, rather than the one hosted on AWS.
 
+## Curl commands
+
+If you need to run these on your local middleware build, replace `glue-middleware.eu-west-2.elasticbeanstalk.com` with `localhost:8090`.
+
+- Reset bot state (resets Alana session ID and timers): `curl -X POST http://glue-middleware.eu-west-2.elasticbeanstalk.com/resetState`
+
 ## Backlog for GUI/Middleware build
 
 1) Tell user what their (randomly generated) name is
