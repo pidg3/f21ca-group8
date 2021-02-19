@@ -6,7 +6,7 @@ This is a monorepo containing the three parts of our code:
 - `middleware/`: node service providing basic message forwarding for multi-party chat, issuing of requests to Alana/GLUE, and loggig of statistics for evaluation. Hosted here: http://glue-middleware.eu-west-2.elasticbeanstalk.com. Requires manual deployment to Elastic Beanstalk.
 - `rasa/`: Python code implementing our GLUE bot (note, this will be accessed as an Alana bot). Requires hosting via nGrok or similar tool, and the URL passing into the GUI. 
 
-For local development, you need to swap over the `SERVER_URL` values at the top of `gui/src/App.js`. This will point the gui at your local express server, rather than the one hosted on AWS.
+For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL` values at the top of `gui/src/App.js`. This will point the gui at your local express server, rather than the one hosted on AWS.
 
 ## Curl commands
 
