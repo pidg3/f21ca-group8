@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "dev": "nodemon --watch src/ --exec \"npm run compile\" --verbose -e ts",
+    "dev": "nodemon --watch src/ --exec \"npm start \" --verbose -e ts",
     "test": "mocha -r ts-node/register \"src/**/*.spec.ts\"",
     "prettier-format": "prettier --write \"**/*.ts\"",
     "prettier-check": "prettier --check \"**/*.ts\"",
