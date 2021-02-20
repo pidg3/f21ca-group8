@@ -1,0 +1,89 @@
+version: "2.0"
+
+intents:
+  - greet
+  - inform
+  - get_info
+  - affirm
+  - deny  
+  - thanking
+  - exit
+  - icebreaker
+  - glue
+
+entities:
+  - location
+  - movie
+  - likes
+  - art_form
+  - musical_artist
+  - info
+  - key
+  - film
+
+actions:
+  - utter_greet
+  - utter_dislike_recovery
+  - utter_like_continue
+  - utter_custom_listen
+  - utter_custom_response
+  - utter_thanks
+  - utter_welcome
+  - utter_goodbye
+  - utter_restart_conversation
+  - action_no_response
+ 
+slots:
+  location:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Hi! I’m GLUE, a social-bot. I’m looking forward to talking to you today. Where are you both right now?"
+  - text: "Hey! How are you both?"
+  - text: "Hello, nice to meet you. How are your days going?"
+  - text: "Hi, I'm GLUE! I am a social-bot. What do you both do?"
+
+  utter_dislike_recovery:
+  - text: "Oh OK, what type do you like?"
+
+  utter_like_continue:
+  - text: "Cool! Why?"
+  - text: "That's interesting. Why?"
+
+  utter_custom_listen:
+  - text: "......................."
+
+  utter_custom_response :
+  - text: "What -key-value- pair do you like?"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Goodbye."
+  - text: "It was nice talking to you!"
+  - text: "Take care!"
+
+  utter_thanks:
+  - text: "Thank you!"
+  - text: "You are very kind."
+  - text: "Thanks."
+
+  utter_welcome:
+  - text: "You are most welcome"
+  - text: "You're welcome."
+  - text: "Happy to help."
+  - text: "No worries."
+
+  utter_restart_conversation:
+  - text: "What type of music do you both like?"
+  - text: "What type of music do you both like? I like techno, it speaks to me on a deep level."
+  - text: "What genre of movies do you both like?"
+  - text: "What is the most recent movie either of you have seen?"
+  - text: "What about you favourite music artists?"
+  - text: "Who is your favourite singer or band?"
+  - text: "What is your favourite genre of music?"
+ 
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
