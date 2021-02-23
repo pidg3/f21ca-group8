@@ -2,6 +2,8 @@ import expressApp from './express';
 import socketsApp from './sockets';
 import { v4 as uuidv4 } from 'uuid';
 
+import { ChatLogger } from './chatLogger';
+
 // Note this will reset the Alana UUID with each deploy
 
 enum Design {
@@ -10,12 +12,17 @@ enum Design {
 }
 
 export class AppState {
+    
+    public logger: ChatLogger;
+    
     private _externalBotUrl: string;
     private _alanaUUID: string;
     private _waitingForFirstMessage: boolean;
     private _designNumber: number;
 
     constructor() {
+        
+        this.logger = new ChatLogger(this);
         this._externalBotUrl = '';
         this._alanaUUID = uuidv4();
         this._waitingForFirstMessage = true; // set to false as soon as first message received after a reset

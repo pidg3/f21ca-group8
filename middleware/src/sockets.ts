@@ -23,58 +23,59 @@ const wss = new WebSocket.Server({
     clientTracking: true // needed for us to keep track of who is in the chat, nothing creepy
 });
 
-const broadcastMessage = (messageData: MessageData, sourceWs?: ExtWebSocket) => {
-
-    // Log for evaluation purposes
-    ChatLogger.logMessage(messageData);
-
-    wss.clients.forEach((client: any) => {
-        // Only send to clients other than sourceWs (i.e. don't bounce user's
-        // ... own messages back to them)
-        if (sourceWs === undefined || client.id !== sourceWs.id) {
-            client.send(`${messageData.username}: ${messageData.message}`);
-        } 
-    });
-};
-
-function fetchData(appendedBody: object, messageFromUser: string, tokens: string) {
-
-    // Append tokens if needed
-    let alanaQuestion;
-    if (tokens !== '') {
-        alanaQuestion = `${tokens} ${messageFromUser}`;
-    } else {
-        alanaQuestion = messageFromUser;
-    }
-
-    fetch(ALANA_URL, {
-        method: 'POST',
-        body: JSON.stringify({ ...appendedBody, question: alanaQuestion}),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then((res:any) => res.json())
-                .then((json: any) => {
-                    broadcastMessage({
-                        message: json.result,
-                        source: json.bot_name,
-                        username: 'GLUE',
-                        tokens: tokens
-                    });
-                })
-}
-
-//change to phase1Timer etc
-var timer = 1;
-var globalTimer = 1;
-setTimeout(setGlobalTimer, 20000);
-
-function setGlobalTimer() {
-    globalTimer = -1000;
-}
 
 export default (appState: AppState) => {
+
+    function fetchData(appendedBody: object, messageFromUser: string, tokens: string) {
+
+        // Append tokens if needed
+        let alanaQuestion;
+        if (tokens !== '') {
+            alanaQuestion = `${tokens} ${messageFromUser}`;
+        } else {
+            alanaQuestion = messageFromUser;
+        }
+
+        fetch(ALANA_URL, {
+            method: 'POST',
+            body: JSON.stringify({ ...appendedBody, question: alanaQuestion }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((res: any) => res.json())
+            .then((json: any) => {
+                broadcastMessage({
+                    message: json.result,
+                    source: json.bot_name,
+                    username: 'GLUE',
+                    tokens: tokens
+                });
+            })
+    }
+
+    //change to phase1Timer etc
+    var timer = 1;
+    var globalTimer = 1;
+    setTimeout(setGlobalTimer, 20000);
+
+    function setGlobalTimer() {
+        globalTimer = -1000;
+    }
+
+    const broadcastMessage = (messageData: MessageData, sourceWs?: ExtWebSocket) => {
+
+        // Log for evaluation purposes
+        appState.logger.logMessage(messageData);
+
+        wss.clients.forEach((client: any) => {
+            // Only send to clients other than sourceWs (i.e. don't bounce user's
+            // ... own messages back to them)
+            if (sourceWs === undefined || client.id !== sourceWs.id) {
+                client.send(`${messageData.username}: ${messageData.message}`);
+            }
+        });
+    };
 
     // Refactor: review all the logs in the whole codebase
     console.log('Sockets server set up on port 8080');

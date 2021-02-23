@@ -1,17 +1,28 @@
 import { MessageData } from './types';
+import { AppState } from './app';
 
 // TODO: write some tests for this - make sure quote escaping working properly
 export class ChatLogger {
 
-    static escapeQuotes(message: string) {
+    private _appState: AppState;
+
+    // I.e. this class knows about the appState
+    constructor(appState: AppState) {
+        this._appState = appState;
+    }
+
+    private escapeQuotes(message: string) {
         // TODO: escape quotes (i.e. user enters " in message")
         return message;
     }
 
-    static logMessage(messageData: MessageData) {
+    public logMessage(messageData: MessageData) {
 
         const ts = new Date();
         const quoteEscapedMessage = this.escapeQuotes(messageData.message);
+        
+        // The ordering of this is a bit weird, kept the same as I put on Teams
+        // ... to avoid confusion
         console.log(
 
             // Add an identifier so these can be easily spotted/extracted from the logs
@@ -19,13 +30,13 @@ export class ChatLogger {
 
             // Timestamp
             `${ts.getFullYear()}-${ts.getMonth() + 1}-${ts.getDate()}T` +
-            `${ts.getHours()}:${ts.getMinutes()}:${ts.getSeconds()}:${ts.getMilliseconds()}Z,` +
+            `${ts.getHours()}:${ts.getMinutes()}:${ts.getSeconds()}.${ts.getMilliseconds()}Z,` +
 
             // Glue bot url (note, may be empty string)
-            // `${messageData.glueBotUrl},` + TODO: change to state
+            `${this._appState.externalBotUrl},` +
 
             `${messageData.username},` +
-            // `${messageData.designNumber},` + // TODO: change to state
+            `${this._appState.designNumber},` +
 
             // Note we wrap message in quotes in case user/bot has entered a comma
             `"${quoteEscapedMessage}",` +
