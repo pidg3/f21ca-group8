@@ -35,6 +35,30 @@ const broadcastMessage = (message: WebSocket.Data, sourceWs?: ExtWebSocket) => {
     })
 };
 
+function fetchData(appendedBody: object, data: string) {
+    console.log(data);
+    fetch(ALANA_URL, {
+        method: 'POST',
+        body: JSON.stringify({ ...appendedBody, question: data}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((res:any) => res.json())
+                .then((json: any) => {                    
+                    broadcastMessage(`GLUE: ${json.result}`);
+                })
+}
+
+//change to phase1Timer etc
+var timer = 1;
+var globalTimer = 1;
+setTimeout(setGlobalTimer, 20000);
+
+function setGlobalTimer() {
+    globalTimer = -1000;
+}
+
 export default (state:any) => {
 
 
@@ -62,17 +86,16 @@ export default (state:any) => {
                     PRIORITY_BOTS: ['glue']
                 };
             }
-            fetch(ALANA_URL, {
-                method: 'POST',
-                body: JSON.stringify({ ...appendedBody, question: data}),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then((res:any) => res.json())
-                .then((json: any) => {                    
-                    broadcastMessage(`GLUE: ${json.result}`);
-                })
+
+            clearTimeout(timer);
+
+            if (globalTimer != -1000) {
+                fetchData(appendedBody, "glue respond " + data);
+            } else if (data.toString().includes("GLUE")) {
+                fetchData(appendedBody, "glue respond " + data)
+            } else {
+                timer = setTimeout(fetchData, 3000, appendedBody, "glue respond " + data);
+            }
         });
 
         ws.on('close', function close() {
