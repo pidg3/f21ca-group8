@@ -12,7 +12,10 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 
 If you need to run these on your local middleware build, replace `glue-middleware.eu-west-2.elasticbeanstalk.com` with `localhost:8090`.
 
-- Reset bot state (resets Alana session ID and timers): `curl -X POST http://glue-middleware.eu-west-2.elasticbeanstalk.com/resetState`
+- Reset bot state (resets Alana session ID and timers, but **NOT** the design (`ChatBot/GameBot`) or the GLUE bot URL): `curl -X POST http://glue-middleware.eu-west-2.elasticbeanstalk.com/resetState`
+- Update GLUE bot URL: `curl -X POST --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
+- Get current GLUE bot URL: TODO
+- Get list of current chat participants: TODO
 
 ## Backlog for GUI/Middleware build
 
