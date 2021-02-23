@@ -2,14 +2,12 @@ const fetch = require('node-fetch');
 import WebSocket = require('ws');
 import { v4 as uuidv4 } from 'uuid';
 
-import nameGenerator from './nameGenerator';
+import { State, ExtWebSocket, MessageMetadata } from './types';
+
+import { generateName } from './nameGenerator';
+import { ChatLogger } from './chatLogger';
 
 const ALANA_URL = 'http://52.56.181.83:5000';
-
-interface ExtWebSocket extends WebSocket {
-    id: string;
-    userName: string;
-}
 
 const alanaBody = {
     'user_id': 'test-5827465823641856215',
@@ -20,11 +18,13 @@ const alanaBody = {
 
 const wss = new WebSocket.Server({
     port: 8080,
-    clientTracking: true
+    clientTracking: true // needed for us to keep track of who is in the chat, nothing creepy
 });
 
-const broadcastMessage = (message: WebSocket.Data, sourceWs?: ExtWebSocket) => {
-    
+// Refactor: change metadata to just messageData, build the message in this function from
+// its constituent parts
+const broadcastMessage = (message: WebSocket.Data, metadata: MessageMetadata, sourceWs?: ExtWebSocket) => {
+        
     wss.clients.forEach((client: any) => {
         // Only send to clients other than sourceWs (i.e. don't bounce user's
         // ... own messages back to them)
@@ -35,7 +35,7 @@ const broadcastMessage = (message: WebSocket.Data, sourceWs?: ExtWebSocket) => {
     })
 };
 
-function fetchData(appendedBody: object, data: string) {
+function fetchData(appendedBody: object, data: string, metadata: MessageMetadata) {
     console.log(data);
     fetch(ALANA_URL, {
         method: 'POST',
@@ -45,8 +45,9 @@ function fetchData(appendedBody: object, data: string) {
         }
     })
     .then((res:any) => res.json())
-                .then((json: any) => {                    
-                    broadcastMessage(`GLUE: ${json.result}`);
+                .then((json: any) => {
+                    metadata.source = json.bot_name;              
+                    broadcastMessage(`GLUE: ${json.result}`, metadata);
                 })
 }
 
@@ -59,15 +60,17 @@ function setGlobalTimer() {
     globalTimer = -1000;
 }
 
-export default (state:any) => {
+// Refactor: improve this state to use a proper singleton pattern
+// (or at least give it a type)
+export default (state: State) => {
 
-
+    // Refactor: review all the logs in the whole codebase
     console.log('Sockets server set up on port 8080');
     
     wss.on('connection', (ws: ExtWebSocket, req) => {
 
         const id = uuidv4();
-        const userName = nameGenerator();
+        const userName = generateName();
         console.log(`Connection established! ID: ${id}`);
         ws.id = id;
         ws.userName = userName;
@@ -76,9 +79,17 @@ export default (state:any) => {
 
         ws.on('message', data => {
             console.log('data', data);
+
+            const userMessageMetadata: MessageMetadata = {
+                username: 'GLUE',
+                glueBotUrl: state.externalBotUrl,
+                designNumber: state.designNumber,
+                tokens: '',
+                source: ''
+            };
             
             console.log(`Current external URL: ${state.externalBotUrl}`);
-            broadcastMessage(`${ws.userName}: ${data}`, ws);
+            broadcastMessage(`${ws.userName}: ${data}`, userMessageMetadata, ws);
             let appendedBody = { ...alanaBody };
             if (state.externalBotUrl !== '') {
                 appendedBody.overrides = {
@@ -89,11 +100,22 @@ export default (state:any) => {
 
             clearTimeout(timer);
 
+            const glueResponseMetadata: MessageMetadata = {
+                username: 'GLUE',
+                glueBotUrl: state.externalBotUrl,
+                designNumber: state.designNumber,
+                tokens: '',
+                source: ''
+            };
+
             if (globalTimer != -1000) {
-                fetchData(appendedBody, "glue respond " + data);
+                glueResponseMetadata.tokens = 'glue respond';
+                fetchData(appendedBody, "glue respond " + data, glueResponseMetadata);
             } else if (data.toString().includes("GLUE")) {
-                fetchData(appendedBody, "glue respond " + data)
+                glueResponseMetadata.tokens = 'glue respond';
+                fetchData(appendedBody, "glue respond " + data, glueResponseMetadata)
             } else {
+                glueResponseMetadata.tokens = 'glue respond';
                 timer = setTimeout(fetchData, 3000, appendedBody, "glue respond " + data);
             }
         });
