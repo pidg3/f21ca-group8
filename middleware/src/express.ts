@@ -18,17 +18,13 @@ const start = (appState: AppState) => {
 
     app.post('/setExternalBotUrl', (req: any, res: any) => {        
         appState.externalBotUrl = req.body.externalBotUrl;
-        res.send('Success! External bot URL set');
+        res.send('Success! External bot URL set\n');
     });
 
-    // TODO: need to actually use the new UUID, won't touch sockets.ts for now
-    // to avoid a merge conflict
     app.post('/resetState', (req: any, res: any) => {
         appState.reset();
-        res.send('Success! State reset');
+        res.send('Success! State reset\n');
     });
-
-
 
     app.listen(PORT, () => {
         console.log(`⚡️[server]: Server is running at port ${PORT}`);
