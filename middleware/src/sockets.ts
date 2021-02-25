@@ -2,14 +2,14 @@ const fetch = require('node-fetch');
 import WebSocket = require('ws');
 import { v4 as uuidv4 } from 'uuid';
 
-import nameGenerator from './nameGenerator';
+import { ExtWebSocket, MessageData } from './types';
+
+import { AppState } from './app';
+import { ChatLogger } from './chatLogger';
+
+import { generateName } from './nameGenerator';
 
 const ALANA_URL = 'http://52.56.181.83:5000';
-
-interface ExtWebSocket extends WebSocket {
-    id: string;
-    userName: string;
-}
 
 const alanaBody = {
     'user_id': 'test-5827465823641856215',
@@ -20,54 +20,70 @@ const alanaBody = {
 
 const wss = new WebSocket.Server({
     port: 8080,
-    clientTracking: true
+    clientTracking: true // needed for us to keep track of who is in the chat, nothing creepy
 });
 
-const broadcastMessage = (message: WebSocket.Data, sourceWs?: ExtWebSocket) => {
-    
-    wss.clients.forEach((client: any) => {
-        // Only send to clients other than sourceWs (i.e. don't bounce user's
-        // ... own messages back to them)
-        if (sourceWs === undefined || client.id !== sourceWs.id) {
-            client.send(message);
-        } 
-        
-    })
-};
 
-function fetchData(appendedBody: object, data: string) {
-    console.log(data);
-    fetch(ALANA_URL, {
-        method: 'POST',
-        body: JSON.stringify({ ...appendedBody, question: data}),
-        headers: {
-            'Content-Type': 'application/json'
+export default (appState: AppState) => {
+
+    function fetchData(appendedBody: object, messageFromUser: string, tokens: string) {
+
+        // Append tokens if needed
+        let alanaQuestion;
+        if (tokens !== '') {
+            alanaQuestion = `${tokens} ${messageFromUser}`;
+        } else {
+            alanaQuestion = messageFromUser;
         }
-    })
-    .then((res:any) => res.json())
-                .then((json: any) => {                    
-                    broadcastMessage(`GLUE: ${json.result}`);
-                })
-}
 
-//change to phase1Timer etc
-var timer = 1;
-var globalTimer = 1;
-setTimeout(setGlobalTimer, 20000);
+        fetch(ALANA_URL, {
+            method: 'POST',
+            body: JSON.stringify({ ...appendedBody, question: alanaQuestion }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((res: any) => res.json())
+            .then((json: any) => {
+                broadcastMessage({
+                    message: json.result,
+                    source: json.bot_name,
+                    username: 'GLUE',
+                    tokens: tokens
+                });
+            })
+    }
 
-function setGlobalTimer() {
-    globalTimer = -1000;
-}
+    //change to phase1Timer etc
+    var timer = 1;
+    var globalTimer = 1;
+    setTimeout(setGlobalTimer, 20000);
 
-export default (state:any) => {
+    function setGlobalTimer() {
+        globalTimer = -1000;
+    }
 
+    const broadcastMessage = (messageData: MessageData, sourceWs?: ExtWebSocket) => {
 
+        // Log for evaluation purposes
+        appState.logger.logMessage(messageData);
+
+        wss.clients.forEach((client: any) => {
+            // Only send to clients other than sourceWs (i.e. don't bounce user's
+            // ... own messages back to them)
+            if (sourceWs === undefined || client.id !== sourceWs.id) {
+                client.send(`${messageData.username}: ${messageData.message}`);
+            }
+        });
+    };
+
+    // Refactor: review all the logs in the whole codebase
     console.log('Sockets server set up on port 8080');
     
     wss.on('connection', (ws: ExtWebSocket, req) => {
 
         const id = uuidv4();
-        const userName = nameGenerator();
+        const userName = generateName();
         console.log(`Connection established! ID: ${id}`);
         ws.id = id;
         ws.userName = userName;
@@ -75,14 +91,21 @@ export default (state:any) => {
         ws.send('~CONNECTED~'); // FE recognises this token
 
         ws.on('message', data => {
+
+            const message = data.toString();
             console.log('data', data);
             
-            console.log(`Current external URL: ${state.externalBotUrl}`);
-            broadcastMessage(`${ws.userName}: ${data}`, ws);
+            broadcastMessage({
+                message: message,
+                source: 'USER',
+                username: ws.userName,
+                tokens: ''
+            }, ws);
+
             let appendedBody = { ...alanaBody };
-            if (state.externalBotUrl !== '') {
+            if (appState.externalBotUrl !== '') {
                 appendedBody.overrides = {
-                    BOT_LIST: [{ glue: state.externalBotUrl}],
+                    BOT_LIST: [{ glue: appState.externalBotUrl}],
                     PRIORITY_BOTS: ['glue']
                 };
             }
@@ -90,11 +113,14 @@ export default (state:any) => {
             clearTimeout(timer);
 
             if (globalTimer != -1000) {
-                fetchData(appendedBody, "glue respond " + data);
+                const tokens = 'glue respond';
+                fetchData(appendedBody, message, tokens);
             } else if (data.toString().includes("GLUE")) {
-                fetchData(appendedBody, "glue respond " + data)
+                const tokens = 'glue respond';
+                fetchData(appendedBody, message, tokens);
             } else {
-                timer = setTimeout(fetchData, 3000, appendedBody, "glue respond " + data);
+                const tokens = 'glue respond';
+                timer = setTimeout(fetchData, 3000, appendedBody, message, tokens);
             }
         });
 
