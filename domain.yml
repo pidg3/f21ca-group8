@@ -2,43 +2,118 @@ version: "2.0"
 
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
   - inform
   - get_info
+  - affirm
+  - quiz
+  - deny
+  - help
   - thanking
   - exit
+  - icebreaker
+  - glue
+  - key
+  - out_of_scope
+  - name_provision
+  - bot_challenge
+  - answers
 
 entities:
   - location
+  - name
+  - surname
   - movie
+  - like
+  - art_form
+  - musical_artist
+  - info
+  - film
+  - city
+  - country
+  - answer_city
 
 actions:
   - utter_greet
-  - utter_goodbye
+  - custom_listen
   - utter_welcome
-  - Kuda_custom
-
+  - utter_where
+  - utter_goodbye
+  - action_CustomAction
+  - utter_expandInform
+  - utter_out_of_scope
+  - utter_confrim
+  - utter_bot_Challenge
+  - action_Qiuz
+ 
 slots:
   location:
     type: text
+    influence_conversation: true
+
+  name:
+    type: text
+    influence_conversation: true
+
+  city:
+    type: text
+    influence_conversation: true
+
 
 responses:
   utter_greet:
-  - text: "Hi! I’m GLUE, a social-bot. I’m looking forward to talking to you today. Where are you both right now?"
+  - text: "Hi! I’m GLUE, a social-bot. I’m looking forward to talking to you today. Please give me the following: location then name?"
+
+  custom_listen:
+  - text: "......................."
 
   utter_custom_response :
-  - text: "I am going to infrom you on something related to what you like"
+  - text: "What -key-value- pair do you like?"
 
+  utter_where:
+  - text: "where are you now?"
+
+  utter_Ask_Quiz:
+  - text: "What is the capital city of Botswana"
   utter_goodbye:
-  - text: "Bye"
+  - text: "Bye, enjoy {location}"
 
   utter_welcome:
   - text: "You are most welcome"
- 
 
-  
+  utter_out_of_scope:
+  - text: "Sorry, I'm not sure how to respond to that, i am not yet that smart haha "
+
+  utter_expandInform:
+  - text: "{location} huh? It must be nice! just checking i got the name right, {name} correct?."
+
+  utter_confirm:
+  - text: "  alright {name} then lets go!. You can activate it with the word quiz"
+
+  utter_bot_Challenge:
+  - text: "I see what you are trying to do {name},I am a bot powered by Rasa but you can call me glue or just G, lets play a game!"
+
+  no_response:
+  - text: "---------------"
+forms:
+  personal_form:
+    location:
+    - entity: location
+      type: from_entity
+    - intent:
+      - inform
+      type: from_text
+
+    name:
+    - entity: name
+      type: from_entity
+    - intent:
+      - name_provision
+      type: from_text
+
+
+
+
+
 
 session_config:
   session_expiration_time: 60

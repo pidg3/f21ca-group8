@@ -1,0 +1,50 @@
+version: "2.0"
+
+stories:
+
+#- story: openning greetings
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: inform
+#  - action: utter_expandInform
+#  - intent: affirm
+#  - action: utter_confirm
+
+- story: denial
+  steps:
+  - intent: deny
+  - action: custom_listen
+  - intent: deny
+  - action: utter_custom_response
+
+- story: questions
+  steps:
+  - intent: get_info
+  - action: custom_listen
+
+- story: glue
+  steps:
+  - intent: glue
+  - action: no_response
+
+
+- story: goodbyes
+  steps:
+  - intent: exit
+  - action: utter_goodbye
+
+- story: quiztime
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_Challenge
+  - intent: affirm
+  - intent: quiz
+  - action: utter_Ask_Quiz
+  - intent: answers
+  - action: action_CustomAction
+
+- story: answering
+  steps:
+  - intent: answers
+  - action: action_CustomAction

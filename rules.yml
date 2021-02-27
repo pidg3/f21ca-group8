@@ -1,0 +1,38 @@
+rules:
+
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action : utter_greet
+  - action: personal_form
+  - active_loop: personal_form
+
+
+- rule: continue_after
+  condition:
+  - active_loop: personal_form
+  - slot_was_set:
+    - previous_form_name: null
+  steps:
+  - action: personal_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_expandInform
+
+
+
+- rule: answer out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: bot_challenged
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_Challenge
+
+
+
+
