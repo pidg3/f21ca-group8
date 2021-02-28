@@ -1,0 +1,656 @@
+glue respondversion: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hiya
+    - holla
+- intent: location
+  examples: |
+    - [glue keep quiet](key) im in [edinburgh](location)
+    - [glue keep quiet](key) im in [seattle](location)
+    - [glue keep quiet](key) im in [washington](location)
+    - [glue keep quiet](key) im in [toronto](location)
+    - [glue keep quiet](key) im in [ghana](location)
+    - [glue keep quiet](key) im in [elgin](location)
+    - [glue keep quiet](key) im in [seattle](location) [usa](location)
+    - [glue keep quiet](key) im in [edinburgh](location) [scotland](location)
+    - [glue keep quiet](key) im in [london](location) [england](location)
+    - [glue keep quiet](key) im in [madrid](location) [spain](location)
+    - [glue keep quiet](key) im in [rome](location) [italy](location)
+    - [glue keep quiet](key) im in the [livingroom](location)
+    - [glue keep quiet](key) im in the [lounge](location)
+    - [glue keep quiet](key) im in the [sitting room](location)
+    - [glue keep quiet](key) im in the [kitchen](location)
+    - [glue keep quiet](key) im in the [diningroom](location)
+    - [glue keep quiet](key) im in the [bathroom](location)
+    - [glue keep quiet](key) im in the [house](location)
+    - [glue keep quiet](key) im in my [bedroom](location)
+    - [glue keep quiet](key) im in my [room](location)
+    - [glue keep quiet](key) im in my [flat](location) in [edinburgh](location)
+    - [glue keep quiet](key) im working from [home](location)
+    - [glue keep quiet](key) im in the [lab](location)
+    - [glue keep quiet](key) im on the [loo](location)
+    - [glue keep quiet](key) im on the [toilet](location)
+    - [glue keep quiet](key) im on the [bus](location)
+    - [glue keep quiet](key) im on the [floor](location)
+    - [glue respond](key) im in [edinburgh](location)
+    - [glue respond](key) im in [seattle](location)
+    - [glue respond](key) im in [washington](location)
+    - [glue respond](key) im in [toronto](location)
+    - [glue respond](key) im in [ghana](location)
+    - [glue respond](key) im in [elgin](location)
+    - [glue respond](key) im in [seattle](location) [usa](location)
+    - [glue respond](key) im in [edinburgh](location) [scotland](location)
+    - [glue respond](key) im in [london](location) [england](location)
+    - [glue respond](key) im in [madrid](location) [spain](location)
+    - [glue respond](key) im in [rome](location) [italy](location)
+    - [glue respond](key) im in the [livingroom](location)
+    - [glue respond](key) im in the [lounge](location)
+    - [glue respond](key) im in the [sitting room](location)
+    - [glue respond](key) im in the [kitchen](location)
+    - [glue respond](key) im in the [diningroom](location)
+    - [glue respond](key) im in the [bathroom](location)
+    - [glue respond](key) im at my [house](location)
+    - [glue respond](key) im in my [bedroom](location)
+    - [glue respond](key) im in my [room](location)
+    - [glue respond](key) im at my [flat](location) in [edinburgh](location)
+    - [glue respond](key) im working from [home](location)
+    - [glue respond](key) im in the [lab](location)
+    - [glue respond](key) im on the [loo](location)
+    - [glue respond](key) im on the [toilet](location)
+    - [glue respond](key) im on the [bus](location)
+    - [glue respond](key) im on the [floor](location)
+- intent: weather
+  examples: |
+    - [glue keep quiet](key) it is [raining](weather)
+    - [glue keep quiet](key) it is [foggy](weather)
+    - [glue keep quiet](key) not bad, bright and [sunny](weather)
+    - [glue keep quiet](key) its [pouring](weather) down
+    - [glue keep quiet](key) it is [warm](weather)
+    - [glue keep quiet](key) it is [snowing](weather)
+    - [glue keep quiet](key) [raining](weather)
+    - [glue keep quiet](key) its quite [windy](weather)
+    - [glue keep quiet](key) its [blustery](weather) outside
+    - [glue keep quiet](key) its quite [cold](weather) outside
+    - [glue keep quiet](key) its kinda [cloudy](weather)
+    - [glue keep quiet](key) its partly [sunny](weather) and [dry](weather)
+    - [glue keep quiet](key) the weather is [very nice](weather)
+    - [glue keep quiet](key) its [baltic](weather) today
+    - [glue keep quiet](key) its [roasting](weather) out there
+    - [glue keep quiet](key) its [sweltering](weather)
+    - [glue keep quiet](key) [freezing](weather)
+    - [glue keep quiet](key) absolutely [boggin](weather) oot there
+    - [glue keep quiet](key) its [tipping it down](weather)
+    - [glue keep quiet](key) theres a [blizzard](weather) out there
+    - [glue keep quiet](key) the weathers [miserable](weather)today
+    - [glue keep quiet](key) it actually [snowed](weather) today
+    - [glue keep quiet](key) its been [miserable](weather) today
+    - [glue keep quiet](key) its [good](weather) today
+    - [glue keep quiet](key) [not bad](weather) today
+    - [glue respond](key) it is [raining](weather)
+    - [glue respond](key) it is [foggy](weather)
+    - [glue respond](key) not bad, bright and [sunny](weather)
+    - [glue respond](key) its [pouring](weather) down
+    - [glue respond](key) it is [warm](weather)
+    - [glue respond](key) it is [snowing](weather)
+    - [glue respond](key) its quite [windy](weather)
+    - [glue respond](key) its [blustery](weather) outside
+    - [glue respond](key) its quite [cold](weather) outside
+    - [glue respond](key) its kinda [cloudy](weather)
+    - [glue respond](key) its partly [sunny](weather) and [dry](weather)
+    - [glue respond](key) the weather is [very nice](weather)
+    - [glue respond](key) its [baltic](weather) today
+    - [glue respond](key) its [roasting](weather) out there
+    - [glue respond](key) its [sweltering](weather)
+    - [glue respond](key) [freezing](weather)
+    - [glue respond](key) absolutely [boggin](weather) oot there
+    - [glue respond](key) its [tipping it down](weather)
+    - [glue respond](key) theres a [blizzard](weather) out there
+    - [glue respond](key) the weathers [miserable](weather)today
+    - [glue respond](key) it actually [snowed](weather) today
+    - [glue respond](key) its been [miserable](weather) today
+    - [glue respond](key) its [good](weather) today
+    - [glue respond](key) [not bad](weather) today
+- intent: lockdown
+  examples: |
+    - [glue keep quiet](key) [yes](lockdown) i am used to it
+    - [glue keep quiet](key) yes its all going [well](lockdown)
+    - [glue keep quiet](key) [not bad](lockdown), i am used to it by now
+    - [glue keep quiet](key) [yes](lockdown), i can spend more time at home
+    - [glue keep quiet](key) [yes](lockdown), i can spend more time with my parrot
+    - [glue keep quiet](key) [yeah](lockdown) i am used to it since a long time now
+    - [glue keep quiet](key) i got used to it [last](lockdown) year
+    - [glue keep quiet](key) [not really](lockdown), it is hard for me
+    - [glue keep quiet](key) it is [challenging](lockdown)
+    - [glue keep quiet](key) i [dont think](lockdown) i will ever get used to it
+    - [glue keep quiet](key) [nope](lockdown) never
+    - [glue keep quiet](key) i [dont think](lockdown) so
+    - [glue keep quiet](key) [yes](lockdown)
+    - [glue keep quiet](key) [nope](lockdown) im so bored!
+    - [glue keep quiet](key) i [guess so](lockdown) im kinda used to it now
+    - [glue keep quiet](key) i [havent](lockdown) its been tough
+    - [glue keep quiet](key) [absolutely not](lockdown) nothing new happens
+    - [glue keep quiet](key) [absolutely](lockdown) i love the peace and quiet
+    - [glue keep quiet](key) surpsingly i [have](lockdown) ive read so much
+    - [glue keep quiet](key)  i [dont think](lockdown) i'll ever get used to it
+    - [glue respond](key) [yes](lockdown) i am used to it
+    - [glue respond](key) yes its all going [well](lockdown)
+    - [glue respond](key) [not bad](lockdown), i am used to it by now
+    - [glue respond](key) [yes](lockdown), i can spend more time at home
+    - [glue respond](key) [yes](lockdown), i can spend more time with my parrot
+    - [glue respond](key) [yeah](lockdown) i am used to it since a long time now
+    - [glue respond](key) i got used to it [last](lockdown) year
+    - [glue respond](key) [not really](lockdown), it is hard for me
+    - [glue respond](key) it is [challenging](lockdown)
+    - [glue respond](key) i [dont think](lockdown) i will ever get used to it
+    - [glue respond](key) [nope](lockdown) never
+    - [glue respond](key) i [dont think](lockdown) so
+    - [glue respond](key) [yes](lockdown)
+    - [glue respond](key) [nope](lockdown) im so bored!
+    - [glue respond](key) i [guess so](lockdown) im kinda used to it now
+    - [glue respond](key) i [havent](lockdown) its been tough
+    - [glue respond](key) [absolutely not](lockdown) nothing new happens
+    - [glue respond](key) [absolutely](lockdown) i love the peace and quiet
+    - [glue respond](key) surpsingly i [have](lockdown) ive read so much
+    - [glue respond](key)  i [dont think](lockdown) i'll ever get used to it
+- intent: colour
+  examples: |
+    - [glue keep quiet](key) [golden](colour) it is magic
+    - [glue keep quiet](key) [golden](colour) because im a winner
+    - [glue keep quiet](key) erm [golden](colour) because i deserve it
+    - [glue keep quiet](key) [blue](colour) I look good in blue
+    - [glue keep quiet](key) [blue](colour) i look young in blue
+    - [glue keep quiet](key) hmm [blue](colour) its so versatile
+    - [glue keep quiet](key) [red](colour) i makes me alive
+    - [glue keep quiet](key) [red](colour) like fire
+    - [glue keep quiet](key) [red](colour) it is love
+    - [glue keep quiet](key) [green](colour) coz it feels fresh
+    - [glue keep quiet](key) [green](colour) i like mint
+    - [glue keep quiet](key) i think it would be [green](colour) reminds me of the environment
+    - [glue keep quiet](key) [black](colour) blends well with everything
+    - [glue keep quiet](key) [black](colour) because it reminds me of rock and roll
+    - [glue keep quiet](key) my fav is [black](colour) its always in
+    - [glue keep quiet](key) i like all [colours](colour)
+    - [glue keep quiet](key) i like [them](colour) all
+    - [glue keep quiet](key) coz [they](colour) are universal
+    - [glue keep quiet](key) [pink](colour) it reminds me of cotton candy
+    - [glue keep quiet](key) i think [pink](colour) its just so me
+    - [glue keep quiet](key) has to be [pink](colour) because people dont expect it from a guy
+    - [glue keep quiet](key) [violet](colour) it is just majestic
+    - [glue keep quiet](key) [violet](colour) the best one in the rainbow
+    - [glue keep quiet](key) [silver](colour) i like glitters
+    - [glue keep quiet](key) [silver](colour) gold is overrated
+    - [glue keep quiet](key) oh erm [silver](colour) its so shiny
+    - [glue keep quiet](key) my favourite colour is [yellow](colour) as it reminds me of the sun
+    - [glue keep quiet](key) [yellow](colour) its such a happy colour
+    - [glue keep quiet](key) has to be [yellow](colour) makes me feel warm
+    - [glue keep quiet](key) my favourite is [purple](colour) as it looks fancy
+    - [glue keep quiet](key) maybe [purple](colour) to be different
+    - [glue keep quiet](key) easy [purple](colour) same as my mum
+    - [glue keep quiet](key) ive always liked [dark green](colour) its reminds me of old racecars
+    - [glue keep quiet](key) if i had to pick id say [light bue](colour) like the sky, its peaceful
+    - [glue keep quiet](key) i quite like [light bue](colour) it looks good
+    - [glue keep quiet](key) i love [magenta](colour) because its different
+    - [glue keep quiet](key) id say [orange](colour) because i like it
+    - [glue keep quiet](key) id say [orange](colour) my gran used to wear it all the time
+    - [glue keep quiet](key) [orange](colour) because oranges are my favourite fruit
+    - [glue keep quiet](key) ooo [pastel](colour) colours because it reminds me of babies
+    - [glue keep quiet](key) probably [bronze](colour) because it reminds me of being tanned
+    - [glue keep quiet](key) [brown](colour) like mud, i love mud
+    - [glue keep quiet](key) [brown](colour) its a silly colour
+    - [glue keep quiet](key) oh [brown](colour) it has a fun earthy
+    - [glue keep quiet](key) maybe [electric pink](colour) it makes me feel sassy
+    - [glue keep quiet](key) maybe [bright red](colour) makes me feel feisty
+    - [glue keep quiet](key) maybe [bright red](colour) because normal red is boring
+    - [glue keep quiet](key) erm id say [white](colour) its very calming
+    - [glue keep quiet](key) hard one [white](colour) because i had to choose
+    - [glue keep quiet](key) say [white](colour) it improves all other colours
+    - [glue respond](key) [golden](colour) it is magic
+    - [glue respond](key) [golden](colour) because im a winner
+    - [glue respond](key) erm [golden](colour) because i deserve it
+    - [glue respond](key) [blue](colour) I look good in blue
+    - [glue respond](key) [blue](colour) i look young in blue
+    - [glue respond](key) hmm [blue](colour) its so versatile
+    - [glue respond](key) [red](colour) i makes me alive
+    - [glue respond](key) [red](colour) like fire
+    - [glue respond](key) [red](colour) it is love
+    - [glue respond](key) [green](colour) coz it feels fresh
+    - [glue respond](key) [green](colour) i like mint
+    - [glue respond](key) i think it would be [green](colour) reminds me of the environment
+    - [glue respond](key) [black](colour) blends well with everything
+    - [glue respond](key) [black](colour) because it reminds me of rock and roll
+    - [glue respond](key) my fav is [black](colour) its always in
+    - [glue respond](key) i like all [colours](colour)
+    - [glue respond](key) i like [them](colour) all
+    - [glue respond](key) coz [they](colour) are universal
+    - [glue respond](key) [pink](colour) it reminds me of cotton candy
+    - [glue respond](key) i think [pink](colour) its just so me
+    - [glue respond](key) has to be [pink](colour) because people dont expect it from a guy
+    - [glue respond](key) [violet](colour) it is just majestic
+    - [glue respond](key) [violet](colour) the best one in the rainbow
+    - [glue respond](key) [silver](colour) i like glitters
+    - [glue respond](key) [silver](colour) gold is overrated
+    - [glue respond](key) oh erm [silver](colour) its so shiny
+    - [glue respond](key) my favourite colour is [yellow](colour) as it reminds me of the sun
+    - [glue respond](key) [yellow](colour) its such a happy colour
+    - [glue respond](key) has to be [yellow](colour) makes me feel warm
+    - [glue respond](key) my favourite is [purple](colour) as it looks fancy
+    - [glue respond](key) maybe [purple](colour) to be different
+    - [glue respond](key) easy [purple](colour) same as my mum
+    - [glue respond](key) ive always liked [dark green](colour) its reminds me of old racecars
+    - [glue respond](key) if i had to pick id say [light bue](colour) like the sky, its peaceful
+    - [glue respond](key) i quite like [light bue](colour) it looks good
+    - [glue respond](key) i love [magenta](colour) because its different
+    - [glue respond](key) id say [orange](colour) because i like it
+    - [glue respond](key) id say [orange](colour) my gran used to wear it all the time
+    - [glue respond](key) [orange](colour) because oranges are my favourite fruit
+    - [glue respond](key) ooo [pastel](colour) colours because it reminds me of babies
+    - [glue respond](key) probably [bronze](colour) because it reminds me of being tanned
+    - [glue respond](key) [brown](colour) like mud, i love mud
+    - [glue respond](key) [brown](colour) its a silly colour
+    - [glue respond](key) oh [brown](colour) it has a fun earthy
+    - [glue respond](key) maybe [electric pink](colour) it makes me feel sassy
+    - [glue respond](key) maybe [bright red](colour) makes me feel feisty
+    - [glue respond](key) maybe [bright red](colour) because normal red is boring
+    - [glue respond](key) erm id say [white](colour) its very calming
+    - [glue respond](key) hard one [white](colour) because i had to choose
+    - [glue respond](key) say [white](colour) it improves all other colours
+- intent: animal
+  examples: |
+    - [glue keep quiet](key) [octopus](animal) coz they are like aliens on earth
+    - [glue keep quiet](key) [cows](animal) they eat the whole day
+    - [glue keep quiet](key) [kingfisher](animal) simply magestic
+    - [glue keep quiet](key) [donkey](animal) there is something adorable about them
+    - [glue keep quiet](key) [dogs](animal) they are endering
+    - [glue keep quiet](key) i dont like [animals](animal) they scare me
+    - [glue keep quiet](key) i like [them](animal) all they are all adorable
+    - [glue keep quiet](key) [horses](animal) i like to ride them
+    - [glue keep quiet](key) [elephants](animal) they are cute
+    - [glue keep quiet](key) [dolphins](animal) they are the smartest
+    - [glue keep quiet](key) i guess [fish](animal) are okay
+    - [glue keep quiet](key) i like [sheep](animal) because they are fluffy
+    - [glue keep quiet](key) im a [cat](animal) person
+    - [glue keep quiet](key) i love [cats](animal) and [dogs](animal)
+    - [glue keep quiet](key) [birds](animal) are my life they have so much peronality
+    - [glue keep quiet](key) oh no i hate [snails](animal) they are so slimy
+    - [glue keep quiet](key) ive always liked [monkeys](animal) they are so curious
+    - [glue keep quiet](key) i find [puffins](animal) amazing so colourful
+    - [glue keep quiet](key) [whales](animal) because they are gentle giants
+    - [glue keep quiet](key) i think [turtles](animal) are my favourite they remind me of holidays
+    - [glue keep quiet](key) [manta-rays](animal) they are so mysterious
+    - [glue keep quiet](key) any [rodent](animal) i love small animals
+    - [glue keep quiet](key) [snakes](animal) they are so misunderstood
+    - [glue keep quiet](key) i cant stand [spiders](animal) they are so creepy
+    - [glue keep quiet](key) i find [lions](animal) and [tigers](animal) amazing they are so powerful
+    - [glue keep quiet](key) [insects](animal) they come in such variety
+    - [glue respond](key) [octopus](animal) coz they are like aliens on earth
+    - [glue respond](key) [cows](animal) they eat the whole day
+    - [glue respond](key) [kingfisher](animal) simply magestic
+    - [glue respond](key) [donkey](animal) there is something adorable about them
+    - [glue respond](key) [dogs](animal) they are endering
+    - [glue respond](key) i dont like [animals](animal) they scare me
+    - [glue respond](key) i like [them](animal) all they are all adorable
+    - [glue respond](key) [horses](animal) i like to ride them
+    - [glue respond](key) [elephants](animal) they are cute
+    - [glue respond](key) [dolphins](animal) they are the smartest
+    - [glue respond](key) i guess [fish](animal) are okay
+    - [glue respond](key) i like [sheep](animal) because they are fluffy
+    - [glue respond](key) im a [cat](animal) person
+    - [glue respond](key) i love [cats](animal) and [dogs](animal)
+    - [glue respond](key) [birds](animal) are my life they have so much peronality
+    - [glue respond](key) oh no i hate [snails](animal) they are so slimy
+    - [glue respond](key) ive always liked [monkeys](animal) they are so curious
+    - [glue respond](key) i find [puffins](animal) amazing so colourful
+    - [glue respond](key) [whales](animal) because they are gentle giants
+    - [glue respond](key) i think [turtles](animal) are my favourite they remind me of holidays
+    - [glue respond](key) [manta-rays](animal) they are so mysterious
+    - [glue respond](key) any [rodent](animal) i love small animals
+    - [glue respond](key) [snakes](animal) they are so misunderstood
+    - [glue respond](key) i cant stand [spiders](animal) they are so creepy
+    - [glue respond](key) i find [lions](animal) and [tigers](animal) amazing they are so powerful
+    - [glue respond](key) [insects](animal) they come in such variety
+- intent: interest
+  examples: |
+    - [glue keep quiet](key) hmm thats [interesting](interest)
+    - [glue keep quiet](key) very [interesting](interest)
+    - [glue keep quiet](key) [interesting](interest)
+    - [glue keep quiet](key) based on that theory i will be [young](interest)
+    - [glue keep quiet](key) well i will be [alone](interest)
+    - [glue keep quiet](key) and i will be with a lil [muncher](interest)
+    - [glue keep quiet](key) i knew it i am [magic](interest)
+    - [glue keep quiet](key) indeed i would like my partner to be [playful](interest)
+    - [glue keep quiet](key) yup i am [universal](interest)
+    - [glue keep quiet](key) that means i will get along with [everyone](interest)
+    - [glue keep quiet](key) [cool](interest) i didnt know that
+    - [glue keep quiet](key) [cool](interest)
+    - [glue keep quiet](key) thats [good](interest) to know
+    - [glue keep quiet](key) [good](interest) fact
+    - [glue keep quiet](key) thats such a [good](interest) question
+    - [glue keep quiet](key) [really](interest) thats [amazing](interest)
+    - [glue keep quiet](key) [amazing](interest) idea
+    - [glue keep quiet](key) ooo [fascinating](interest) point of view
+    - [glue keep quiet](key) [fascinating](interest)
+    - [glue keep quiet](key) [wow](interest) thats [awesome](interest)
+    - [glue keep quiet](key) oh [wow](interest)
+    - [glue keep quiet](key) [okay](interest) i didnt about it like that
+    - [glue keep quiet](key) [okay](interest) i see what you did there
+    - [glue keep quiet](key) [huh](interest) thats a hot take
+    - [glue keep quiet](key) [okay](interest) i didnt about it like that
+    - [glue keep quiet](key) plus be [nice](interest) to see some [sights](interest)
+    - [glue respond](key) hmm thats [interesting](interest)
+    - [glue respond](key) very [interesting](interest)
+    - [glue respond](key) [interesting](interest)
+    - [glue respond](key) based on that theory i will be [young](interest)
+    - [glue respond](key) well i will be [alone](interest)
+    - [glue respond](key) and i will be with a lil [muncher](interest)
+    - [glue respond](key) i knew it i am [magic](interest)
+    - [glue respond](key) indeed i would like my partner to be [playful](interest)
+    - [glue respond](key) yup i am [universal](interest)
+    - [glue respond](key) that means i will get along with [everyone](interest)
+    - [glue respond](key) [cool](interest) i didnt know that
+    - [glue respond](key) [cool](interest)
+    - [glue respond](key) thats [good](interest) to know
+    - [glue respond](key) [good](interest) fact
+    - [glue respond](key) thats such a [good](interest) question
+    - [glue respond](key) [really](interest) thats [amazing](interest)
+    - [glue respond](key) [amazing](interest) idea
+    - [glue respond](key) ooo [fascinating](interest) point of view
+    - [glue respond](key) [fascinating](interest)
+    - [glue respond](key) [wow](interest) thats [awesome](interest)
+    - [glue respond](key) oh [wow](interest)
+    - [glue respond](key) [okay](interest) i didnt about it like that
+    - [glue respond](key) [okay](interest) i see what you did there
+    - [glue respond](key) [huh](interest) thats a hot take
+    - [glue respond](key) [okay](interest) i didnt about it like that
+    - [glue respond](key) plus be [nice](interest) to see some [sights](interest)
+- intent: activity
+  examples: |
+    - [glue keep quiet](key) nothing too exicting mostly work i do eat a lot of [takeaways](activity)
+    - [glue keep quiet](key) just some odd [walks](activity) and [drives](activity) here and there
+    - [glue keep quiet](key) [lockdown](activity) so not much to do
+    - [glue keep quiet](key) went for a little [walk](activity)
+    - [glue keep quiet](key) went [hiking](activity) with my dog that was fun
+    - [glue keep quiet](key) went for a long [walk](activity) over weekend it was good
+    - [glue keep quiet](key) not really much to do [around](activity)
+    - [glue keep quiet](key) i wish this [lockdown](activity) was over so we can do something
+    - [glue keep quiet](key) i climbed a nearby [hill](activity)
+    - [glue keep quiet](key) i regularly go for [jogs](activity) if that counts now even that is interesting
+    - [glue keep quiet](key) i go for morning [runs](activity) to keep me fit
+    - [glue keep quiet](key) i do 3 [workouts](activity) a week in my house to keep me sane
+    - [glue keep quiet](key) [climbing](activity) as you can do it alone
+    - [glue keep quiet](key) i learned how to play the [guitar](activity) its so fun
+    - [glue keep quiet](key) i just learned how to [knit](activity) its very wholesome
+    - [glue keep quiet](key) i have memorised all the [countries](activity) of the world for fun
+    - [glue keep quiet](key) i actually have started [skipping](activity) its surpsingly hard
+    - [glue keep quiet](key) i went [swimming](activity) in the sea it was so cold
+    - [glue keep quiet](key) climbed a nearby [hill](activity)
+    - [glue respond](key) nothing too exicting mostly work i do eat a lot of [takeaways](activity)
+    - [glue respond](key) just some odd [walks](activity) and [drives](activity) here and there
+    - [glue respond](key) [lockdown](activity) so not much to do
+    - [glue respond](key) went for a little [walk](activity)
+    - [glue respond](key) went [hiking](activity) with my dog that was fun
+    - [glue respond](key) went for a long [walk](activity) over weekend it was good
+    - [glue respond](key) not really much to do [around](activity)
+    - [glue respond](key) i wish this [lockdown](activity) was over so we can do something
+    - [glue respond](key) i regularly go for [jogs](activity) if that counts now even that is interesting
+    - [glue respond](key) climbed a nearby [hill](activity)
+    - [glue respond](key) nothing too exicting mostly work i do eat a lot of [takeaways](activity)
+    - [glue respond](key) just some odd [walks](activity) and [drives](activity) here and there
+    - [glue respond](key) [lockdown](activity) so not much to do
+    - [glue respond](key) went for a little [walk](activity)
+    - [glue respond](key) went [hiking](activity) with my dog that was fun
+    - [glue respond](key) went for a long [walk](activity) over weekend it was good
+    - [glue respond](key) not really much to do [around](activity)
+    - [glue respond](key) i wish this [lockdown](activity) was over so we can do something
+    - [glue respond](key) i climbed a nearby [hill](activity)
+    - [glue respond](key) i regularly go for [jogs](activity) if that counts now even that is interesting
+    - [glue respond](key) i go for morning [runs](activity) to keep me fit
+    - [glue respond](key) i do 3 [workouts](activity) a week in my house to keep me sane
+    - [glue respond](key) [climbing](activity) as you can do it alone
+    - [glue respond](key) i learned how to play the [guitar](activity) its so fun
+    - [glue respond](key) i just learned how to [knit](activity) its very wholesome
+    - [glue respond](key) i have memorised all the [countries](activity) of the world for fun
+    - [glue respond](key) i actually have started [skipping](activity) its surpsingly hard
+    - [glue respond](key) i went [swimming](activity) in the sea it was so cold
+- intent: movie
+  examples: |
+    - [glue keep quiet](key) yes, [Elma Holmes](movie) was a good watch
+    - [glue keep quiet](key) i would recommend [New mutants](movie) it is a good movie
+    - [glue keep quiet](key) i saw [parasite](movie) recently it was good
+    - [glue keep quiet](key) really i hated [Parasite](movie) such a slow start
+    - [glue keep quiet](key) yes, [princess mononoke](movie) is quite good
+    - [glue keep quiet](key) saw few of the [marvel](movie) movies
+    - [glue keep quiet](key) saw the latest intsalment of [X men](movie) not bad
+    - [glue keep quiet](key) [mulan](movie) was a good watch, i would recommend it
+    - [glue keep quiet](key) hmm saw [tenet](movie) it was a good watch too
+    - [glue keep quiet](key) saw the latest [Lord of the rings](movie) and [pirates of caribbean](movie) movies
+    - [glue keep quiet](key) oh i saw [Space odyssey](movie) such a classic
+    - [glue keep quiet](key) recently i saw [la la land](movie) such a rollercoaster
+    - [glue keep quiet](key) personally you cant beat [disney](movie) movies
+    - [glue keep quiet](key) ive been meaning to watch [shawshank redemption](movie)
+    - [glue keep quiet](key) [10 things i hate about you](movie) always makes me laugh
+    - [glue keep quiet](key) controversially i dont think [shaun of the dead](movie) is a good movie
+    - [glue keep quiet](key) i dont rate the [star wars](movies)
+    - [glue keep quiet](key) [shrek](movie) without a shadow of a doubt
+    - [glue keep quiet](key) the [hunger games](movie) is amazing
+    - [glue keep quiet](key) [divergent](movie) is a wanna be hunger games
+    - [glue keep quiet](key) [the hangover](movie) trilogy because it said it was a trilogy and stayed that way
+    - [glue keep quiet](key) i think the [matrix](movie) movies make you think too munch
+    - [glue keep quiet](key) [inception](movie) is an incredible concept
+    - [glue keep quiet](key) the [saw](movie) movies still give me nightmares
+    - [glue keep quiet](key) i cant handle horror movies like [paranormal](movie)
+    - [glue respond](key) yes, [Elma Holmes](movie) was a good watch
+    - [glue respond](key) i would recommend [New mutants](movie) it is a good movie
+    - [glue respond](key) i saw [parasite](movie) recently it was good
+    - [glue respond](key) really i hated [Parasite](movie) such a slow start
+    - [glue respond](key) yes, [princess mononoke](movie) is quite good
+    - [glue respond](key) saw few of the [marvel](movie) movies
+    - [glue respond](key) saw the latest intsalment of [X men](movie) not bad
+    - [glue respond](key) [mulan](movie) was a good watch, i would recommend it
+    - [glue respond](key) hmm saw [tenet](movie) it was a good watch too
+    - [glue respond](key) saw the latest [Lord of the rings](movie) and [pirates of caribbean](movie) movies
+    - [glue respond](key) oh i saw [Space odyssey](movie) such a classic
+    - [glue respond](key) recently i saw [la la land](movie) such a rollercoaster
+    - [glue respond](key) personally you cant beat [disney](movie) movies
+    - [glue respond](key) ive been meaning to watch [shawshank redemption](movie)
+    - [glue respond](key) [10 things i hate about you](movie) always makes me laugh
+    - [glue respond](key) controversially i dont think [shaun of the dead](movie) is a good movie
+    - [glue respond](key) i dont rate the [star wars](movies)
+    - [glue respond](key) [shrek](movie) without a shadow of a doubt
+    - [glue respond](key) the [hunger games](movie) is amazing
+    - [glue respond](key) [divergent](movie) is a wanna be hunger games
+    - [glue respond](key) [the hangover](movie) trilogy because it said it was a trilogy and stayed that way
+    - [glue respond](key) i think the [matrix](movie) movies make you think too munch
+    - [glue respond](key) [inception](movie) is an incredible concept
+    - [glue respond](key) the [saw](movie) movies still give me nightmares
+    - [glue respond](key) i cant handle horror movies like [paranormal](movie)
+- intent: darkside
+  examples: |
+    - [glue keep quiet](key) okay thats not [creepy](darkside) at all
+    - [glue keep quiet](key) are you going to take over the [world](darkside)?
+    - [glue keep quiet](key) wow i did not see that [coming](darkside)
+    - [glue keep quiet](key) really thats a bit [skynet](darkside)  for me
+    - [glue keep quiet](key) u r [scary](darkside)
+    - [glue keep quiet](key) haha [funny](darkside)
+    - [glue keep quiet](key) haha okay so you have a [dark side](darkside)
+    - [glue keep quiet](key) thats good to know that you have a [dark side](darkside)
+    - [glue keep quiet](key) [creepy](darkside)
+    - [glue keep quiet](key) hahaha glue you are [funny](darkside)
+    - [glue keep quiet](key) thats [unnerving](darkside)
+    - [glue keep quiet](key) your [mad](darkside)
+    - [glue keep quiet](key) [maniac](darkside)
+    - [glue keep quiet](key) absolute [madness](darkside)
+    - [glue keep quiet](key) your [mental](darkside)
+    - [glue keep quiet](key) wow your [crazy](darkside)
+    - [glue keep quiet](key) your [evil](darkside) i love it
+    - [glue keep quiet](key) thats [chaos](darkside)
+    - [glue respond](key) okay thats not [creepy](darkside) at all
+    - [glue respond](key) are you going to take over the [world](darkside)?
+    - [glue respond](key) wow i did not see that [coming](darkside)
+    - [glue respond](key) really thats a bit [skynet](darkside)  for me
+    - [glue respond](key) u r [scary](darkside)
+    - [glue respond](key) haha [funny](darkside)
+    - [glue respond](key) haha okay so you have a [dark side](darkside)
+    - [glue respond](key) thats good to know that you have a [dark side](darkside)
+    - [glue respond](key) [creepy](darkside)
+    - [glue respond](key) thats [unnerving](darkside)
+    - [glue respond](key) your [mad](darkside)
+    - [glue respond](key) [maniac](darkside)
+    - [glue respond](key) absolute [madness](darkside)
+    - [glue respond](key) your [mental](darkside)
+    - [glue respond](key) wow your [crazy](darkside)
+    - [glue respond](key) your [evil](darkside) i love it
+    - [glue respond](key) thats [chaos](darkside)
+- intent: genre
+  examples: |
+    - [glue keep quiet](key) i like [fantasy](genre) movies as well
+    - [glue keep quiet](key) i prefer [scifi](genre)
+    - [glue keep quiet](key) i also like [science fiction] and [horror](genre)
+    - [glue keep quiet](key) give me a [thriller](genre) any day
+    - [glue keep quiet](key) I am a sucker for [romantic comedies](genre)
+    - [glue keep quiet](key) i  would watch [comedy](genre) any day
+    - [glue keep quiet](key) [funny](genre) movies are the best
+    - [glue keep quiet](key) I am ore of a [documentary](genre) person
+    - [glue keep quiet](key) [spooky thrillers](genre) for me please
+    - [glue keep quiet](key) i watch [action](genre) movies
+    - [glue keep quiet](key) i enjoy [war](genre) movies
+    - [glue keep quiet](key) i actually like old [cowboy](genre) movies like [westerns](genre)
+    - [glue keep quiet](key) i watch [black and white] movies alot
+    - [glue keep quiet](key) [comedies](genre) love a laugh
+    - [glue keep quiet](key) for me id say [adventure](genre) movies
+    - [glue keep quiet](key) i go for [fantasy](genre) movies
+    - [glue keep quiet](key) i pick [crime](genre) films
+    - [glue respond](key) i like [fantasy](genre) movies as well
+    - [glue respond](key) i prefer [scifi](genre)
+    - [glue respond](key) i also like [science fiction] and [horror](genre)
+    - [glue respond](key) give me a [thriller](genre) any day
+    - [glue respond](key) I am a sucker for [romantic comedies](genre)
+    - [glue respond](key) i  would watch [comedy](genre) any day
+    - [glue respond](key) [funny](genre) movies are the best
+    - [glue respond](key) I am ore of a [documentary](genre) person
+    - [glue respond](key) [spooky thrillers](genre) for me please
+    - [glue respond](key) i watch [action](genre) movies
+    - [glue respond](key) i enjoy [war](genre) movies
+    - [glue respond](key) i actually like old [cowboy](genre) movies like [westerns](genre)
+    - [glue respond](key) i watch [black and white] movies alot
+    - [glue respond](key) [comedies](genre) love a laugh
+    - [glue respond](key) for me id say [adventure](genre) movies
+    - [glue respond](key) i go for [fantasy](genre) movies
+    - [glue respond](key) i pick [crime](genre) films
+- intent: superhero
+  examples: |
+
+    - [glue keep quiet](key) oh yes i love marvel [Dr Strange](superhero) is my favourite
+    - [glue keep quiet](key) i found [deadpool](superhero) refreshing
+    - [glue keep quiet](key) i like [batman](superhero) not marvel though
+    - [glue keep quiet](key) [thor](superhero) is the guy love him
+    - [glue keep quiet](key) yes i like marvel universe [ironman](superhero) is coolest
+    - [glue keep quiet](key) marvel yes, i loved every one in [avengers](superhero)
+    - [glue keep quiet](key) i like [black panther](superhero) its a well made movie
+    - [glue keep quiet](key) [captain america](superhero) works well for me
+    - [glue keep quiet](key) [hulk](superhero) all day longg
+    - [glue keep quiet](key) [spiderman](superhero) hes the most iconic
+    - [glue keep quiet](key) [ant man](superhero) because its a bit different
+    - [glue keep quiet](key) [wolverine](superhero) his powers are amazing
+    - [glue keep quiet](key) [star lord](superhero) the soundtrack is amazing
+    - [glue keep quiet](key) [groot](superhero) i am groot
+    - [glue keep quiet](key) [captain marvel](superhero) she rocks
+    - [glue keep quiet](key) my [dad] hes always inspired me
+    - [glue keep quiet](key) my [mum] shes so kind
+
+
+
+    - [glue respond](key) oh yes i love marvel [Dr Strange](superhero) is my favourite
+    - [glue respond](key) i found [deadpool](superhero) refreshing
+    - [glue respond](key) i like [batman](superhero) not marvel though
+    - [glue respond](key) [thor](superhero) is the guy love him
+    - [glue respond](key) yes i like marvel universe [ironman](superhero) is coolest
+    - [glue respond](key) marvel yes, i loved every one in [avengers](superhero)
+    - [glue respond](key) i like [black panther](superhero) its a well made movie
+    - [glue respond](key) [captain america](superhero) works well for me
+    - [glue respond](key) [hulk](superhero) all day longg
+    - [glue respond](key) [spiderman](superhero) hes the most iconic
+    - [glue respond](key) [ant man](superhero) because its a bit different
+    - [glue respond](key) [wolverine](superhero) his powers are amazing
+    - [glue respond](key) [star lord](superhero) the soundtrack is amazing
+    - [glue respond](key) [groot](superhero) i am groot
+    - [glue respond](key) [captain marvel](superhero) she rocks
+    - [glue respond](key) my [dad] hes always inspired me
+    - [glue respond](key) my [mum] shes so kind
+- intent: service
+  examples: |
+    - [glue keep quiet](key) i have [all](service) of them i dont have any preferences
+    - [glue keep quiet](key) i dont have any preferences I like the ones with good [content](service)
+    - [glue keep quiet](key) [netlfix](service) is overpriced
+    - [glue keep quiet](key) i dont think i prefer any but i do like [Netflix](service) for its content
+    - [glue keep quiet](key) [viki](service) is free so i enjoy it
+    - [glue keep quiet](key) have [amazon prime](service) service so enjoy the programmes too
+    - [glue keep quiet](key) [disney+](service) is overpriced for sure cant believe i fell for it
+    - [glue keep quiet](key) [disney+](service) is also slow in updating the content
+    - [glue keep quiet](key) [prime](service) as i get free delivery too
+    - [glue keep quiet](key) oh [prime](service) i prefer its content
+    - [glue keep quiet](key) [netflix](service) has the best selection
+    - [glue keep quiet](key) [hulu](service) at the moment
+    - [glue keep quiet](key) [now tv](service) it has absolutely everything
+    - [glue respond](key) i have [all](service) of them i dont have any preferences
+    - [glue respond](key) i dont have any preferences I like the ones with good [content](service)
+    - [glue respond](key) [netlfix](service) is overpriced
+    - [glue respond](key) i dont think i prefer any but i do like [Netflix](service) for its content
+    - [glue respond](key) [viki](service) is free so i enjoy it
+    - [glue respond](key) have [amazon prime](service) service so enjoy the programmes too
+    - [glue respond](key) [disney+](service) is overprices for sure cant believe i fell for it
+    - [glue respond](key) [disney+](service) is also slow in updating the content
+    - [glue respond](key) [prime](service) as i get free delivery too
+    - [glue respond](key) oh [prime](service) i prefer its content
+    - [glue respond](key) [netflix](service) has the best selection
+    - [glue respond](key) [hulu](service) at the moment
+    - [glue respond](key) [now tv](service) it has absolutely everything
+- intent: series
+  examples: |
+    - [glue keep quiet](key) i saw [expanse](series) and it is good
+    - [glue keep quiet](key) havent seen that one but i do recommend [Wandavision](series)
+    - [glue keep quiet](key) try it. it is good [wandavision](series)
+    - [glue keep quiet](key) [boys before flower](series) is good one too got very popular
+    - [glue keep quiet](key) recent one on Netflix [Ginny & Georgia](series) is light and fun
+    - [glue keep quiet](key) [behind her eyes](series) is a good one
+    - [glue keep quiet](key) [hemlock grove](series) is my all time fav
+    - [glue keep quiet](key) [breaking bad](series) its the best
+    - [glue keep quiet](key) [family guy](series) its so funny
+    - [glue keep quiet](key) has to be [the simpsons] lasted this long has to be the best
+    - [glue keep quiet](key) [futurama](series) im sad its finished
+    - [glue keep quiet](key) oh [lost](series) was great
+    - [glue keep quiet](key) abit basic but [game of thrones](series) despite the ending
+    - [glue keep quiet](key) i really liked [sex education](series) its just a bit different
+    - [glue keep quiet](key) [big mouth](series) its graphic but i love it
+    - [glue keep quiet](key) [better call saul](series) its like breaking bad but better
+    - [glue keep quiet](key) [emmerdale](series) love the drama
+    - [glue keep quiet](key) [coronation street](series) me and my mum watch all the time
+    - [glue respond](key) i saw [expanse](series) and it is good
+    - [glue respond](key) havent seen that one but i do recommend [Wandavision](series)
+    - [glue respond](key) try it. it is good [wandavision](series)
+    - [glue respond](key) [boys before flower](series) is good one too got very popular
+    - [glue respond](key) recent one on Netflix [Ginny & Georgia](series) is light and fun
+    - [glue respond](key) [behind her eyes](series) is a good one
+    - [glue respond](key) [hemlock grove](series) is my all time fav
+    - [glue respond](key) [breaking bad](series) its the best
+    - [glue respond](key) [family guy](series) its so funny
+    - [glue respond](key) has to be [the simpsons] lasted this long has to be the best
+    - [glue respond](key) [futurama](series) im sad its finished
+    - [glue respond](key) oh [lost](series) was great
+    - [glue respond](key) abit basic but [game of thrones](series) despite the ending
+    - [glue respond](key) i really liked [sex education](series) its just a bit different
+    - [glue respond](key) [big mouth](series) its graphic but i love it
+    - [glue respond](key) [better call saul](series) its like breaking bad but better
+    - [glue respond](key) [emmerdale](series) love the drama
+    - [glue respond](key) [coronation street](series) me and my mum watch all the time
+- intent: exit
+  examples: |
+    - glue keep quiet bye
+    - glue keep quiet I will leave now
+    - glue keep quiet I am going to go now
+    - glue keep quiet goodbye
+    - glue keep quiet cya
+    - glue keep quiet talk to you later
+    - glue keep quiet till we meet next time
