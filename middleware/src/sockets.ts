@@ -81,6 +81,12 @@ export default (appState: AppState) => {
     console.log('Sockets server set up on port 8080');
     
     wss.on('connection', (ws: ExtWebSocket, req) => {
+        
+        if (req !== undefined && req.url?.includes('type=admin')) {
+            console.log('ADMIN CONNECTION');
+            // Set up slightly different admin connection that just gets passed messages
+        }
+        
 
         const id = uuidv4();
         const userName = generateName();
