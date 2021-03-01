@@ -16,17 +16,13 @@ export class ChatLogger {
         return message;
     }
 
-    public logMessage(messageData: MessageData) {
-
+    // We expose this publicly as we call it in the admin view
+    public formatMessage(messageData: MessageData) {
         const ts = new Date();
         const quoteEscapedMessage = this.escapeQuotes(messageData.message);
-        
         // The ordering of this is a bit weird, kept the same as I put on Teams
         // ... to avoid confusion
-        console.log(
-
-            // Add an identifier so these can be easily spotted/extracted from the logs
-            'EVAL_LOG: ' +
+        return (
 
             // Timestamp
             `${ts.getFullYear()}-${ts.getMonth() + 1}-${ts.getDate()}T` +
@@ -44,5 +40,9 @@ export class ChatLogger {
             `${messageData.tokens},` +
             `${messageData.source}`
         );
+    }
+
+    public logMessage(messageData: MessageData) {
+        console.log('EVAL_LOG: ' + this.formatMessage(messageData));
     }
 }

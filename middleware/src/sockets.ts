@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { ExtWebSocket, MessageData } from './types';
 
 import { AppState } from './app';
-import { ChatLogger } from './chatLogger';
 
 import { generateName } from './nameGenerator';
 
@@ -69,11 +68,22 @@ export default (appState: AppState) => {
         appState.logger.logMessage(messageData);
 
         wss.clients.forEach((client: any) => {
-            // Only send to clients other than sourceWs (i.e. don't bounce user's
-            // ... own messages back to them)
-            if (sourceWs === undefined || client.id !== sourceWs.id) {
-                client.send(`${messageData.username}: ${messageData.message}`);
+
+            // Send all messages to admin clients, but in csv format
+            if (client.type === 'admin') {
+                client.send(appState.logger.formatMessage(messageData));
+            } 
+
+            else {
+                // For users...
+                // only send to clients other than sourceWs (i.e. don't bounce user's
+                // ... own messages back to them)
+                if (sourceWs === undefined || client.id !== sourceWs.id) {
+                    client.send(`${messageData.username}: ${messageData.message}`);
+                }
+
             }
+
         });
     };
 

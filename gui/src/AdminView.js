@@ -22,7 +22,6 @@ class AdminView extends React.Component {
         this.state = { serverMessages: [] };
 
         this.appendMessage = this.appendMessage.bind(this);
-        this.sendMessage = this.sendMessage.bind(this);
         this.receiveMessage = this.receiveMessage.bind(this);
         this.setUrl = this.setUrl.bind(this);
     }
@@ -41,6 +40,24 @@ class AdminView extends React.Component {
             this.appendMessage('Helper Bot: connected to GLUE!');
         } else {
             this.appendMessage(message.data);
+        }
+    }
+
+    async setUrl(url) {
+        const response = await fetch(`http://${EXPRESS_URL}/setExternalBotUrl`, {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ externalBotUrl: url })
+        });
+        console.log(response);
+        this.connection = new WebSocket(`ws://${SOCKETS_URL}?type=admin`);
+
+        this.connection.onmessage = (msg) => {
+            this.receiveMessage(msg);
         }
     }
 
