@@ -93,7 +93,7 @@ export default (appState: AppState) => {
     wss.on('connection', (ws: ExtWebSocket, req) => {
     
         const id = uuidv4();
-        const userName = generateName();
+        const username = generateName();
         ws.id = id;
 
         if (req !== undefined && req.url?.includes('type=admin')) {
@@ -102,11 +102,12 @@ export default (appState: AppState) => {
         } else {
             console.log(`User connection established! ID: ${id}`);
             ws.type = 'user';
-            ws.userName = userName;
+            ws.username = username;
+            ws.send(`~CONNECTED#${username}`); // FE recognises this token
         }
 
 
-        ws.send('~CONNECTED~'); // FE recognises this token
+        
 
         ws.on('message', data => {
 
@@ -116,7 +117,7 @@ export default (appState: AppState) => {
             broadcastMessage({
                 message: message,
                 source: 'USER',
-                username: ws.userName,
+                username: ws.username,
                 tokens: ''
             }, ws);
 
