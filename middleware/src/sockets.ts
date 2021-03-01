@@ -87,6 +87,15 @@ export default (appState: AppState) => {
         });
     };
 
+    const newUserNotification = (username: string, sourceWs: ExtWebSocket) => {
+        wss.clients.forEach((client: any) => {
+            if (sourceWs === undefined || client.id !== sourceWs.id) {
+                client.send(`New user ${username} joined the chat`);
+            }
+        });
+
+    }
+
     // Refactor: review all the logs in the whole codebase
     console.log('Sockets server set up on port 8080');
     
@@ -97,15 +106,15 @@ export default (appState: AppState) => {
         ws.id = id;
 
         if (req !== undefined && req.url?.includes('type=admin')) {
-            console.log(`Admin connection established! ID: ${id}`);
             ws.type = 'admin';
         } else {
-            console.log(`User connection established! ID: ${id}`);
             ws.type = 'user';
             ws.username = username;
             ws.send(`~CONNECTED#${username}`); // FE recognises this token
+            newUserNotification(username, ws);
         }
 
+        console.log(`Connection established! Username=${ws.username || 'ADMIN'}, ID=${id}`);
 
         
 
@@ -145,7 +154,7 @@ export default (appState: AppState) => {
 
         ws.on('close', function close() {
             ws.terminate();
-            console.log(`Connection terminated: ID=${ws.id}`);
+            console.log(`Connection terminated! Username=${ws.username || 'ADMIN'}, ID=${ws.id}`);
         });
     });
 };
