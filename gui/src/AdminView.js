@@ -32,16 +32,7 @@ class AdminView extends React.Component {
     }
 
     appendMessage(message) {
-        this.setState({ serverMessages: [message, ...this.state.serverMessages] });
-    }
-
-    sendMessage(message) {
-        if (this.connection !== undefined) {
-            this.connection.send(message);
-            this.appendMessage(`${USERNAME}: ${message}`);
-        } else {
-            this.appendMessage('Helper Bot: sorry, not connected');
-        }
+        this.setState({ serverMessages: [...this.state.serverMessages, message] });
     }
 
     receiveMessage(message) {
@@ -53,30 +44,11 @@ class AdminView extends React.Component {
         }
     }
 
-    async setUrl(url) {
-        const response = await fetch(`http://${EXPRESS_URL}/setExternalBotUrl`, {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ externalBotUrl: url })
-        });
-        console.log(response);
-        this.connection = new WebSocket(`ws://${SOCKETS_URL}?type=admin`);
-
-        this.connection.onmessage = (msg) => {
-            this.receiveMessage(msg);
-        }
-
-    }
-
     render() {
         return (
             <div className="App">
                 <h1>Admin View</h1>
-
+                {this.state.serverMessages.map(msg => <p>{msg}</p>)}
             </div>
         );
     }
