@@ -11,9 +11,12 @@ import { generateName } from './nameGenerator';
 
 const ALANA_URL = 'http://52.56.181.83:5000';
 
+const EXPRESS_URL = 'http://glue-middleware.eu-west-2.elasticbeanstalk.com';
+// const EXPRESS_URL = 'http://f1f7ec8d1202.ngrok.io';
+
 const alanaBody = {
     'user_id': 'test-5827465823641856215',
-    'session_id': 'Group8-Dev-1',
+    'session_id': 'Group8-Dev-2',
     'projectId': 'CA2020',
     'overrides': {}
 };
@@ -105,7 +108,7 @@ export default (appState: AppState) => {
             let appendedBody = { ...alanaBody };
             if (appState.externalBotUrl !== '') {
                 appendedBody.overrides = {
-                    BOT_LIST: [{ glue: appState.externalBotUrl}],
+                    BOT_LIST: [{ glue: `${EXPRESS_URL}/glueProxy`}],
                     PRIORITY_BOTS: ['glue']
                 };
             }

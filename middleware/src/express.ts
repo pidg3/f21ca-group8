@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-
 import { AppState } from './app';
+const fetch = require('node-fetch');
 
 const app = express();
 
@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 8090;
 const start = (appState: AppState) => {
 
     app.use(cors());
-    app.use(express.json());
+    app.use(express.json({ limit: '5mb' }));
+
     app.get('/', (req: any, res: any) => res.send('OK!'));
 
     app.post('/setExternalBotUrl', (req: any, res: any) => {        
@@ -24,6 +25,42 @@ const start = (appState: AppState) => {
     app.post('/resetState', (req: any, res: any) => {
         appState.reset();
         res.send('Success! State reset\n');
+    });
+
+    app.post('/glueProxy', (req: any, res: any) => {
+        console.log('--- Glue Proxy Invoked ---');
+        const userMessage = req.body.current_state.state.input.text;
+        
+        // Call the RASA bot
+        fetch(appState.externalBotUrl, {
+            method: 'POST',
+            body: JSON.stringify({
+                sender: 'test_user',
+                message: userMessage
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((res: any) => res.json())
+            .then((json: any) => {                
+                const result = {
+                    "result": json.text,
+                    "bot_name": 'glue',
+                    "lock_requested": false,
+                    "bot_params": {
+                        "something": 1
+                    }
+                }
+
+                res.json([result])
+            })
+            .catch((err: Error) => {
+                console.log(err.message);
+                // TODO: test this. Does it give us an empty result and therefore
+                // Alana uses another bot?
+                res.json([]);
+            })
     });
 
     app.listen(PORT, () => {
