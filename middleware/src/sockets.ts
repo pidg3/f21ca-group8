@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { ExtWebSocket, MessageData } from './types';
 
 import { AppState } from './app';
-import { ChatLogger } from './chatLogger';
 
 import { generateName } from './nameGenerator';
 
@@ -72,26 +71,55 @@ export default (appState: AppState) => {
         appState.logger.logMessage(messageData);
 
         wss.clients.forEach((client: any) => {
-            // Only send to clients other than sourceWs (i.e. don't bounce user's
-            // ... own messages back to them)
-            if (sourceWs === undefined || client.id !== sourceWs.id) {
-                client.send(`${messageData.username}: ${messageData.message}`);
+
+            // Send all messages to admin clients, but in csv format
+            if (client.type === 'admin') {
+                client.send(appState.logger.formatMessage(messageData));
+            } 
+
+            else {
+                // For users...
+                // only send to clients other than sourceWs (i.e. don't bounce user's
+                // ... own messages back to them)
+                if (sourceWs === undefined || client.id !== sourceWs.id) {
+                    client.send(`${messageData.username}: ${messageData.message}`);
+                }
+
             }
+
         });
     };
+
+    const newUserNotification = (username: string, sourceWs: ExtWebSocket) => {
+        wss.clients.forEach((client: any) => {
+            if (sourceWs === undefined || client.id !== sourceWs.id) {
+                client.send(`New user ${username} joined the chat`);
+            }
+        });
+
+    }
 
     // Refactor: review all the logs in the whole codebase
     console.log('Sockets server set up on port 8080');
     
     wss.on('connection', (ws: ExtWebSocket, req) => {
-
+    
         const id = uuidv4();
-        const userName = generateName();
-        console.log(`Connection established! ID: ${id}`);
+        const username = generateName();
         ws.id = id;
-        ws.userName = userName;
 
-        ws.send('~CONNECTED~'); // FE recognises this token
+        if (req !== undefined && req.url?.includes('type=admin')) {
+            ws.type = 'admin';
+        } else {
+            ws.type = 'user';
+            ws.username = username;
+            ws.send(`~CONNECTED#${username}`); // FE recognises this token
+            newUserNotification(username, ws);
+        }
+
+        console.log(`Connection established! Username=${ws.username || 'ADMIN'}, ID=${id}`);
+
+        
 
         ws.on('message', data => {
 
@@ -101,7 +129,7 @@ export default (appState: AppState) => {
             broadcastMessage({
                 message: message,
                 source: 'USER',
-                username: ws.userName,
+                username: ws.username,
                 tokens: ''
             }, ws);
 
@@ -154,7 +182,7 @@ export default (appState: AppState) => {
 
         ws.on('close', function close() {
             ws.terminate();
-            console.log(`Connection terminated: ID=${ws.id}`);
+            console.log(`Connection terminated! Username=${ws.username || 'ADMIN'}, ID=${ws.id}`);
         });
     });
 };

@@ -2,7 +2,8 @@ import WebSocket = require('ws');
 
 export interface ExtWebSocket extends WebSocket {
     id: string;
-    userName: string;
+    username: string;
+    type: string;
 }
 
 export interface MessageData {
