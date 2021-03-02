@@ -23,7 +23,6 @@ const wss = new WebSocket.Server({
     clientTracking: true // needed for us to keep track of who is in the chat, nothing creepy
 });
 
-
 export default (appState: AppState) => {
 
     function fetchData(appendedBody: object, messageFromUser: string, tokens: string) {
@@ -52,16 +51,17 @@ export default (appState: AppState) => {
                     tokens: tokens
                 });
             })
+
+        //whenever fetchData is called, clear the timer.
+        clearTimeout(phase2Timer);
+        phase2TimerFlag = false;
     }
 
     //change to phase1Timer etc
-    var timer = 1;
-    var globalTimer = 1;
-    setTimeout(setGlobalTimer, 20000);
-
-    function setGlobalTimer() {
-        globalTimer = -1000;
-    }
+    var phase2Timer = 1;
+    var helloCounter = 0;
+    var phase2TimerFlag = false;
+    var msg = "";
 
     const broadcastMessage = (messageData: MessageData, sourceWs?: ExtWebSocket) => {
 
@@ -109,18 +109,43 @@ export default (appState: AppState) => {
                     PRIORITY_BOTS: ['glue']
                 };
             }
+        
 
-            clearTimeout(timer);
+            //this checks to see if a timer exists, if so, it'll look into "msg" which stores the previous msg.
+            //it then sends this with a glue keep quiet since we know the previous timer didn't hit 0.
+            if (phase2TimerFlag == true) {
+                const tokens = 'glue keep quiet';
 
-            if (globalTimer != -1000) {
-                const tokens = 'glue respond';
-                fetchData(appendedBody, message, tokens);
+                // console.log since GLUE isn't set up so Alana will respond to this currently.
+                console.log("glue keep quiet " + msg);
+                //fetchData(appendedBody, msg, tokens);
+
+                clearTimeout(phase2Timer);
+                phase2TimerFlag = false;
+            }
+
+
+            //this is the new phase 1, we check if two "Hello" inputs are made before starting the GLUE talking session.
+            if (helloCounter != 2) {
+                if (message == "Hello") {
+                    if (helloCounter == 1) {
+                        const tokens = 'glue respond';
+                        fetchData(appendedBody, message, tokens);
+                    }
+    
+                    helloCounter = helloCounter + 1;
+                }
             } else if (data.toString().includes("GLUE")) {
+                //If GLUE is mentioned, we get GLUE to respond instantly
                 const tokens = 'glue respond';
                 fetchData(appendedBody, message, tokens);
             } else {
+                //otherwise, wait 20 seconds and if no message appears, get GLUE response.
+                //if a message is sent, reset this timer.
                 const tokens = 'glue respond';
-                timer = setTimeout(fetchData, 3000, appendedBody, message, tokens);
+                msg = message;
+                phase2Timer = setTimeout(fetchData, 20000, appendedBody, message, tokens);
+                phase2TimerFlag = true;
             }
         });
 
