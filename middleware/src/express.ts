@@ -21,6 +21,14 @@ const start = (appState: AppState) => {
         res.send(appState.chatParticipants);
     });
 
+    app.get('/externalBotUrl', (req: any, res: any) => {
+        if (appState.externalBotUrl === '') {
+            res.send('Glue bot URL not defined - using vanilla Alana only\n');
+
+        }
+        res.send(appState.externalBotUrl + '\n');
+    });
+
     app.post('/setExternalBotUrl', (req: any, res: any) => {        
         appState.externalBotUrl = req.body.externalBotUrl;
         res.send('Success! External bot URL set\n');

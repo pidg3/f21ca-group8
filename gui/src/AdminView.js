@@ -4,11 +4,11 @@ import './App.css';
 
 // Swap over the below lines for local development
 
-// const EXPRESS_URL = 'glue-middleware.eu-west-2.elasticbeanstalk.com';
-const EXPRESS_URL = 'localhost:8090';
+const EXPRESS_URL = 'glue-middleware.eu-west-2.elasticbeanstalk.com';
+// const EXPRESS_URL = 'localhost:8090';
 
-// const SOCKETS_URL = 'glue-middleware.eu-west-2.elasticbeanstalk.com:8080';
-const SOCKETS_URL = 'localhost:8080';
+const SOCKETS_URL = 'glue-middleware.eu-west-2.elasticbeanstalk.com:8080';
+// const SOCKETS_URL = 'localhost:8080';
 
 class AdminView extends React.Component {
     constructor(props) {
