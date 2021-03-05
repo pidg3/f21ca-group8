@@ -75,7 +75,7 @@ export default (appState: AppState) => {
             // Send all messages to admin clients, but in csv format
             if (client.type === 'admin') {
                 client.send(appState.logger.formatMessage(messageData));
-            } 
+            }
 
             else {
                 // For users...
@@ -115,6 +115,11 @@ export default (appState: AppState) => {
             ws.username = username;
             ws.send(`~CONNECTED#${username}`); // FE recognises this token
             newUserNotification(username, ws);
+            appState.addChatParticipant({
+                id: id,
+                username: username,
+                joiningTime: new Date()
+            })
         }
 
         console.log(`Connection established! Username=${ws.username || 'ADMIN'}, ID=${id}`);

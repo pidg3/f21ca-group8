@@ -12,3 +12,9 @@ export interface MessageData {
     tokens: string;
     source: string;
 }
+
+export interface ChatParticipant {
+    username: string;
+    id: string;
+    joiningTime: Date;
+}

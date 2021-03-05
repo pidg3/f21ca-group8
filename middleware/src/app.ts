@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { ChatLogger } from './chatLogger';
 
+import { ChatParticipant } from './types';
+
 // Note this will reset the Alana UUID with each deploy
 
 enum Design {
@@ -19,6 +21,8 @@ export class AppState {
     private _alanaUUID: string;
     private _waitingForFirstMessage: boolean;
     private _designNumber: number;
+    private _chatParticipants: ChatParticipant[];
+
 
     constructor() {
         
@@ -27,6 +31,7 @@ export class AppState {
         this._alanaUUID = uuidv4();
         this._waitingForFirstMessage = true; // set to false as soon as first message received after a reset
         this._designNumber = Design.ChatBot; // default
+        this._chatParticipants = [];
 
         console.log(`AppState initialised. Alana UUID: ${this._alanaUUID}`);
     }
@@ -64,8 +69,20 @@ export class AppState {
         this._designNumber = newDesign;
     }
 
+    get chatParticipants(): ChatParticipant[] {
+        return this._chatParticipants;
+    }
+
+    public addChatParticipant(newJoiner: ChatParticipant): void {
+        this._chatParticipants.push(newJoiner);
+    }
+
+    public removeChatParticipant(idToRemove: string) {
+        return this._chatParticipants.find(cp => cp.id === idToRemove);
+    }
+
     // Note - this doesn't change the external bot URL, or the design number
-    public reset() {
+    public reset(): void {
         this._alanaUUID = uuidv4();
         this._waitingForFirstMessage = true;
         console.log(`AppState initialised. Alana UUID: ${this._alanaUUID}`);        

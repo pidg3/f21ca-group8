@@ -17,6 +17,10 @@ const start = (appState: AppState) => {
 
     app.get('/', (req: any, res: any) => res.send('OK!'));
 
+    app.get('/chatParticipants', (req: any, res: any) => {
+        res.send(appState.chatParticipants);
+    });
+
     app.post('/setExternalBotUrl', (req: any, res: any) => {        
         appState.externalBotUrl = req.body.externalBotUrl;
         res.send('Success! External bot URL set\n');
