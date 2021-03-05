@@ -55,9 +55,10 @@ const start = (appState: AppState) => {
             }
         })
             .then((res: any) => res.json())
-            .then((json: any) => {                
+            .then((json: any) => {
+                console.log('RASA Response:' + JSON.stringify(json));
                 const result = {
-                    "result": json.text,
+                    "result": json[0].text,
                     "bot_name": 'glue',
                     "lock_requested": false,
                     "bot_params": {

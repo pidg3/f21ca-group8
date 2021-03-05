@@ -11,7 +11,6 @@ import { generateName } from './nameGenerator';
 const ALANA_URL = 'http://52.56.181.83:5000';
 
 const EXPRESS_URL = 'http://glue-middleware.eu-west-2.elasticbeanstalk.com';
-// const EXPRESS_URL = 'http://f1f7ec8d1202.ngrok.io';
 
 const alanaBody = {
     'user_id': 'test-5827465823641856215',
@@ -24,6 +23,20 @@ const wss = new WebSocket.Server({
     port: 8080,
     clientTracking: true // needed for us to keep track of who is in the chat, nothing creepy
 });
+
+function messageContainsGreeting(message: string) {
+    const lowerCaseMessage: string = message.toLowerCase();
+    if (
+        lowerCaseMessage.includes('hello') ||
+        lowerCaseMessage.includes('hey') ||
+        lowerCaseMessage.includes('hi') ||
+        lowerCaseMessage.includes('yo') ||
+        lowerCaseMessage.includes('ey up')
+    ) {
+        return true;
+    }
+    return false;
+}
 
 export default (appState: AppState) => {
 
@@ -61,7 +74,7 @@ export default (appState: AppState) => {
 
     //change to phase1Timer etc
     var phase2Timer = 1;
-    var helloCounter = 0;
+    var greetingCounter = 0;
     var phase2TimerFlag = false;
     var msg = "";
 
@@ -127,9 +140,7 @@ export default (appState: AppState) => {
         
 
         ws.on('message', data => {
-
             const message = data.toString();
-            console.log('data', data);
             
             broadcastMessage({
                 message: message,
@@ -158,20 +169,16 @@ export default (appState: AppState) => {
 
                 clearTimeout(phase2Timer);
                 phase2TimerFlag = false;
-            }
+            }            
 
-
-            //this is the new phase 1, we check if two "Hello" inputs are made before starting the GLUE talking session.
-            if (helloCounter != 2) {
-                if (message == "Hello") {
-                    if (helloCounter == 1) {
+            //this is the new phase 1, we check if two "greeting" inputs are made before starting the GLUE talking session.            
+            if (greetingCounter < 2) {
+                if (greetingCounter == 1 && messageContainsGreeting(message) === true) {
                         const tokens = 'glue respond';
                         fetchData(appendedBody, message, tokens);
                     }
-    
-                    helloCounter = helloCounter + 1;
-                }
-            } else if (data.toString().includes("GLUE")) {
+                greetingCounter = greetingCounter + 1;
+            } else if (data.toString().toLowerCase().includes("glue")) {
                 //If GLUE is mentioned, we get GLUE to respond instantly
                 const tokens = 'glue respond';
                 fetchData(appendedBody, message, tokens);
