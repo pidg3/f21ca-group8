@@ -1,0 +1,30 @@
+rules:
+
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: location
+  steps:
+  - intent: location
+  - action: custom_location_response
+ 
+- rule: weather
+  steps:
+  - intent: weather
+  - action: custom_weather_response
+
+- rule: lockdown
+  steps:
+  - intent: lockdown
+  - action: custom_lockdown_response
+
+#- rule: colour
+#  steps:
+#  - intent: colour
+#  - action: custom_colour_response
+#  - action: custom_colour_response_two
+#  - action: custom_colour_response_three
+

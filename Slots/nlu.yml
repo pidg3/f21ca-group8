@@ -1,0 +1,129 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hiya
+    - holla 
+- intent: location
+  examples: |
+    - [glue keep quiet](key) im in [edinburgh](location)
+    - [glue keep quiet](key) im in [seattle](location)
+    - [glue keep quiet](key) im in [washington](location)
+    - [glue keep quiet](key) im in [toronto](location)
+    - [glue keep quiet](key) im in [ghana](location)
+    - [glue keep quiet](key) im in [elgin](location)
+    - [glue keep quiet](key) im in [seattle](location) [usa](location)
+    - [glue keep quiet](key) im in [edinburgh](location) [scotland](location)
+    - [glue keep quiet](key) im in [london](location) [england](location)
+    - [glue keep quiet](key) im in [madrid](location) [spain](location)
+    - [glue keep quiet](key) im in [rome](location) [italy](location)
+    - [glue respond](key) im in [edinburgh](location)
+    - [glue respond](key) im in [seattle](location)
+    - [glue respond](key) im in [washington](location)
+    - [glue respond](key) im in [toronto](location)
+    - [glue respond](key) im in [ghana](location)
+    - [glue respond](key) im in [elgin](location)
+    - [glue respond](key) im in [seattle](location) [usa](location)
+    - [glue respond](key) im in [edinburgh](location) [scotland](location)
+    - [glue respond](key) im in [london](location) [england](location)
+    - [glue respond](key) im in [madrid](location) [spain](location)
+    - [glue respond](key) im in [rome](location) [italy](location)        
+- intent: weather
+  examples: |
+    - [glue keep quiet](key) it is [raining](weather) 
+    - [glue keep quiet](key) it is [foggy](weather)
+    - [glue keep quiet](key) not bad, bright and [sunny](weather)
+    - [glue keep quiet](key) its [pouring](weather) down
+    - [glue keep quiet](key) it is [warm](weather)
+    - [glue keep quiet](key) it is [snowing](weather)
+    - [glue respond](key) it is [raining](weather) 
+    - [glue respond](key) it is [foggy](weather)
+    - [glue respond](key) not bad, bright and [sunny](weather)
+    - [glue respond](key) its [pouring](weather) down
+    - [glue respond](key) it is [warm](weather)
+    - [glue respond](key) it is [snowing](weather)
+- intent: lockdown
+  examples: |
+    - [glue keep quiet](key) [yes](lockdown) i am used to it
+    - [glue keep quiet](key) yes its all going [well](lockdown)
+    - [glue keep quiet](key) [not bad](lockdown), i am used to it by now
+    - [glue keep quiet](key) [yes](lockdown), i can sepnd more time at home
+    - [glue keep quiet](key) [yes](lockdown), i can spend more time with my parrot
+    - [glue keep quiet](key) [yeah](lockdown) i am used to it since a long time now
+    - [glue keep quiet](key) i got used to it [last](lockdown) year
+    - [glue keep quiet](key) [not really](lockdown), it is hard for me
+    - [glue keep quiet](key) it is [challenging](lockdown)
+    - [glue keep quiet](key) i [dont think](lockdown) i will ever get used to it
+    - [glue keep quiet](key) [nope](lockdown) never
+    - [glue keep quiet](key) i [dont think](lockdown) so 
+    - [glue keep quiet](key) [yes](lockdown) 
+    - [glue respond](key) [yes](lockdown) i am used to it
+    - [glue respond](key) yes its all going [well](lockdown)
+    - [glue respond](key) [not bad](lockdown), i am used to it by now
+    - [glue respond](key) [yes](lockdown), i can sepnd more time at home
+    - [glue respond](key) [yes](lockdown), i can spend more time with my parrot
+    - [glue respond](key) [yeah](lockdown) i am used to it since a long time now
+    - [glue respond](key) i got used to it [last](lockdown) year
+    - [glue respond](key) [not really](lockdown), it is hard for me
+    - [glue respond](key) it is [challenging](lockdown)
+    - [glue respond](key) i [dont think](lockdown) i will ever get used to it
+    - [glue respond](key) [nope](lockdown) never
+    - [glue respond](key) i [dont think](lockdown) so 
+    - [glue respond](key) [yes](lockdown)
+- intent: colour
+  examples: |
+    - [human_1](human) [glue keep quiet](key) [golden](colour) it is magic
+    - [human_1](human) [glue keep quiet](key) [blue](colour) I look good in blue
+    - [human_1](human) [glue keep quiet](key) [blue](colour) i look young in blue
+    - [human_1](human) [glue keep quiet](key) [red](colour) i makes me alive
+    - [human_1](human) [glue keep quiet](key) [red](colour) it is love
+    - [human_1](human) [glue keep quiet](key) [green](colour) coz it feels fresh
+    - [human_1](human) [glue keep quiet](key) [black](colour) blends well with everything
+    - [human_1](human) [glue keep quiet](key) i like all [colours](colour)
+    - [human_1](human) [glue keep quiet](key) i like [them](colour) all
+    - [human_1](human) [glue keep quiet](key) coz [they](colour) are universal
+    - [human_1](human) [glue keep quiet](key) [pink](colour) it reminds me of cotton candy
+    - [human_1](human) [glue keep quiet](key) [violet](colour) it is just majestic
+    - [human_1](human) [glue keep quiet](key) [silver](colour) i like glitters
+    - [human_1](human) [glue respond](key) [golden](colour) it is magic
+    - [human_1](human) [glue respond](key) [blue](colour) I look good in blue
+    - [human_1](human) [glue respond](key) [blue](colour) i look young in blue
+    - [human_1](human) [glue respond](key) [red](colour) i makes me alive
+    - [human_1](human) [glue respond](key) [red](colour) it is love
+    - [human_1](human) [glue respond](key) [green](colour) coz it feels fresh
+    - [human_1](human) [glue respond](key) [black](colour) blends well with everything
+    - [human_1](human) [glue respond](key) i like all [colours](colour)
+    - [human_1](human) [glue respond](key) i like [them](colour) all
+    - [human_1](human) [glue respond](key) coz [they](colour) are universal
+    - [human_1](human) [glue respond](key) [pink](colour) it reminds me of cotton candy
+    - [human_1](human) [glue respond](key) [violet](colour) it is just majestic
+    - [human_1](human) [glue respond](key) [silver](colour) i like glitters
+    - [human_2](human) [glue keep quiet](key) [golden](colour) it is magic
+    - [human_2](human) [glue keep quiet](key) [blue](colour) I look good in blue
+    - [human_2](human) [glue keep quiet](key) [blue](colour) i look young in blue
+    - [human_2](human) [glue keep quiet](key) [red](colour) i makes me alive
+    - [human_2](human) [glue keep quiet](key) [red](colour) it is love
+    - [human_2](human) [glue keep quiet](key) [green](colour) coz it feels fresh
+    - [human_2](human) [glue keep quiet](key) [black](colour) blends well with everything
+    - [human_2](human) [glue keep quiet](key) i like all [colours](colour)
+    - [human_2](human) [glue keep quiet](key) i like [them](colour) all
+    - [human_2](human) [glue keep quiet](key) coz [they](colour) are universal
+    - [human_2](human) [glue keep quiet](key) [pink](colour) it reminds me of cotton candy
+    - [human_2](human) [glue keep quiet](key) [violet](colour) it is just majestic
+    - [human_2](human) [glue keep quiet](key) [silver](colour) i like glitters
+    - [human_2](human) [glue respond](key) [golden](colour) it is magic
+    - [human_2](human) [glue respond](key) [blue](colour) I look good in blue
+    - [human_2](human) [glue respond](key) [blue](colour) i look young in blue
+    - [human_2](human) [glue respond](key) [red](colour) i makes me alive
+    - [human_2](human) [glue respond](key) [red](colour) it is love
+    - [human_2](human) [glue respond](key) [green](colour) coz it feels fresh
+    - [human_2](human) [glue respond](key) [black](colour) blends well with everything
+    - [human_2](human) [glue respond](key) i like all [colours](colour)
+    - [human_2](human) [glue respond](key) i like [them](colour) all
+    - [human_2](human) [glue respond](key) coz [they](colour) are universal
+    - [human_2](human) [glue respond](key) [pink](colour) it reminds me of cotton candy
+    - [human_2](human) [glue respond](key) [violet](colour) it is just majestic
+    - [human_2](human) [glue respond](key) [silver](colour) i like glitters
+

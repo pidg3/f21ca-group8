@@ -1,0 +1,18 @@
+version: "2.0"
+
+stories:
+
+- story: colour similar respond
+  steps:
+  - intent: colour
+  - slot_was_set:
+    - key: glue respond
+  - action: custom_respond_colour_slots
+
+- story: colour similar keep quiet
+  steps:
+  - intent: colour
+  - slot_was_set:
+    - key: glue keep quiet
+  - action: custom_respond_colour_slots
+ 

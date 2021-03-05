@@ -1,0 +1,61 @@
+version: "2.0"
+
+intents:
+  - greet
+  - exit
+  - location 
+  - weather
+  - lockdown
+  - colour
+
+  
+
+entities:
+  - key
+  - location
+  - weather
+  - lockdown
+  - colour 
+  - human
+
+  
+actions:
+  - utter_greet
+  - utter_goodbye
+  - custom_location_response
+  - custom_weather_response
+  - custom_lockdown_response
+  - custom_colour_response 
+  - custom_colour_response_two
+  - custom_colour_response_three
+  - custom_respond_colour_slots
+
+
+slots:
+  human:
+    type: text
+  key:
+    type: categorical
+    values:
+      - glue keep quiet
+      - glue respond
+  colour:
+    type: text
+
+   
+responses:
+  utter_greet:
+  - text: "Hi, I am Glue, a social bot. I am looking forward to talking to you today. Where are you both right now?"
+
+  utter_goodbye:
+  - text: "Bye. Hope you enjoyed the GLUE expereince" 
+
+  utter_default:
+  - text: "OOOOOOOOOOOOOOOOOOOOOOOOO"
+  
+
+   
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
