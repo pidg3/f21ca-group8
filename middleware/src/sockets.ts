@@ -11,6 +11,7 @@ import { generateName } from './nameGenerator';
 const ALANA_URL = 'http://52.56.181.83:5000';
 
 const EXPRESS_URL = 'http://glue-middleware.eu-west-2.elasticbeanstalk.com';
+// const EXPRESS_URL = ''; // nGrok URL here
 
 const alanaBody = {
     'user_id': 'test-5827465823641856215',

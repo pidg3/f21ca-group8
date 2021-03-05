@@ -8,6 +8,15 @@ This is a monorepo containing the three parts of our code:
 
 For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL` values at the top of `gui/src/UserView.js` and `gui/src/AdminView.js`. This will point the gui at your local express server, rather than the one hosted on AWS.
 
+## How to debug the tokens/RASA locally
+
+1. Spin up the GUI and middleware locally using the instructions above. 
+2. Spin up your RASA bot. Note the URL it is exposed on (this is normally localhost:5005)
+3. Expose your middleware via nGrok: `ngrok http 8090`. Replace EXPRESS_URL with your ngrok URL at the top of sockets.ts
+4. Expose the RASA bot via nGrok: `ngrok http [rasa port]`. 
+5. Go to localhost:3000 to view the GUI. Connect using the URL: `[nGrok URL for RASA bot]/webhooks/rest/webhook`, for example: `http://6d7eec0d09ad.ngrok.io/webhooks/rest/webhook`
+
+This should now get RASA responses and show then in the UI. Note that nGrok only allows a single port to be forwarded per account, so two different accounts will need to be used.
 ## Curl commands
 
 If you need to run these on your local middleware build, replace `glue-middleware.eu-west-2.elasticbeanstalk.com` with `localhost:8090`.
