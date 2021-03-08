@@ -51,6 +51,7 @@ export default (appState: AppState) => {
             alanaQuestion = messageFromUser;
         }
 
+        console.log("Sent to Alana: " + alanaQuestion);
         fetch(ALANA_URL, {
             method: 'POST',
             body: JSON.stringify({ ...appendedBody, question: alanaQuestion }),
@@ -78,6 +79,8 @@ export default (appState: AppState) => {
     var greetingCounter = 0;
     var phase2TimerFlag = false;
     var msg = "";
+    var humanTokens: { [id: string] : string; } = {};
+    var previousHumanID = "";
 
     const broadcastMessage = (messageData: MessageData, sourceWs?: ExtWebSocket) => {
 
@@ -162,11 +165,11 @@ export default (appState: AppState) => {
             //this checks to see if a timer exists, if so, it'll look into "msg" which stores the previous msg.
             //it then sends this with a glue keep quiet since we know the previous timer didn't hit 0.
             if (phase2TimerFlag == true) {
-                const tokens = 'glue keep quiet';
+                const tokens = humanTokens[previousHumanID] + ' glue keep quiet';
 
-                // console.log since GLUE isn't set up so Alana will respond to this currently.
-                console.log("glue keep quiet " + msg);
-                //fetchData(appendedBody, msg, tokens);
+                //console.log since GLUE isn't set up so Alana will respond to this currently.
+                //console.log(humanTokens[ws.username] + " glue keep quiet " + msg);
+                fetchData(appendedBody, msg, tokens);
 
                 clearTimeout(phase2Timer);
                 phase2TimerFlag = false;
@@ -174,22 +177,24 @@ export default (appState: AppState) => {
 
             //this is the new phase 1, we check if two "greeting" inputs are made before starting the GLUE talking session.            
             if (greetingCounter < 2) {
-                if (greetingCounter == 1 && messageContainsGreeting(message) === true) {
-                        const tokens = 'glue respond';
+                if (messageContainsGreeting(message) === true && humanTokens[ws.username] == undefined) {
+                        humanTokens[ws.username] = "human_" + (greetingCounter + 1);
+
+                        const tokens = humanTokens[ws.username];
                         fetchData(appendedBody, message, tokens);
+                        greetingCounter = greetingCounter + 1;
                     }
-                greetingCounter = greetingCounter + 1;
-            } else if (data.toString().toLowerCase().includes("glue")) {
-                //If GLUE is mentioned, we get GLUE to respond instantly
-                const tokens = 'glue respond';
+            } else if (message.toLowerCase().includes('final answer is')) {
+                const tokens = humanTokens[ws.username] + ' glue respond';
                 fetchData(appendedBody, message, tokens);
             } else {
                 //otherwise, wait 20 seconds and if no message appears, get GLUE response.
                 //if a message is sent, reset this timer.
-                const tokens = 'glue respond';
+                const tokens = humanTokens[ws.username] + ' glue respond';
                 msg = message;
                 phase2Timer = setTimeout(fetchData, 20000, appendedBody, message, tokens);
                 phase2TimerFlag = true;
+                previousHumanID = ws.username;
             }
         });
 
