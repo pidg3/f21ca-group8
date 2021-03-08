@@ -16,10 +16,10 @@ This is missing the functionality for resetting the chat state: it won't work pr
 
 1. Spin up your RASA bot. Note the port it is exposed on (this is normally localhost:5005).
 2. Expose the RASA bot via nGrok: `ngrok http [rasa port]`, i.e. `ngrok http 5005` if the port follows the above pattern.
-3. Tell the app what the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
+3. Tell the app what the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
 4. Check this has worked properly: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl` should return the URL with an extra bit at the end: 'webhooks/rest/webhook'.
-5. Go to the usual URL in the browser: http://glue-middleware.eu-west-2.elasticbeanstalk.com
-6. Open up the admin views in separate tabs: http://glue-middleware.eu-west-2.elasticbeanstalk.com/readable and http://glue-middleware.eu-west-2.elasticbeanstalk.com/admin
+5. Go to the usual URL in the browser: http://glue-bot.s3-website.eu-west-2.amazonaws.com/
+6. Open up the admin views in separate tabs: http://glue-bot.s3-website.eu-west-2.amazonaws.com/readable and http://glue-bot.s3-website.eu-west-2.amazonaws.com/admin
 7. Press the 'Connect' button (in multiple tabs if needed). 
 8. When the chat has finshed, remember to copy out the logs from the admin view and paste into a spreadsheet for evaluation purposes. 
 
@@ -28,7 +28,7 @@ This is missing the functionality for resetting the chat state: it won't work pr
 If you need to run these on your local middleware build, replace `glue-middleware.eu-west-2.elasticbeanstalk.com` with `localhost:8090`.
 
 - Reset bot state (resets Alana session ID and timers, but **NOT** the design (`ChatBot/GameBot`) or the GLUE bot URL): `curl -X POST http://glue-middleware.eu-west-2.elasticbeanstalk.com/resetState`
-- Update GLUE bot URL: `curl -X POST --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
+- Update GLUE bot URL: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
 - Get current GLUE bot URL: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl`
 - Get list of current chat participants: `curl -w "\n" http://glue-middleware.eu-west-2.elasticbeanstalk.com/chatParticipants`
 
