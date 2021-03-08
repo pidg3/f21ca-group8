@@ -8,7 +8,7 @@ This is a monorepo containing the three parts of our code:
 
 For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL` values at the top of `gui/src/UserView.js` and `gui/src/AdminView.js`. This will point the gui at your local express server, rather than the one hosted on AWS.
 
-## How to debug the tokens/RASA locally
+## How to connect a RASA bot to the GUI
 
 Note that only one instance is currently hosted, so we might need to coordinate as if two groups are trying to do this at the same time, the URLs will get into a muddle.
 
