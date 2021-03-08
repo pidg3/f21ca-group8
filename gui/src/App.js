@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import UserView from './UserView';
 import AdminView from './AdminView';
+import ReadableAdminView from './ReadableAdminView';
 
 
 export default function App() {
@@ -16,6 +17,9 @@ export default function App() {
                 <Switch>
                     <Route path="/admin">
                         <AdminView />
+                    </Route>
+                    <Route path="/readable">
+                        <ReadableAdminView />
                     </Route>
                     <Route path="/">
                         <UserView />
