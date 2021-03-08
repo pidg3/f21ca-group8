@@ -10,20 +10,26 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 
 ## How to debug the tokens/RASA locally
 
-1. Spin up the GUI and middleware locally using the instructions above. 
-2. Spin up your RASA bot. Note the URL it is exposed on (this is normally localhost:5005)
-3. Expose your middleware via nGrok: `ngrok http 8090`. Replace EXPRESS_URL with your ngrok URL at the top of sockets.ts
-4. Expose the RASA bot via nGrok: `ngrok http [rasa port]`. 
-5. Go to localhost:3000 to view the GUI. Connect using the URL: `[nGrok URL for RASA bot]/webhooks/rest/webhook`, for example: `http://6d7eec0d09ad.ngrok.io/webhooks/rest/webhook`
+Note that only one instance is currently hosted, so we might need to coordinate as if two groups are trying to do this at the same time, the URLs will get into a muddle.
 
-This should now get RASA responses and show then in the UI. Note that nGrok only allows a single port to be forwarded per account, so two different accounts will need to be used.
+This is missing the functionality for resetting the chat state: it won't work properly until this is done, however it should allow you to test your connection to the GLUE bot. 
+
+1. Spin up your RASA bot. Note the port it is exposed on (this is normally localhost:5005).
+2. Expose the RASA bot via nGrok: `ngrok http [rasa port]`, i.e. `ngrok http 5005` if the port follows the above pattern.
+3. Tell the app what the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
+4. Check this has worked properly: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl` should return the URL with an extra bit at the end: 'webhooks/rest/webhook'.
+5. Go to the usual URL in the browser: http://glue-middleware.eu-west-2.elasticbeanstalk.com
+6. Open up the admin views in separate tabs: http://glue-middleware.eu-west-2.elasticbeanstalk.com/readable and http://glue-middleware.eu-west-2.elasticbeanstalk.com/admin
+7. Press the 'Connect' button (in multiple tabs if needed). 
+8. When the chat has finshed, remember to copy out the logs from the admin view and paste into a spreadsheet for evaluation purposes. 
+
 ## Curl commands
 
 If you need to run these on your local middleware build, replace `glue-middleware.eu-west-2.elasticbeanstalk.com` with `localhost:8090`.
 
 - Reset bot state (resets Alana session ID and timers, but **NOT** the design (`ChatBot/GameBot`) or the GLUE bot URL): `curl -X POST http://glue-middleware.eu-west-2.elasticbeanstalk.com/resetState`
 - Update GLUE bot URL: `curl -X POST --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
-- Get current GLUE bot URL: `curl localhost:8090/externalBotUrl`
+- Get current GLUE bot URL: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl`
 - Get list of current chat participants: `curl -w "\n" http://glue-middleware.eu-west-2.elasticbeanstalk.com/chatParticipants`
 
 ## Backlog for GUI/Middleware build
