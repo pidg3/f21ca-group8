@@ -24,13 +24,12 @@ const start = (appState: AppState) => {
     app.get('/externalBotUrl', (req: any, res: any) => {
         if (appState.externalBotUrl === '') {
             res.send('Glue bot URL not defined - using vanilla Alana only\n');
-
         }
         res.send(appState.externalBotUrl + '\n');
     });
 
     app.post('/setExternalBotUrl', (req: any, res: any) => {        
-        appState.externalBotUrl = req.body.externalBotUrl;
+        appState.externalBotUrl = `${req.body.externalBotUrl}/webhooks/rest/webhook`;
         res.send('Success! External bot URL set\n');
     });
 

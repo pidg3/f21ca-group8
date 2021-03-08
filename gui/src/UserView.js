@@ -1,10 +1,10 @@
 import React from 'react';
+import { Button } from '@material-ui/core';
 
 import './App.css';
 
 import ChatInput from './chat/ChatInput';
 import ChatWindow from './chat/ChatWindow';
-import BotUrlInput from './BotUrlInput';
 
 // Swap over the below lines for local development
 
@@ -19,12 +19,12 @@ const USERNAME = 'Me'; // temporary, till user can enter name
 class UserView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { serverMessages: [] };
+    this.state = { serverMessages: [], connected: false };
 
     this.appendMessage = this.appendMessage.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
     this.receiveMessage = this.receiveMessage.bind(this);
-    this.setUrl = this.setUrl.bind(this);
+    this.connect = this.connect.bind(this);
   }
 
   appendMessage(message) {
@@ -50,20 +50,11 @@ class UserView extends React.Component {
     }
   }
 
-  async setUrl(url) {
-    const response = await fetch(`http://${EXPRESS_URL}/setExternalBotUrl`, {
-      method: 'POST',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ externalBotUrl: url})
-    });
-    console.log(response);
+  async connect() {
     this.connection = new WebSocket(`ws://${SOCKETS_URL}`);
 
     this.connection.onmessage = (msg) => {
+      this.setState({connected: true})
       this.receiveMessage(msg);
     }
 
@@ -74,7 +65,20 @@ class UserView extends React.Component {
       <div className="App">
         <ChatWindow messages={this.state.serverMessages} />
         <ChatInput sendMessage={(message) => this.sendMessage(message)} />
-        <BotUrlInput setUrl={(url) => this.setUrl(url)}/>
+        {this.state.connected === false ? 
+          <Button
+            style={{ marginLeft: 10, width: '20%' }}
+            color="default"
+            variant="contained"
+            type="submit"
+            value="Connect"
+            onClick={this.connect}
+          >
+            Connect
+        </Button>
+        :
+        null
+      }
       </div>
     );
   }
