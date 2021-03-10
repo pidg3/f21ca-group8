@@ -18,7 +18,6 @@ export class AppState {
 
   private _externalBotUrl: string;
   private _alanaSessionUUID: string;
-  private _waitingForFirstMessage: boolean;
   private _designNumber: number;
   private _chatParticipants: ChatParticipant[];
 
@@ -26,7 +25,6 @@ export class AppState {
     this.logger = new ChatLogger(this);
     this._externalBotUrl = '';
     this._alanaSessionUUID = uuidv4();
-    this._waitingForFirstMessage = true; // set to false as soon as first message received after a reset
     this._designNumber = Design.ChatBot; // default
     this._chatParticipants = [];
 
@@ -47,14 +45,6 @@ export class AppState {
   // TODO: is this worth logging out as well?
   get alanaSessionUUID(): string {
     return this._alanaSessionUUID;
-  }
-
-  get waitingForFirstMessage(): boolean {
-    return this._waitingForFirstMessage;
-  }
-
-  public messageReceived() {
-    this._waitingForFirstMessage = false;
   }
 
   get designNumber(): Design {
@@ -81,7 +71,6 @@ export class AppState {
   // Note - this doesn't change the external bot URL, or the design number
   public reset(): void {
     this._alanaSessionUUID = uuidv4();
-    this._waitingForFirstMessage = true;
     console.log(`AppState initialised. Alana UUID: ${this._alanaSessionUUID}`);
   }
 }
