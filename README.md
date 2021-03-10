@@ -25,19 +25,19 @@ The response is also send to GLUE instantly if the message contains 'final answe
 
 ## How to connect a RASA bot to the GUI
 
-Note that only one instance is currently hosted, so we might need to coordinate as if two groups are trying to do this at the same time, the URLs will get into a muddle.
-
-This is missing the functionality for resetting the chat state: it won't work properly until this is done, however it should allow you to test your connection to the GLUE bot. 
-
 1. Spin up your RASA bot. Note the port it is exposed on (this is normally localhost:5005).
 2. Expose the RASA bot via nGrok: `ngrok http [rasa port]`, i.e. `ngrok http 5005` if the port follows the above pattern.
 3. Tell the app what the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
 4. Check this has worked properly: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl` should return the URL with an extra bit at the end: 'webhooks/rest/webhook'.
-5. Go to the usual URL in the browser: http://glue-bot.s3-website.eu-west-2.amazonaws.com/
-6. Open up the admin views in separate tabs: http://glue-bot.s3-website.eu-west-2.amazonaws.com/readable and http://glue-bot.s3-website.eu-west-2.amazonaws.com/admin
-7. Press the 'Connect' button (in multiple tabs if needed). 
-8. When the chat has finshed, remember to copy out the logs from the admin view and paste into a spreadsheet for evaluation purposes. 
+5. Reset the app state: `curl -X POST http://glue-middleware.eu-west-2.elasticbeanstalk.com/resetState` (you will want to do this between conversations as well)
+6. Go to the usual URL in the browser: http://glue-bot.s3-website.eu-west-2.amazonaws.com/
+7. Open up the admin views in separate tabs: http://glue-bot.s3-website.eu-west-2.amazonaws.com/readable and http://glue-bot.s3-website.eu-west-2.amazonaws.com/admin
+8. Press the 'Connect' button (in multiple tabs if needed). 
+9. When the chat has finshed, remember to copy out the logs from the admin view and paste into a spreadsheet for evaluation purposes. 
 
+Couple of things to note:
+* Note that only one instance is currently hosted, so we might need to coordinate as if two groups are trying to do this at the same time, the URLs will get into a muddle.
+* You should ideally refresh any open browser tabs for the chat after you reset the state.
 ## Curl commands
 
 If you need to run these on your local middleware build, replace `glue-middleware.eu-west-2.elasticbeanstalk.com` with `localhost:8090`.
