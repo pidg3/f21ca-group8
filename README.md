@@ -8,6 +8,21 @@ This is a monorepo containing the three parts of our code:
 
 For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL` values at the top of `gui/src/UserView.js` and `gui/src/AdminView.js`. This will point the gui at your local express server, rather than the one hosted on AWS.
 
+## Token system
+
+| User  | Message | Sent to GLUE |
+| ------------- | ------------- | ------------- |
+| FirstUser  | Hello | human_1 Hello |
+| SecondUser  | Hi | human_2 Hello |
+| GLUE | I am GLUE, Where are you? | N/A |
+| FirstUser | I'm in Edinburgh | *(nothing - wait for next message to send to GLUE if timer not breached)* |
+| SecondUser | I'm in Glasgow | human_1 glue keep quiet I'm in Edinburgh |
+| SecondUser | Raining here | human_2 glue keep quiet I'm in Glasgow |
+| *(we now have one of our awkward silences with no response - after 20s the message is sent to GLUE)* || human_2 glue respond Raining here |
+| GLUE | Here's an interesting fact about rain! | N/A |
+
+The response is also send to GLUE instantly if the message contains 'final answer is', along with the `glue respond` token.
+
 ## How to connect a RASA bot to the GUI
 
 Note that only one instance is currently hosted, so we might need to coordinate as if two groups are trying to do this at the same time, the URLs will get into a muddle.
