@@ -71,16 +71,9 @@ export default (appState: AppState) => {
       });
 
     //whenever fetchData is called, clear the timer.
-    clearTimeout(phase2Timer);
-    phase2TimerFlag = false;
+    clearTimeout(appState.phase2Timer);
+    appState.phase2TimerFlag = false;
   }
-
-  var phase2Timer: number;
-  var greetingCounter = 0;
-  var phase2TimerFlag = false;
-  var previousMessage = '';
-  var humanTokens: { [id: string]: string } = {};
-  var previousHumanId = '';
 
   const broadcastMessage = (
     messageData: MessageData,
@@ -112,7 +105,6 @@ export default (appState: AppState) => {
     });
   };
 
-  // Refactor: review all the logs in the whole codebase
   console.log('Sockets server set up on port 8080');
 
   wss.on('connection', (ws: ExtWebSocket, req) => {
@@ -164,45 +156,45 @@ export default (appState: AppState) => {
 
       //this checks to see if a timer exists, if so, it'll look into "previousMessage" which stores the previous 'message'.
       //it then sends this with a glue keep quiet since we know the previous timer didn't hit 0.
-      if (phase2TimerFlag == true) {
-        const tokens = humanTokens[previousHumanId] + ' glue keep quiet';
+      if (appState.phase2TimerFlag == true) {
+        const humanNumber = appState.getHumanTokenFromId(appState.previousHumanId);
+        const tokens = `${humanNumber} glue keep quiet`;
 
-        //console.log since GLUE isn't set up so Alana will respond to this currently.
-        //console.log(humanTokens[ws.id] + " glue keep quiet " + previousMessage);
-        fetchData(appendedBody, previousMessage, tokens);
+        fetchData(appendedBody, appState.previousMessage, tokens);
 
-        clearTimeout(phase2Timer);
-        phase2TimerFlag = false;
+        appState.cancelPhase2Timer();
+        appState.phase2TimerFlag = false;
       }
 
       //this is the new phase 1, we check if two "greeting" inputs are made before starting the GLUE talking session.
-      if (greetingCounter < 2) {
+      if (appState.greetingCounter < 2) {
         if (
           messageContainsGreeting(message) === true &&
-          humanTokens[ws.id] == undefined
+          appState.getHumanTokenFromId(ws.id) == undefined
         ) {
-          humanTokens[ws.id] = 'human_' + (greetingCounter + 1);
-          const tokens = humanTokens[ws.id];
+          appState.appendHumanToken(ws.id);
+          const tokens = appState.getHumanTokenFromId(ws.id);
           fetchData(appendedBody, message, tokens);
-          greetingCounter = greetingCounter + 1;
         }
       } else if (message.toLowerCase().includes('final answer is')) {
-        const tokens = humanTokens[ws.id] + ' glue respond';
+        const humanNumber = appState.getHumanTokenFromId(ws.id);
+        const tokens = `${humanNumber} glue respond`;
         fetchData(appendedBody, message, tokens);
       } else {
         //otherwise, wait 20 seconds and if no message appears, get GLUE response.
         //if a message is sent, reset this timer.
-        const tokens = humanTokens[ws.id] + ' glue respond';
-        previousMessage = message;
-        phase2Timer = setTimeout(
+        const humanNumber = appState.getHumanTokenFromId(ws.id);
+        const tokens = `${humanNumber} glue respond`;
+        appState.previousMessage =message;
+        appState.phase2Timer = setTimeout(
           fetchData,
           20000,
           appendedBody,
           message,
           tokens
         );
-        phase2TimerFlag = true;
-        previousHumanId = ws.id;
+        appState.phase2TimerFlag = true;
+        appState.previousHumanId = ws.id;
       }
     });
 

@@ -20,6 +20,13 @@ export class AppState {
   private _alanaSessionUUID: string;
   private _designNumber: number;
   private _chatParticipants: ChatParticipant[];
+  private _phase2Timer: number;
+  private _greetingCounter: number;
+  private _phase2TimerFlag: boolean;
+  private _previousMessage: string;
+  private _humanTokens: { [id: string]: string };
+  private _previousHumanId: string;
+
 
   constructor() {
     this.logger = new ChatLogger(this);
@@ -27,6 +34,12 @@ export class AppState {
     this._alanaSessionUUID = uuidv4();
     this._designNumber = Design.ChatBot; // default
     this._chatParticipants = [];
+    // this._phase2Timer: number;
+    this._greetingCounter = 1;
+    this._phase2TimerFlag = false;
+    this._previousMessage = '';
+    this._humanTokens = {};
+    this._previousHumanId = '';
 
     console.log(`AppState initialised. Alana UUID: ${this._alanaSessionUUID}`);
   }
@@ -66,6 +79,52 @@ export class AppState {
 
   public removeChatParticipant(idToRemove: string) {
     return this._chatParticipants.find(cp => cp.id === idToRemove);
+  }
+
+  get greetingCounter() {
+    return this._greetingCounter;
+  }
+
+  set phase2Timer(timer: number) {
+    this._phase2Timer = timer;
+  }
+
+  public cancelPhase2Timer() {
+    clearTimeout(this._phase2Timer);
+  }
+
+
+  get phase2TimerFlag(): boolean {
+    return this._phase2TimerFlag;
+  }
+
+  set phase2TimerFlag(value: boolean) {
+    this._phase2TimerFlag = value;
+  }
+
+  get previousMessage(): string {
+    return this._previousMessage;
+  }
+
+  set previousMessage(value: string) {
+    this._previousMessage = value;
+  }
+
+  public getHumanTokenFromId(id: string) {
+    return (this._humanTokens[id]);
+  }
+
+  public appendHumanToken(id: string) {
+    this._humanTokens[id] = `human_${this._greetingCounter}`;
+    this._greetingCounter += 1;
+  }
+
+  get previousHumanId(): string {
+    return this._previousHumanId;
+  }
+
+  set previousHumanId(value: string) {
+    this._previousHumanId = value;
   }
 
   // Note - this doesn't change the external bot URL, or the design number
