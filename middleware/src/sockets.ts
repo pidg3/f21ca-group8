@@ -15,7 +15,6 @@ const EXPRESS_URL = 'http://glue-middleware.eu-west-2.elasticbeanstalk.com';
 
 const alanaBody = {
   user_id: 'test-5827465823641856215',
-  session_id: 'Group8-Dev-2',
   projectId: 'CA2020',
   overrides: {}
 };
@@ -154,7 +153,8 @@ export default (appState: AppState) => {
       );
 
       let appendedBody = {
-        ...alanaBody
+        ...alanaBody,
+          session_id: appState.alanaSessionUUID
       };
       if (appState.externalBotUrl !== '') {
         appendedBody.overrides = {
