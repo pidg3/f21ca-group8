@@ -34,7 +34,6 @@ export class AppState {
     this._alanaSessionUUID = uuidv4();
     this._designNumber = Design.ChatBot; // default
     this._chatParticipants = [];
-    // this._phase2Timer: number;
     this._greetingCounter = 1;
     this._phase2TimerFlag = false;
     this._previousMessage = '';
@@ -130,6 +129,13 @@ export class AppState {
   // Note - this doesn't change the external bot URL, or the design number
   public reset(): void {
     this._alanaSessionUUID = uuidv4();
+    this._chatParticipants = [];
+    this._greetingCounter = 1;
+    this._phase2TimerFlag = false;
+    this._previousMessage = '';
+    this._humanTokens = {};
+    this._previousHumanId = '';
+
     console.log(`AppState initialised. Alana UUID: ${this._alanaSessionUUID}`);
   }
 }

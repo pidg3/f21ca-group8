@@ -167,7 +167,7 @@ export default (appState: AppState) => {
       }
 
       //this is the new phase 1, we check if two "greeting" inputs are made before starting the GLUE talking session.
-      if (appState.greetingCounter < 2) {
+      if (appState.greetingCounter <= 2) {
         if (
           messageContainsGreeting(message) === true &&
           appState.getHumanTokenFromId(ws.id) == undefined
@@ -185,7 +185,7 @@ export default (appState: AppState) => {
         //if a message is sent, reset this timer.
         const humanNumber = appState.getHumanTokenFromId(ws.id);
         const tokens = `${humanNumber} glue respond`;
-        appState.previousMessage =message;
+        appState.previousMessage = message;
         appState.phase2Timer = setTimeout(
           fetchData,
           20000,

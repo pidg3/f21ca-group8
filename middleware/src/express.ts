@@ -21,14 +21,21 @@ const start = (appState: AppState) => {
   });
 
   app.get('/externalBotUrl', (req: any, res: any) => {
+    let response: string;
     if (appState.externalBotUrl === '') {
-      res.send('Glue bot URL not defined - using vanilla Alana only\n');
+      response = 'Glue bot URL not defined - using vanilla Alana only\n';
+    } else {
+      response = appState.externalBotUrl + '\n';
     }
-    res.send(appState.externalBotUrl + '\n');
+    res.send(response);
   });
 
   app.post('/setExternalBotUrl', (req: any, res: any) => {
-    appState.externalBotUrl = `${req.body.externalBotUrl}/webhooks/rest/webhook`;
+    if (req.body.externalBotUrl === '') {
+      appState.externalBotUrl = '';
+    } else {
+      appState.externalBotUrl = `${req.body.externalBotUrl}/webhooks/rest/webhook`;
+    }
     res.send('Success! External bot URL set\n');
   });
 

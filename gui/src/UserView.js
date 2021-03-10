@@ -57,7 +57,6 @@ class UserView extends React.Component {
       this.setState({connected: true})
       this.receiveMessage(msg);
     }
-
   }
 
   render() {
