@@ -18,10 +18,12 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 | FirstUser | I'm in Edinburgh | *(nothing - wait for next message to send to GLUE if timer not breached)* |
 | SecondUser | I'm in Glasgow | human_1 glue keep quiet I'm in Edinburgh |
 | SecondUser | Raining here | human_2 glue keep quiet I'm in Glasgow |
-| *(we now have one of our awkward silences with no response - after 20s the message is sent to GLUE)* || human_2 glue respond Raining here |
+| *(we now have one of our awkward silences with no response - after 20s the message is sent to GLUE)* || human_2  glue respond Raining here |
 | GLUE | Here's an interesting fact about rain! | N/A |
 
-The response is also send to GLUE instantly if the message contains 'final answer is', along with the `glue respond` token.
+The response is also send to GLUE instantly if the message contains 'final answer is', along with the ` glue respond` token.
+
+Note that ' glue respond' token contains an extra space at the start as per instructions from RASA team. 
 
 ## How to connect a RASA bot to the GUI
 

@@ -11,7 +11,6 @@ import { generateName } from './nameGenerator';
 const ALANA_URL = 'http://52.56.181.83:5000';
 
 const EXPRESS_URL = 'http://glue-middleware.eu-west-2.elasticbeanstalk.com';
-// const EXPRESS_URL = ''; // nGrok URL here
 
 const SILENT_RESPONSE_TOKEN = 'silent_response';
 
@@ -179,13 +178,14 @@ export default (appState: AppState) => {
         }
       } else if (message.toLowerCase().includes('final answer is')) {
         const humanNumber = appState.getHumanTokenFromId(ws.id);
-        const tokens = `${humanNumber} glue respond`;
+        // Note the extra space in these 'glue respond' token as per instructions from RASA team
+        const tokens = `${humanNumber}  glue respond`;
         fetchData(appendedBody, message, tokens);
       } else {
         //otherwise, wait 20 seconds and if no message appears, get GLUE response.
         //if a message is sent, reset this timer.
         const humanNumber = appState.getHumanTokenFromId(ws.id);
-        const tokens = `${humanNumber} glue respond`;
+        const tokens = `${humanNumber}  glue respond`;
         appState.previousMessage = message;
         appState.phase2Timer = setTimeout(
           fetchData,
