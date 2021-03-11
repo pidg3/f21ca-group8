@@ -49,6 +49,19 @@ const start = (appState: AppState) => {
     res.send(logs);
   });
 
+  app.get('/alanaBots', (req: any, res: any) => {
+    res.send(appState.alanaBots);
+  });
+
+  app.post('/setAlanaBots', (req: any, res: any) => {
+    console.log(req.body);
+    
+    appState.alanaBots = req.body;
+    res.send('Alana bots set!\n');
+    console.log(appState.alanaBots[0]);
+    
+  });
+
   app.post('/glueProxy', (req: any, res: any) => {
     appState.logger.logDirect('--- Glue Proxy Invoked ---');
     const userMessage = req.body.current_state.state.input.text;

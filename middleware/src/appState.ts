@@ -21,6 +21,7 @@ export class AppState {
   private _previousMessage: string;
   private _humanTokens: { [id: string]: string };
   private _previousHumanId: string;
+  private _alanaBots: string[];
 
 
   constructor() {
@@ -34,6 +35,7 @@ export class AppState {
     this._previousMessage = '';
     this._humanTokens = {};
     this._previousHumanId = '';
+    this._alanaBots = [];
 
     this.logger.logDirect(`AppState initialised. Alana UUID: ${this._alanaSessionUUID}`);
   }
@@ -119,6 +121,14 @@ export class AppState {
 
   set previousHumanId(value: string) {
     this._previousHumanId = value;
+  }
+
+  get alanaBots(): string[] {
+    return this._alanaBots;
+  }
+
+  set alanaBots(bots: string[]) {
+    this._alanaBots = bots;
   }
 
   // Note - this doesn't change the external bot URL, or the design number

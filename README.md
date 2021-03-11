@@ -49,6 +49,8 @@ If you need to run these on your local middleware build, replace `glue-middlewar
 - Get current GLUE bot URL: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl`
 - Get list of current chat participants: `curl -w "\n" http://glue-middleware.eu-west-2.elasticbeanstalk.com/chatParticipants`
 - Get most recent logs: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/logs?limit=[LIMIT]`, where `[LIMIT]` is the number of log messages to return (max 200).
+- Get current Alana bots in priority order: `curl -w "\n" http://glue-middleware.eu-west-2.elasticbeanstalk.com/alanaBots`
+- Set current Alana bots in priority order: `curl -X POST --header "Content-Type: application/json" --data '["bot_1", "bot_2"]' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setAlanaBots`, where bot_1 and bot_2 are the names of the bots. Note you DON'T have to set the GLUE bot here, this is handled separately through the /externalBotUrl endpoint.
 
 ## Backlog for GUI/Middleware build
 
