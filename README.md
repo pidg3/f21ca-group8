@@ -13,7 +13,7 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 | User  | Message | Sent to GLUE |
 | ------------- | ------------- | ------------- |
 | FirstUser  | Hello | human_1 Hello |
-| SecondUser  | Hi | human_2 Hello |
+| SecondUser  | Hi | human_2 Hi |
 | GLUE | I am GLUE, Where are you? | N/A |
 | FirstUser | I'm in Edinburgh | *(nothing - wait for next message to send to GLUE if timer not breached)* |
 | SecondUser | I'm in Glasgow | human_1 glue keep quiet I'm in Edinburgh |
