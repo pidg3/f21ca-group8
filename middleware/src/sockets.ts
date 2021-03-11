@@ -148,8 +148,8 @@ export default (appState: AppState) => {
       };
       if (appState.externalBotUrl !== '') {
         appendedBody.overrides = {
-          BOT_LIST: [{ glue: `${EXPRESS_URL}/glueProxy` }, 'profanity_bot', 'coherence_bot'],
-          PRIORITY_BOTS: ['glue', 'profanity_bot', 'coherence_bot']
+          BOT_LIST: [{ glue: `${EXPRESS_URL}/glueProxy` }, ...appState.alanaBots],
+          PRIORITY_BOTS: ['glue', ...appState.alanaBots]
         };
       }
 

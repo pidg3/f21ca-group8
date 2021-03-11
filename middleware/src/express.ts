@@ -53,13 +53,9 @@ const start = (appState: AppState) => {
     res.send(appState.alanaBots);
   });
 
-  app.post('/setAlanaBots', (req: any, res: any) => {
-    console.log(req.body);
-    
+  app.post('/setAlanaBots', (req: any, res: any) => {    
     appState.alanaBots = req.body;
     res.send('Alana bots set!\n');
-    console.log(appState.alanaBots[0]);
-    
   });
 
   app.post('/glueProxy', (req: any, res: any) => {
