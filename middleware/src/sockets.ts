@@ -13,6 +13,8 @@ const ALANA_URL = 'http://52.56.181.83:5000';
 const EXPRESS_URL = 'http://glue-middleware.eu-west-2.elasticbeanstalk.com';
 // const EXPRESS_URL = ''; // nGrok URL here
 
+const SILENT_RESPONSE_TOKEN = 'silent_response';
+
 const alanaBody = {
   user_id: 'test-5827465823641856215',
   projectId: 'CA2020',
@@ -86,10 +88,9 @@ export default (appState: AppState) => {
       // Send all messages to admin clients, but in csv format
       if (client.type === 'admin') {
         client.send(appState.logger.formatMessage(messageData));
-      } else {
-        // For users...
-        // only send to clients other than sourceWs (i.e. don't bounce user's
-        // ... own messages back to them)
+      } else if (messageData.message !== SILENT_RESPONSE_TOKEN) {
+        // For users, we only send the message if the message is not our silent response token,
+        // ... AND the user is not the one sending the message
         if (sourceWs === undefined || client.id !== sourceWs.id) {
           client.send(`${messageData.username}: ${messageData.message}`);
         }
@@ -149,8 +150,8 @@ export default (appState: AppState) => {
       };
       if (appState.externalBotUrl !== '') {
         appendedBody.overrides = {
-          BOT_LIST: [{ glue: `${EXPRESS_URL}/glueProxy` }],
-          PRIORITY_BOTS: ['glue']
+          BOT_LIST: [{ glue: `${EXPRESS_URL}/glueProxy` }, 'profanity_bot', 'coherence_bot'],
+          PRIORITY_BOTS: ['glue', 'profanity_bot', 'coherence_bot']
         };
       }
 
