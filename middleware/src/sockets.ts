@@ -29,10 +29,9 @@ function messageContainsGreeting(message: string) {
   const lowerCaseMessage: string = message.toLowerCase();
   if (
     lowerCaseMessage.includes('hello') ||
-    lowerCaseMessage.includes('hey') ||
     lowerCaseMessage.includes('hi') ||
-    lowerCaseMessage.includes('yo') ||
-    lowerCaseMessage.includes('ey up')
+    lowerCaseMessage.includes('hiya') ||
+    lowerCaseMessage.includes('holla')
   ) {
     return true;
   }
