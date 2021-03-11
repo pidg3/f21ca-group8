@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { AppState } from './app';
+import { AppState } from './appState';
 const fetch = require('node-fetch');
 
 const app = express();
@@ -44,8 +44,13 @@ const start = (appState: AppState) => {
     res.send('Success! State reset\n');
   });
 
+  app.get('/logs', (req: any, res: any) => {
+    const logs = appState.logger.getMessageHistory(req.query.limit).join('\n') + '\n';
+    res.send(logs);
+  });
+
   app.post('/glueProxy', (req: any, res: any) => {
-    console.log('--- Glue Proxy Invoked ---');
+    appState.logger.logDirect('--- Glue Proxy Invoked ---');
     const userMessage = req.body.current_state.state.input.text;
 
     // Call the RASA bot
@@ -61,7 +66,7 @@ const start = (appState: AppState) => {
     })
       .then((res: any) => res.json())
       .then((json: any) => {
-        console.log('RASA Response:' + JSON.stringify(json));
+        appState.logger.logDirect('RASA Response:' + JSON.stringify(json));
         const result = {
           result: json[0].text,
           bot_name: 'glue',
@@ -74,15 +79,13 @@ const start = (appState: AppState) => {
         res.json([result]);
       })
       .catch((err: Error) => {
-        console.log(err.message);
-        // TODO: test this. Does it give us an empty result and therefore
-        // Alana uses another bot?
+        appState.logger.logDirect(err.message);
         res.json([]);
       });
   });
 
   app.listen(PORT, () => {
-    console.log(`⚡️[server]: Server is running at port ${PORT}`);
+    appState.logger.logDirect(`⚡️[server]: Server is running at port ${PORT}`);
   });
 };
 

@@ -48,6 +48,7 @@ If you need to run these on your local middleware build, replace `glue-middlewar
 - Update GLUE bot URL: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl`
 - Get current GLUE bot URL: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl`
 - Get list of current chat participants: `curl -w "\n" http://glue-middleware.eu-west-2.elasticbeanstalk.com/chatParticipants`
+- Get most recent logs: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/logs?limit=[LIMIT]`, where `[LIMIT]` is the number of log messages to return (max 200).
 
 ## Backlog for GUI/Middleware build
 

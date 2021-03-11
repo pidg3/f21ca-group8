@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { ExtWebSocket, MessageData } from './types';
 
-import { AppState } from './app';
+import { AppState } from './appState';
 
 import { generateName } from './nameGenerator';
 
@@ -52,7 +52,7 @@ export default (appState: AppState) => {
       alanaQuestion = messageFromUser;
     }
 
-    console.log('Sent to Alana: ' + alanaQuestion);
+    appState.logger.logDirect('Sent to Alana: ' + alanaQuestion);
     fetch(ALANA_URL, {
       method: 'POST',
       body: JSON.stringify({ ...appendedBody, question: alanaQuestion }),
@@ -80,7 +80,7 @@ export default (appState: AppState) => {
     sourceWs?: ExtWebSocket
   ) => {
     // Log for evaluation purposes
-    appState.logger.logMessage(messageData);
+    appState.logger.logChatMessage(messageData);
 
     wss.clients.forEach((client: any) => {
       // Send all messages to admin clients, but in csv format
@@ -104,7 +104,7 @@ export default (appState: AppState) => {
     });
   };
 
-  console.log('Sockets server set up on port 8080');
+  appState.logger.logDirect('Sockets server set up on port 8080');
 
   wss.on('connection', (ws: ExtWebSocket, req) => {
     const id = uuidv4();
@@ -125,7 +125,7 @@ export default (appState: AppState) => {
       });
     }
 
-    console.log(
+    appState.logger.logDirect(
       `Connection established! Username=${ws.username || 'ADMIN'}, ID=${id}`
     );
 
@@ -200,7 +200,7 @@ export default (appState: AppState) => {
 
     ws.on('close', function close() {
       ws.terminate();
-      console.log(
+      appState.logger.logDirect(
         `Connection terminated! Username=${ws.username || 'ADMIN'}, ID=${ws.id}`
       );
     });
