@@ -17,11 +17,11 @@ class ReadableAdminView extends React.Component {
 
         this.appendMessage = this.appendMessage.bind(this);
         this.receiveMessage = this.receiveMessage.bind(this);
-        this.setUrl = this.setUrl.bind(this);
+        this.connect = this.connect.bind(this);
     }
 
     componentDidMount() {
-        this.setUrl('');
+        this.connect();
     }
 
     appendMessage(message) {
@@ -37,17 +37,7 @@ class ReadableAdminView extends React.Component {
         }
     }
 
-    async setUrl(url) {
-        const response = await fetch(`http://${EXPRESS_URL}/setExternalBotUrl`, {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ externalBotUrl: url })
-        });
-        console.log(response);
+    async connect() {
         this.connection = new WebSocket(`ws://${SOCKETS_URL}?type=admin`);
 
         this.connection.onmessage = (msg) => {
