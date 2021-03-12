@@ -48,7 +48,7 @@ class AdminView extends React.Component {
         return (
             <div className="App">
                 <h1>Admin View</h1>
-                {this.state.serverMessages.map(msg => <p>{msg}</p>)}
+                {this.state.serverMessages.map(msg => <span>{msg}<br/></span>)}
             </div>
         );
     }
