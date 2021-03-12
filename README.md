@@ -28,8 +28,8 @@ Note that, when sending text strings to Alana/GLUE, there is always a double spa
 ## How to connect a RASA bot to the GUI
 
 1. Spin up your RASA bot. This is achieved with 2 seperate command line prompts running your version of the alana environment. The first running `rasa run actions` then once it says its running, in the other window run `rasa run --enable-api` - Note the port it is exposed on (this is normally localhost:5005).
-2. In a third command line window, navigate to where your ngrok file is and expose the RASA bot via nGrok: `ngrok http [rasa port]`, i.e. `ngrok http 5005` if the port follows the above pattern. Note 
-3. In a forth window Tell the app what the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl` - note you should use the HTTP ngrok URL for this (not the HTTPS).
+2. In a third command line window, navigate to where your ngrok program file is located and expose the RASA bot via nGrok: `ngrok http [rasa port]`, i.e. `ngrok http 5005` if the port follows the above pattern. Note 
+3. In a forth window, tell the app the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl` - note you should use the HTTP ngrok URL for this (not the HTTPS).
 4. Check this has worked properly: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl` should return the URL with an extra bit at the end: 'webhooks/rest/webhook'.
 5. Reset the app state: `curl -X POST http://glue-middleware.eu-west-2.elasticbeanstalk.com/resetState` (you will want to do this between conversations as well)
 6. Go to the usual URL in the browser: http://glue-bot.s3-website.eu-west-2.amazonaws.com/ (open a second for another user)
