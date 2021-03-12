@@ -27,7 +27,7 @@ Note that ' glue respond' token contains an extra space at the start as per inst
 
 ## How to connect a RASA bot to the GUI
 
-1. Spin up your RASA bot. This is achieved with 2 seperate command line prompts, one running `rasa run actions`, the second running `rasa run --enable-api` - Note the port it is exposed on (this is normally localhost:5005).
+1. Spin up your RASA bot. This is achieved with 2 seperate command line prompts running your version of the alana environment. The first running `rasa run actions`then once it says its running, in the other window run `rasa run --enable-api` - Note the port it is exposed on (this is normally localhost:5005).
 2. Expose the RASA bot via nGrok: `ngrok http [rasa port]`, i.e. `ngrok http 5005` if the port follows the above pattern. Note 
 3. Tell the app what the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl` - note you should use the HTTP ngrok URL for this (not the HTTPS).
 4. Check this has worked properly: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl` should return the URL with an extra bit at the end: 'webhooks/rest/webhook'.
