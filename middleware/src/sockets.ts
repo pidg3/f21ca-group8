@@ -47,7 +47,8 @@ export default (appState: AppState) => {
     // Append tokens if needed
     let alanaQuestion;
     if (tokens !== '') {
-      alanaQuestion = `${tokens} ${messageFromUser}`;
+      // Note double space between tokens and message, as per instructions
+      alanaQuestion = `${tokens}  ${messageFromUser}`;
     } else {
       alanaQuestion = messageFromUser;
     }
@@ -177,14 +178,13 @@ export default (appState: AppState) => {
         }
       } else if (message.toLowerCase().includes('final answer is')) {
         const humanNumber = appState.getHumanTokenFromId(ws.id);
-        // Note the extra space in these 'glue respond' token as per instructions from RASA team
-        const tokens = `${humanNumber}  glue respond`;
+        const tokens = `${humanNumber} glue respond`;
         fetchData(appendedBody, message, tokens);
       } else {
         //otherwise, wait 20 seconds and if no message appears, get GLUE response.
         //if a message is sent, reset this timer.
         const humanNumber = appState.getHumanTokenFromId(ws.id);
-        const tokens = `${humanNumber}  glue respond`;
+        const tokens = `${humanNumber} glue respond`;
         appState.previousMessage = message;
         appState.phase2Timer = setTimeout(
           fetchData,

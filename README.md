@@ -12,18 +12,18 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 
 | User  | Message | Sent to GLUE |
 | ------------- | ------------- | ------------- |
-| FirstUser  | Hello | human_1 Hello |
-| SecondUser  | Hi | human_2 Hi |
+| FirstUser  | Hello | human_1  Hello |
+| SecondUser  | Hi | human_2  Hi |
 | GLUE | I am GLUE, Where are you? | N/A |
 | FirstUser | I'm in Edinburgh | *(nothing - wait for next message to send to GLUE if timer not breached)* |
-| SecondUser | I'm in Glasgow | human_1 glue keep quiet I'm in Edinburgh |
-| SecondUser | Raining here | human_2 glue keep quiet I'm in Glasgow |
-| *(we now have one of our awkward silences with no response - after 20s the message is sent to GLUE)* || human_2  glue respond Raining here |
+| SecondUser | I'm in Glasgow | human_1 glue keep quiet  I'm in Edinburgh |
+| SecondUser | Raining here | human_2 glue keep quiet  I'm in Glasgow |
+| *(we now have one of our awkward silences with no response - after 20s the message is sent to GLUE)* || human_2 glue respond  Raining here |
 | GLUE | Here's an interesting fact about rain! | N/A |
 
-The response is also send to GLUE instantly if the message contains 'final answer is', along with the ` glue respond` token.
+The response is also send to GLUE instantly if the message contains 'final answer is', along with the `glue respond` token.
 
-Note that ' glue respond' token contains an extra space at the start as per instructions from RASA team. 
+Note that, when sending text strings to Alana/GLUE, there is always a double space between any tokens and the message e.g. `human_2 glue respond  Raining here`
 
 ## How to connect a RASA bot to the GUI
 
@@ -35,7 +35,7 @@ Note that ' glue respond' token contains an extra space at the start as per inst
 6. Go to the usual URL in the browser: http://glue-bot.s3-website.eu-west-2.amazonaws.com/ (open a second for another user)
 7. Open up the admin views in separate tabs: http://glue-bot.s3-website.eu-west-2.amazonaws.com/readable and http://glue-bot.s3-website.eu-west-2.amazonaws.com/admin
 8. Press the 'Connect' button (in multiple tabs if needed). 
-9. When the chat has finshed, remember to copy out the logs from the admin view and paste into a spreadsheet for evaluation purposes. 
+9. When the chat has finished, remember to copy out the logs from the admin view and paste into a spreadsheet for evaluation purposes. 
 
 Couple of things to note:
 * Note that only one instance is currently hosted, so we might need to coordinate as if two groups are trying to do this at the same time, the URLs will get into a muddle.
