@@ -10,6 +10,10 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 
 ## Token system
 
+### To GLUE
+
+Example conversation:
+
 | User  | Message | Sent to GLUE |
 | ------------- | ------------- | ------------- |
 | FirstUser  | Hello | human_1 Hello |
@@ -21,9 +25,13 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 | *(we now have one of our awkward silences with no response - after 20s the message is sent to GLUE)* || human_2  glue respond Raining here |
 | GLUE | Here's an interesting fact about rain! | N/A |
 
-The response is also send to GLUE instantly if the message contains 'final answer is', along with the ` glue respond` token.
+The message is also sent to GLUE instantly if the message contains 'final answer is', along with the ` glue respond` token.
 
 Note that ' glue respond' token contains an extra space at the start as per instructions from RASA team. 
+
+### From GLUE
+
+GLUE should return a single token: `silent_response` - to indicate a response that should **not** be shown in the UI. Note this differs from an empty response, which indicates another Alana bot should take over. 
 
 ## How to connect a RASA bot to the GUI
 
