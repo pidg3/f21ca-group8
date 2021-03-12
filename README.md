@@ -10,10 +10,6 @@ For local development, you need to swap over the `EXPRESS_URL` and `SOCKETS_URL`
 
 ## Token system
 
-### To GLUE
-
-Example conversation:
-
 | User  | Message | Sent to GLUE |
 | ------------- | ------------- | ------------- |
 | FirstUser  | Hello | human_1 Hello |
@@ -25,17 +21,13 @@ Example conversation:
 | *(we now have one of our awkward silences with no response - after 20s the message is sent to GLUE)* || human_2  glue respond Raining here |
 | GLUE | Here's an interesting fact about rain! | N/A |
 
-The message is also sent to GLUE instantly if the message contains 'final answer is', along with the ` glue respond` token.
+The response is also send to GLUE instantly if the message contains 'final answer is', along with the ` glue respond` token.
 
 Note that ' glue respond' token contains an extra space at the start as per instructions from RASA team. 
 
-### From GLUE
-
-GLUE should return a single token: `silent_response` - to indicate a response that should **not** be shown in the UI. Note this differs from an empty response, which indicates another Alana bot should take over. 
-
 ## How to connect a RASA bot to the GUI
 
-1. Spin up your RASA bot. Note the port it is exposed on (this is normally localhost:5005).
+1. Spin up your RASA bot. This is achieved with 2 seperate command line prompts, one running `rasa run actions`, the second running `rasa run --enable-api` - Note the port it is exposed on (this is normally localhost:5005).
 2. Expose the RASA bot via nGrok: `ngrok http [rasa port]`, i.e. `ngrok http 5005` if the port follows the above pattern. Note 
 3. Tell the app what the ngrok URL for the GLUE bot is via cUrl: `curl -X POST --header "Content-Type: application/json" --data '{"externalBotUrl":"[URL]"}' http://glue-middleware.eu-west-2.elasticbeanstalk.com/setExternalBotUrl` - note you should use the HTTP ngrok URL for this (not the HTTPS).
 4. Check this has worked properly: `curl http://glue-middleware.eu-west-2.elasticbeanstalk.com/externalBotUrl` should return the URL with an extra bit at the end: 'webhooks/rest/webhook'.
@@ -48,7 +40,8 @@ GLUE should return a single token: `silent_response` - to indicate a response th
 Couple of things to note:
 * Note that only one instance is currently hosted, so we might need to coordinate as if two groups are trying to do this at the same time, the URLs will get into a muddle.
 * You should ideally refresh any open browser tabs for the chat after you reset the state.
-* If this isn't working I'd suggest pinging your RASA bot directly to see if it is working: `curl -X POST --header "Content-Type: application/json" --data '{"sender":"test_user", "message": "glue respond  hello"}' localhost:5005` (alter the 'message' property as required). 
+* If this isn't working I'd suggest pinging your RASA bot directly to see if it is working: `curl -X POST --header "Content-Type: application/json" --data '{"sender":"test_user", "message": "glue respond  hello"}' localhost:5005` (alter the 'message' property as required).
+* If you find alana is always responding rather than getting typical glue responses, test that your rasa is picking up the trained model. There seems to be an issue between models trained on windows/mac/linux. To resolve this issue simply train rasa again, this will take approx 25 mins.  
 
 ## Curl commands
 
