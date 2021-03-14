@@ -1,7 +1,7 @@
 import { MessageData } from './types';
 import { AppState } from './appState';
 
-const DEFAULT_HISTORY_LIMIT = 200;
+const DEFAULT_HISTORY_LIMIT = 1000;
 
 export class ChatLogger {
   private _appState: AppState;
