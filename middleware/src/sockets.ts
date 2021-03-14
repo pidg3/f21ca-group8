@@ -154,6 +154,8 @@ export default (appState: AppState) => {
         };
       }
 
+      appState.logger.logDirect(`appendedBody: ${JSON.stringify(appendedBody)}`);
+
       //this checks to see if a timer exists, if so, it'll look into "previousMessage" which stores the previous 'message'.
       //it then sends this with a glue keep quiet since we know the previous timer didn't hit 0.
       if (appState.phase2TimerFlag == true) {
