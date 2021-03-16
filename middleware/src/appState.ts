@@ -8,6 +8,8 @@ enum Design {
   GameBot = 2
 }
 
+const DEFAULT_ALANA_BOTS = ["aiml_bot"];
+
 export class AppState {
   public logger: ChatLogger;
 
@@ -35,7 +37,7 @@ export class AppState {
     this._previousMessage = '';
     this._humanTokens = {};
     this._previousHumanId = '';
-    this._alanaBots = [];
+    this._alanaBots = DEFAULT_ALANA_BOTS;
 
     this.logger.logDirect(`AppState initialised. Alana UUID: ${this._alanaSessionUUID}`);
   }
