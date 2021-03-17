@@ -53,6 +53,8 @@ export default (appState: AppState) => {
       alanaQuestion = messageFromUser;
     }
 
+    console.log(alanaQuestion);
+
     appState.logger.logDirect('Sent to Alana: ' + alanaQuestion);
     fetch(ALANA_URL, {
       method: 'POST',
@@ -168,31 +170,37 @@ export default (appState: AppState) => {
         appState.phase2TimerFlag = false;
       }
 
+      var filteredMessage = message.toLowerCase().split(' glue ').join(" ");
+      filteredMessage = filteredMessage.toLowerCase().split(' glue').join("");
+      filteredMessage = filteredMessage.toLowerCase().split('glue ').join("");
+      filteredMessage = filteredMessage.toLowerCase().split('glue').join(" ");
+      console.log(filteredMessage);
+
       //this is the new phase 1, we check if two "greeting" inputs are made before starting the GLUE talking session.
       if (appState.greetingCounter <= 2) {
         if (
-          messageContainsGreeting(message) === true &&
+          messageContainsGreeting(filteredMessage) === true &&
           appState.getHumanTokenFromId(ws.id) == undefined
         ) {
           appState.appendHumanToken(ws.id);
           const tokens = appState.getHumanTokenFromId(ws.id);
-          fetchData(appendedBody, message, tokens);
+          fetchData(appendedBody, filteredMessage, tokens);
         }
-      } else if (message.toLowerCase().includes('final answer is')) {
+      } else if (filteredMessage.toLowerCase().includes('final answer is')) {
         const humanNumber = appState.getHumanTokenFromId(ws.id);
         const tokens = `${humanNumber} glue respond`;
-        fetchData(appendedBody, message, tokens);
+        fetchData(appendedBody, filteredMessage, tokens);
       } else {
         //otherwise, wait 20 seconds and if no message appears, get GLUE response.
         //if a message is sent, reset this timer.
         const humanNumber = appState.getHumanTokenFromId(ws.id);
         const tokens = `${humanNumber} glue respond`;
-        appState.previousMessage = message;
+        appState.previousMessage = filteredMessage;
         appState.phase2Timer = setTimeout(
           fetchData,
           20000,
           appendedBody,
-          message,
+          filteredMessage,
           tokens
         );
         appState.phase2TimerFlag = true;
