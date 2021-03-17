@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Paper } from '@material-ui/core';
 
 import './App.css';
 
@@ -62,6 +62,16 @@ class UserView extends React.Component {
   render() {
     return (
       <div className="App">
+        <Paper style={{
+          padding: '10px 20px 10px 20px',
+          marginTop: 20,
+          width: '600px',
+          maxHeight: '600px',
+        }}>
+          <h2>Connecting to the chat</h2>
+          <p>1) Press 'Connect' button below. You'll be assigned an automatically generated username.</p>
+          <p>2) Start the conversation by saying 'Hello'.</p>
+        </Paper>
         <ChatWindow messages={this.state.serverMessages} />
         <ChatInput sendMessage={(message) => this.sendMessage(message)} />
         {this.state.connected === false ? 
