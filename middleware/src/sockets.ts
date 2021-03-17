@@ -173,7 +173,7 @@ export default (appState: AppState) => {
       var filteredMessage = message.toLowerCase().split(' glue ').join(" ");
       filteredMessage = filteredMessage.split(' glue').join("");
       filteredMessage = filteredMessage.split('glue ').join("");
-      filteredMessage = filteredMessage.split('\bglue\b').join(" ");
+      filteredMessage = filteredMessage.split('glue').join(" ");
 
       //this is the new phase 1, we check if two "greeting" inputs are made before starting the GLUE talking session.
       if (appState.greetingCounter <= 2) {
