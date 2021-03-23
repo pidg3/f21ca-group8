@@ -17,9 +17,9 @@ bot_script_rule = {
 	"rewind": "I have both hahaha Okay lets try another one, would you rather be able to talk with the animals or speak all foreign languages?",
 	"talk": " a tough one for me. I want to talk in all languages but if I choose animals, I will be the first bot to do that! Such an exciting prospect. Would you rather fart or burp glitter?",
 	"fart": "Well, one way or another it has to come out ",
-	"eights": "Answer is 20. 10 plus all of the  ",
+	"eights": "Answer is 20. 10 plus all of the ",
 	"divide": "False. 300 divided 0.5 is 600.",
-	"cigar": "Its a cigar. Okay next one ",
+	"cigar": "Its a cigar. Okay next one",
 	"nobel": "He invented Dynamite.",
 	"river": "Po. It is actually the longest river in Italy. Well, this is all I am programmed to do. Thank you and hope you enjoyed the GLUE experience. Bye!",
 }
@@ -71,7 +71,7 @@ def get_conv_details(log):
 					turn_counter[log.iloc[i][2]] = count +1
 					if log.iloc[i-1][4] == "silent_response":
 						glue_icebreaker = glue_icebreaker+1
-			if log.iloc[i][6] != "USER" and log.iloc[i][6] != "GLUE":
+			if log.iloc[i][6] != "USER" and log.iloc[i][6] != "glue":
 				alana_bot = alana_bot + 1
 			else:
 				count = turn_counter[log.iloc[i][2]]
@@ -134,9 +134,10 @@ def coherence_metric(UI_log, script):
 
 
 	for i in range(UI_log.shape[0]):
-		if UI_log[6][i] == "glue":
+		if UI_log[6][i] != "USER":
 			if UI_log[4][i] not in exceptions_list:
-				intent = [k for k, v in script.items() if v == UI_log[4][i]]
+				print( UI_log[4][i])
+				intent = [k for k, v in script.items() if v in str(UI_log[4][i])]
 				if len(intent) >= 1:
 					intent = intent[0]
 					log_responses[intent] = UI_log[4][i]
@@ -168,6 +169,8 @@ def coherence_metric(UI_log, script):
 				coherence_metric_2 = coherence_metric_2 + 1
 			else:
 				print("custom response")
+
+	print(log_responses)
 
 
 	print("Coherence metric 1 - checks whether all intents in the scripts were followed - {0}".format(coherence_metric_1))
@@ -271,10 +274,13 @@ def run():
 	for log in rg_logs_array:
 		rg_turn_counter[i][0], rg_score_1[i][0], rg_score_2[i][0], rg_glue_icebreaker[i][0], rg_alana_bot[i][0], rg_duration[i][0], rg_time_per_glue_turn[i][0], rg_coherence_metric_1[i][0], rg_coherence_metric_2[i][0], rg_coherence_metric_3[i][0] = evaluation(log, bot_script_rule)
 		i = i + 1
+		print("====================================================================================================================\n {0}".format(i))
 	i = 0
 	for log in cc_logs_array:
 		cc_turn_counter[i][0], cc_score_1[i][0], cc_score_2[i][0], cc_glue_icebreaker[i][0], cc_alana_bot[i][0], cc_duration[i][0], cc_time_per_glue_turn[i][0], cc_coherence_metric_1[i][0], cc_coherence_metric_2[i][0], cc_coherence_metric_3[i][0] = evaluation(log, bot_script_csv)
 		i = i + 1
+		print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=====================\n {0}".format(i))
+
 
 
 	likert_rating = load_rating("TabulatedQuestionResults.csv")
