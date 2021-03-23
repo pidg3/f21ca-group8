@@ -15,7 +15,7 @@ def check_data_distribution(data):
 
 
 def check_correlation(data_1, data_2):
-    if check_data_distribution(data_1) > 0.05:
+    if check_data_distribution(data_1) > 0.05 and check_data_distribution(data_2) > 0.05:
         stat, p = pearsonr(data_1, data_2)
     else:
         stat, p = spearmanr(data_1, data_2)
@@ -27,10 +27,10 @@ def check_correlation(data_1, data_2):
 
 
 def check_UX_statistical_significance(data_1, data_2):
-    if check_data_distribution(data_1) > 0.05:
+    if check_data_distribution(data_1) > 0.05 and check_data_distribution(data_2) > 0.05:
         stat, p = ttest_ind(data_1, data_2)
     else:
-        stat, p = wilcoxon(data_1, data_2)
+        stat, p = mannwhitneyu(data_1, data_2)
     print('stat=%.3f, p=%.3f' % (stat, p))
     if p > 0.05:
         print('No statistical difference between samples.')
@@ -40,7 +40,7 @@ def check_UX_statistical_significance(data_1, data_2):
 
 
 def check_icebreaker_statistical_significance(data_1, data_2):
-    if check_data_distribution(data_1) > 0.05:
+    if check_data_distribution(data_1) > 0.05 and check_data_distribution(data_2) > 0.05:
         stat, p = ttest_ind(data_1, data_2)
     else:
         stat, p = mannwhitneyu(data_1, data_2)
