@@ -6,11 +6,11 @@ from scipy.stats import ttest_ind, mannwhitneyu
 
 def check_data_distribution(data):
     stat, p = shapiro(data)
-    print('stat=%.3f, p=%.3f' % (stat, p))
+
     if p > 0.05:
         print('Data is normally distributed and therefore parametric tests will be used for analysis.')
     else:
-	    print('Data is not normally distributed and therefore non-parametric tests will be used for analysis.')
+        print('Data is not normally distributed and therefore non-parametric tests will be used for analysis.')
     return p
 
 
@@ -36,7 +36,7 @@ def check_UX_statistical_significance(data_1, data_2):
         print('No statistical difference between samples.')
     else:
         print('Samples are statistically different from each other.')
-
+    print("*********************************************************")
 
 
 def check_icebreaker_statistical_significance(data_1, data_2):
@@ -46,6 +46,7 @@ def check_icebreaker_statistical_significance(data_1, data_2):
         stat, p = mannwhitneyu(data_1, data_2)
     print('stat=%.3f, p=%.3f' % (stat, p))
     if p > 0.05:
-	    print('No statistical difference between samples.')
+        print('No statistical difference between samples.')
     else:
-	    print('Samples are statistically different from each other.')
+        print('Samples are statistically different from each other.')
+    print("*********************************************************")
