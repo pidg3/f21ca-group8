@@ -1,0 +1,127 @@
+rules:
+
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Hello
+  steps:
+  - intent: greet
+  - action: utter_response
+
+- rule: location
+  steps:
+  - intent: location
+  - action: custom_location_response
+
+ 
+- rule: weather
+  steps:
+  - intent: weather
+  - action: custom_weather_response
+
+
+- rule: colour
+  steps:
+  - intent: colour
+  - action: custom_colour_response_two
+  - action: custom_colour_response_three
+  - action: custom_colour_response
+
+- rule: animal
+  steps:
+  - intent: animal
+  - action: custom_animal_response_two
+  - action: custom_animal_response_three
+  - action: custom_animal_response
+
+
+- rule: interest
+  steps:
+  - intent: interest
+  - action: custom_interest_response
+
+
+- rule: word
+  steps:
+  - intent: word
+  - action: custom_word_response
+
+
+- rule: response
+  steps:
+  - intent: response
+  - action: custom_response_response
+
+
+- rule: balloon
+  steps:
+  - intent: balloon
+  - action: custom_balloon_response
+
+- rule: live
+  steps:
+  - intent: live
+  - action: custom_live_response
+
+- rule: rewind
+  steps:
+  - intent: rewind
+  - action: custom_rewind_response
+
+- rule: talk
+  steps:
+  - intent: talk
+  - action: custom_talk_response
+
+- rule: fart
+  steps:
+  - intent: fart
+  - action: custom_fart_response
+
+- rule: eights
+  steps:
+  - intent: eights
+  - action: custom_eights_response
+
+- rule: divide
+  steps:
+  - intent: divide
+  - action: custom_divide_response
+
+- rule: cigar
+  steps:
+  - intent: cigar
+  - action: custom_cigar_response
+
+- rule: nobel
+  steps:
+  - intent: nobel
+  - action: custom_nobel_response
+
+- rule: river
+  steps:
+  - intent: river
+  - action: custom_river_response
+ 
+
+- rule: default
+  steps:
+  - intent: nlu_fallback
+  - action: custom_default_response
+
+- rule: profanity
+  steps:
+  - intent: profanity
+  - action: custom_profanity_response
+
+
+
+
+
+
+
+
+

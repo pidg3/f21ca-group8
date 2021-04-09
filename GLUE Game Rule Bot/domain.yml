@@ -1,0 +1,91 @@
+version: "2.0"
+
+intents:
+  - greet
+  - location 
+  - weather
+  - colour
+  - animal
+  - interest
+  - word
+  - response
+  - balloon
+  - live
+  - rewind
+  - talk
+  - fart
+  - eights
+  - divide
+  - cigar
+  - nobel
+  - river
+  - profanity
+
+  
+
+entities:
+  - key
+  - location
+  - weather
+  - colour 
+  - human
+  - animal
+  - interest
+  - word
+  - response
+  - balloon
+  - live
+  - rewind 
+  - talk 
+  - fart 
+  - eights
+  - divide
+  - cigar
+  - nobel
+  - river
+  - profanity
+
+  
+actions:
+  - utter_greet
+  - utter_default
+  - custom_location_response
+  - custom_weather_response
+  - custom_colour_response 
+  - custom_colour_response_two
+  - custom_colour_response_three
+  - custom_animal_response
+  - custom_animal_response_two
+  - custom_animal_response_three
+  - custom_interest_response
+  - custom_word_response
+  - custom_response_response
+  - custom_balloon_response
+  - custom_live_response
+  - custom_rewind_response
+  - custom_talk_response
+  - custom_fart_response
+  - custom_eights_response
+  - custom_divide_response
+  - custom_cigar_response
+  - custom_nobel_response
+  - custom_river_response
+  - custom_default_response
+  - custom_profanity_response
+
+   
+responses:
+  utter_greet:
+  - text: "Hi, I am Glue, a social bot. I am looking forward to talking to you today. Where are you both right now?"
+
+  utter_response:
+  - text: "Hello"
+
+  utter_default:
+  - text: "I am sorry. I seem to be out of sync. Please continue the conversation without me and I will try to get back on board"
+
+   
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
