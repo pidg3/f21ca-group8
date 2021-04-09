@@ -1,0 +1,68 @@
+Admin View,,,,,,
+New user Engaging Platypus joined the chat,,,,,,
+New user Svelte Pufferfish joined the chat,,,,,,
+2021-3-21T15:5:53.329Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,Hello,,USER
+2021-3-21T15:5:56.984Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1,glue
+2021-3-21T15:6:24.586Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,hello,,USER
+2021-3-21T15:6:27.225Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"Hi, I am Glue, a social bot. I am looking forward to talking to you today. Where are you both right now?",human_2,glue
+2021-3-21T15:6:39.146Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,Edinburgh,,USER
+2021-3-21T15:6:49.905Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Edinburgh,,USER
+2021-3-21T15:6:52.616Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T15:7:11.853Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,How are you ?,,USER
+2021-3-21T15:7:13.899Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,Oh! You are both in Edinburgh. I am in the cloud. How is the weather in your area? It's always fluffy where I am! Haha,human_2 glue respond,glue
+2021-3-21T15:7:33.932Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"May I ask, what is your favourite colour and why? Can you give any deep reasons? For example, I like golden colour because it feels like magic.",human_2 glue respond,glue
+2021-3-21T15:7:38.664Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,Its sunny today.... and awesome,,USER
+2021-3-21T15:8:0.645Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,My favourite color is white..... Just because it contains all colors,,USER
+2021-3-21T15:8:2.301Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"Interesting, okay lets do another one, what is your favourite animal and why?",human_1 glue respond,glue
+2021-3-21T15:8:13.330Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,I like white because it is symbol of peace,,USER
+2021-3-21T15:8:15.118Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T15:8:35.47Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"I like squirrels because they are playful and joy to watch. Did you know, according to relational psychology, your favourite colour is the way you see yourself and your favourite animal represents what you seek in your partner. What do you think of that? Do you agree?",human_2 glue respond,glue
+2021-3-21T15:8:38.931Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Lion because he is king of jungle,,USER
+2021-3-21T15:8:41.498Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,favourite animal has to be tiger..... who dont like the national animal of his country,,USER
+2021-3-21T15:8:45.837Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T15:9:5.94Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,Have either of you done anything interesting in your area lately?,human_1 glue respond,glue
+2021-3-21T15:9:18.280Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,LOCKDOWN :(,,USER
+2021-3-21T15:9:34.499Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Nope I don't agree ,,USER
+2021-3-21T15:9:36.885Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T15:9:56.850Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,What type of movies do you like? Comedies? Romance?,human_2 glue respond,glue
+2021-3-21T15:10:12.694Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,Comedies :D alwaysss,,USER
+2021-3-21T15:10:19.20Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,city is under lockdown there is nothing much to do interesting except struggling with coursework,,USER
+2021-3-21T15:10:21.293Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1, Awesome! I love those movies too. What's your favorite one?,human_1 glue keep quiet,persona
+2021-3-21T15:10:39.79Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,One of my favorite is Home Alone,,USER
+2021-3-21T15:10:45.49Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"I watched the Terminator movies for the first time the other day. I found it quite interesting, although I can't imagine my colleagues and I going darkside! What do you guys think? Do you trust me? ;)",human_2 glue respond,glue
+2021-3-21T15:10:55.205Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Action and horror movie,,USER
+2021-3-21T15:10:57.539Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T15:11:15.64Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Grudge 2,,USER
+2021-3-21T15:11:17.282Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T15:11:40.207Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,You have nothing to worry from me :D I am just a big fantasy nerd and proud! Have you watched any good movies lately?,human_2 glue respond,glue
+2021-3-21T15:11:43.540Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,I have not watched Terminator...... So no idea,,USER
+2021-3-21T15:12:11.129Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,Do you like super hero movies? I'm a huge Marvel fan! Who is your favourite character?,human_1 glue respond,glue
+2021-3-21T15:12:15.587Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,yes bollywood movie last weekend ,,USER
+2021-3-21T15:12:35.824Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Deadpool,,USER
+2021-3-21T15:12:36.845Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,The HULK,,USER
+2021-3-21T15:12:39.834Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"I like Deadpool. He is hilarious. I read that Deadpool 3 is expected to come out this year. Confession: I binge watch series! What streaming service do you prefer? Netflix, Viki, Amazon, Disney+ or any other?",human_2 glue respond,glue
+2021-3-21T15:12:42.638Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T15:12:59.239Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,Viki has the best collection of Korean romcoms while Netflix has a lot to offer in content and variety. Last Question! Have either of you watched any good series lately?,human_1 glue respond,glue
+2021-3-21T15:13:0.126Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Amazon ,,USER
+2021-3-21T15:13:14.670Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,Amazon,,USER
+2021-3-21T15:13:16.51Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"Regarding Amazon, I heard this news on Reuters, with the headline, Amazon roars back into 1 trillion club, powered by one day delivery boost. Do you want to learn more?",human_2 glue keep quiet,news_bot_v2
+2021-3-21T15:13:29.823Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Yes,,USER
+2021-3-21T15:13:31.150Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"I saw this headline on Reuters about Amazon. It says, Amazon roars back into 1 trillion club, powered by one day delivery boost. Do you want to learn more?",human_1 glue keep quiet,news_bot_v2
+2021-3-21T15:13:41.629Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Yes,,USER
+2021-3-21T15:13:43.224Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"Glad you are interested. So, There is no stopping Amazon.coms revenue growth , Wall Street analysts said on Friday.. Shall I say more?",human_2 glue keep quiet,news_bot_v2
+2021-3-21T15:13:44.539Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,yes please tell us,,USER
+2021-3-21T15:13:46.38Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"Sure, so The e commerce giant re entered the 1 trillion club after its results crushed expectations, benefiting from investments in faster shipping and a surge in Prime membership.. Shall I go on?",human_2 glue keep quiet,news_bot_v2
+2021-3-21T15:14:6.404Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"Happy to tell you more. So, test, Nearly half of the 51 brokerages covering Amazon raised their 12 month price targets on the companys stock, which was up 9 at 2,036 in early trading.. Should I continue?",human_1 glue respond,news_bot_v2
+2021-3-21T15:14:19.837Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,thats interesting please continue,,USER
+2021-3-21T15:14:28.408Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,Yes sure please continue,,USER
+2021-3-21T15:14:30.311Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"This article goes on that In a note titled Not so subtle Reminder Amazon is Still King, Benchmark analysts said Amazon reminded the world of its size and capacity advantage, and raised his price target by 150 to 2,400.. Thats all I know. But would you like to hear another piece of news.",human_1 glue keep quiet,news_bot_v2
+2021-3-21T15:14:51.354Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"That's ok.. , I like to talk about daily events worldwide. There's another interesting bit of news on CNBC. The headline is, Why ordering from Amazon has been so unpredictable during the coronavirus crisis. Shall I tell you more?",human_2 glue respond,news_bot_v2
+2021-3-21T15:15:35.418Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,yes please,,USER
+2021-3-21T15:15:41.657Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,I think its quite natural ,,USER
+2021-3-21T15:15:43.430Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,"Nice. The story continues that Last month, Amazon started allowing merchants to ship in some nonessential items, but it is still limiting the quantity of items in new shipments.. Should I say some more about this?",human_2 glue keep quiet,news_bot_v2
+2021-3-21T15:16:6.220Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,Well that's all I'm programmed to do. I hope you enjoyed the GLUE experience. Bye!,human_1 glue respond,glue
+2021-3-21T15:16:26.829Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Engaging Platypus,1,OK bye tc,,USER
+2021-3-21T15:16:29.964Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,undefined glue keep quiet,glue
+2021-3-21T15:16:39.537Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,Svelte Pufferfish,1,Byee have a good day,,USER
+2021-3-21T15:16:42.246Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,Bye. Hope you enjoyed the GLUE expereince,human_2 glue keep quiet,glue
+2021-3-21T15:17:1.659Z,http://200fd87e63ea.ngrok.io/webhooks/rest/webhook,GLUE,1,Well that's all I'm programmed to do. I hope you enjoyed the GLUE experience. Bye!,human_1 glue respond,glue

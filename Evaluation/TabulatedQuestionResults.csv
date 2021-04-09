@@ -1,0 +1,13 @@
+1,2,3,4,5,6,7,8
+01/RG,5,5,4,3,4,5,Adequate
+02/RG,4,4,3,3,2,3,Too Short
+03/RG,4,4,3,3,3,3,Adequate
+04/RG,5,5,4,3,4,4,Adequate
+05/RG,5,5,4,5,5,5,Adequate
+06/RG,3,2,1,2,1,1,Adequate
+07/CC,5,4,5,5,5,5,Adequate
+08/CC,5,4,3,4,3,3,Too Long
+09/CC,5,5,5,4,4,5,Adequate
+10/CC,5,4,5,4,4,4,Too Short
+11/CC,5,2,1,1,2,1,Too Short
+12/CC,3,4,3,5,4,4,Adequate

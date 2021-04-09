@@ -1,0 +1,70 @@
+Admin View,,,,,,
+New user Svelte Platypus joined the chat,,,,,,
+New user Engaging Babyshark joined the chat,,,,,,
+2021-3-20T11:7:8.474Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,hello,,USER
+2021-3-20T11:7:9.802Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Hi, I am Glue, a social bot. I am looking forward to talking to you today. Where are you both right now?",human_1,glue
+2021-3-20T11:7:27.939Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,At home :),,USER
+2021-3-20T11:7:40.731Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,Edinburgh,,USER
+2021-3-20T11:9:22.893Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,Hello,human_2,glue
+2021-3-20T11:9:29.346Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,hello,,USER
+2021-3-20T11:9:42.348Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,hi,,USER
+2021-3-20T11:9:44.175Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,undefined glue keep quiet,glue
+2021-3-20T11:10:5.368Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,Hello,human_1 glue respond,glue
+2021-3-20T11:12:2.542Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Earnest Babyshark,1,edinbugh too ,,USER
+2021-3-20T11:12:27.330Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,And I am in the cloud. How is the weather in your area?,human_2 glue respond,glue
+2021-3-20T11:12:42.883Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,sunny :),,USER
+2021-3-20T11:12:53.849Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,It's sunny after a long time.,,USER
+2021-3-20T11:12:55.817Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-20T11:13:17.655Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"It is always fluffy where I am, haha! May I ask, what is your favourite colour and why? Can you give any deep reasons? For example, I like golden colour because it feels like magic",undefined glue respond,glue
+2021-3-20T11:13:33.179Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Red. I don't know why :),,USER
+2021-3-20T11:13:54.822Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Okay lets do another one, what is your favourite animal and why?",human_1 glue respond,glue
+2021-3-20T11:14:23.934Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,Mine is red too.,,USER
+2021-3-20T11:14:26.601Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Panda. Also not sure why :) ,,USER
+2021-3-20T11:14:28.720Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,undefined glue keep quiet,glue
+2021-3-20T11:14:49.57Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Oh! I like squirrels because they are playful and joy to watch. Did you know, according to relational psychology, your favourite colour is way you see yourself. And your favourite animal represents what you seek in your partner? I bet that got you thinking!? hahaha?",human_1 glue respond,glue
+2021-3-20T11:15:11.706Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,I am not fond of animals.,,USER
+2021-3-20T11:15:34.671Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,You have to wear a t-shirt with one word on it for one year. Which word do you choose?,undefined glue respond,glue
+2021-3-20T11:15:37.222Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,Makes sense,,USER
+2021-3-20T11:16:2.194Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Interesting word choices, as per social relational experts the word summarizes yourself. I choose GLUE. Yes, it is a clear marketing strategy hahaha",undefined glue respond,glue
+2021-3-20T11:16:18.606Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,not sure i'll have to think about that,,USER
+2021-3-20T11:16:20.608Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,Lazarus,,USER
+2021-3-20T11:16:22.875Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-20T11:16:44.896Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,Would you rather ride in a hot air balloon or fly a plane? Why?,undefined glue respond,glue
+2021-3-20T11:16:58.900Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,neither. afraid of heights :(,,USER
+2021-3-20T11:17:18.61Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,fly a plane. ,,USER
+2021-3-20T11:17:21.687Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-20T11:17:41.867Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,Interesting! Being in the cloud I would prefer a submarine haha. Would you rather live for 500 years or be a billionaire for one year?,undefined glue respond,glue
+2021-3-20T11:17:51.518Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,billionaire,,USER
+2021-3-20T11:18:0.896Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,billionaire for a year,,USER
+2021-3-20T11:18:2.967Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-20T11:18:24.404Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Hmmm, I would prefer eternity. Would you rather have a rewind button or a pause button on your life? Why?",undefined glue respond,glue
+2021-3-20T11:18:37.299Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,rewind,,USER
+2021-3-20T11:18:51.131Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,pause. I could use some sleep,,USER
+2021-3-20T11:18:53.287Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-20T11:19:15.190Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"I have both hahaha Okay lets try another one, would you rather be able to talk with the animals or speak all foreign languages?",undefined glue respond,glue
+2021-3-20T11:19:29.151Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,speak all foreign languages,,USER
+2021-3-20T11:19:39.486Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,talk with animals,,USER
+2021-3-20T11:19:41.879Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,undefined glue keep quiet,glue
+2021-3-20T11:20:2.597Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"That’s a tough one for me. I want to talk in all languages but if I choose animals, I will be the first bot to do that! Such an exciting prospect. Would you rather fart or burp glitter?",human_1 glue respond,glue
+2021-3-20T11:20:19.305Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,pass,,USER
+2021-3-20T11:20:20.55Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,burp,,USER
+2021-3-20T11:20:22.107Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-20T11:20:42.971Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Well, one way or another it has to come out ;) Okay lets play Quiz, how many 8 are there from 1-100? Please discuss with other humans in the chat. To submit your final answer type ‘final answer is…….’",undefined glue respond,glue
+2021-3-20T11:21:4.228Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,you any good with numbers? i'm not,,USER
+2021-3-20T11:21:26.116Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Answer is 20. 10 plus all of the 80’s – 80 to 89. Okay another one, 300 divided by ½ is 150. Is it true? To submit your final answer type ‘final answer is…….’",human_1 glue respond,glue
+2021-3-20T11:21:26.594Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,final answer is 20,,USER
+2021-3-20T11:21:26.920Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,i figure about 11,,USER
+2021-3-20T11:21:29.320Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,False. 300 divided 0.5 is 600. Here comes another one - What is a Winston Churchill? To submit your final answer type ‘final answer is…….’,undefined glue respond,glue
+2021-3-20T11:21:30.548Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,oh i was off,,USER
+2021-3-20T11:21:34.477Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-20T11:21:54.272Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Its a cigar. Okay next one- How did Alfred Nobel make his money? Yes, the guy whose face is on the Nobel prize coin! To submit your final answer type ‘final answer is…….’",human_1 glue respond,glue
+2021-3-20T11:22:15.5Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,final answer is dynamite,,USER
+2021-3-20T11:22:17.304Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"He invented Dynamite. He literally blew things to riches. Lets do one more, which river in Europe has the shortest name? To submit your final answer type ‘final answer is…….’",human_1 glue respond,glue
+2021-3-20T11:22:42.675Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,final answer is elb,,USER
+2021-3-20T11:22:46.114Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,"Po. It is actually the longest river in Italy. Well, this is all I am programmed to do. Thank you and hope you enjoyed the GLUE experience. Bye!",human_1 glue respond,glue
+2021-3-20T11:23:1.669Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,need to work on my history and geography,,USER
+2021-3-20T11:23:19.478Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Svelte Platypus,1,Bye!,,USER
+2021-3-20T11:23:23.259Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,undefined glue keep quiet,glue
+2021-3-20T11:23:30.376Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,bye,,USER
+2021-3-20T11:23:31.713Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,undefined glue keep quiet,glue
+2021-3-20T11:23:53.190Z,http://f68a2afd3b9d.ngrok.io/webhooks/rest/webhook,GLUE,1,This is all I am programmed to do. Thank you and hope you enjoyed the GLUE experience. Bye!,human_1 glue respond,glue

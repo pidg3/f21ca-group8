@@ -1,0 +1,72 @@
+Admin View,,,,,,
+New user Amorous Camel joined the chat,,,,,,
+New user Engaging Babyshark joined the chat,,,,,,
+2021-3-21T18:37:47.183Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Hello,,USER
+2021-3-21T18:37:50.629Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1,glue
+2021-3-21T18:38:51.731Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,"Hi, how are you?!!!",,USER
+2021-3-21T18:40:6.344Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,Hello,,USER
+2021-3-21T18:40:9.403Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,"Hi, I am Glue, a social bot. I am looking forward to talking to you today. Where are you both right now?",human_2,glue
+2021-3-21T18:40:18.864Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,Edinburgh,,USER
+2021-3-21T18:40:27.948Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Same! Edinburgh too,,USER
+2021-3-21T18:40:34.93Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T18:40:45.517Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,"Hey, where in Edinburgh do you live?",,USER
+2021-3-21T18:40:50.36Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:41:4.963Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,"currie , what about you ",,USER
+2021-3-21T18:41:9.694Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:41:28.193Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,Oh! You are both in Edinburgh. I am in the cloud. How is the weather in your area? It's always fluffy where I am! Haha,human_2 glue respond,glue
+2021-3-21T18:41:28.477Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Currie too! I live on campus ,,USER
+2021-3-21T18:41:40.966Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,Great! me too,,USER
+2021-3-21T18:41:45.519Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:42:1.846Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,"The weather has been amazing this week, right?",,USER
+2021-3-21T18:42:5.383Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,"May I ask, what is your favourite colour and why? Can you give any deep reasons? For example, I like golden colour because it feels like magic.",human_2 glue respond,glue
+2021-3-21T18:42:24.793Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,"Interesting, okay lets do another one, what is your favourite animal and why?",human_1 glue respond,glue
+2021-3-21T18:42:36.654Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,"Weather is marvelous, fresh air & cool atmosphere ",,USER
+2021-3-21T18:42:50.885Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Mine is Red (Darker ideally),,USER
+2021-3-21T18:42:53.812Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T18:43:3.181Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,But dont really have a deep reason why,,USER
+2021-3-21T18:43:7.325Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,How about you?,,USER
+2021-3-21T18:43:8.143Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:43:12.769Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:43:30.680Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,"I like squirrels because they are playful and joy to watch. Did you know, according to relational psychology, your favourite colour is the way you see yourself and your favourite animal represents what you seek in your partner. What do you think of that? Do you agree?",human_1 glue respond,glue
+2021-3-21T18:43:34.265Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,"cheetah , fastest animal",,USER
+2021-3-21T18:43:57.575Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,Have either of you done anything interesting in your area lately?,human_2 glue respond,glue
+2021-3-21T18:44:20.791Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Mine is something similar ,,USER
+2021-3-21T18:44:45.283Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,What type of movies do you like? Comedies? Romance?,human_1 glue respond,glue
+2021-3-21T18:44:51.128Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,I like tiger. Just like them for their great abilities,,USER
+2021-3-21T18:44:54.314Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,i dont know the psychology ,,USER
+2021-3-21T18:44:57.308Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:45:3.518Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,comedy,,USER
+2021-3-21T18:45:7.362Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T18:45:27.427Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,"I watched the Terminator movies for the first time the other day. I found it quite interesting, although I can't imagine my colleagues and I going darkside! What do you guys think? Do you trust me? ;)",human_2 glue respond,glue
+2021-3-21T18:45:36.920Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Same! I always try to go for Comedy films ,,USER
+2021-3-21T18:45:38.187Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,Booksmart,,USER
+2021-3-21T18:45:41.433Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1, Interesting. What's your favorite movie?,human_1 glue keep quiet,persona
+2021-3-21T18:46:2.968Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,You have nothing to worry from me :D I am just a big fantasy nerd and proud! Have you watched any good movies lately?,human_2 glue respond,glue
+2021-3-21T18:46:12.724Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,what about you,,USER
+2021-3-21T18:46:35.967Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,Do you like super hero movies? I'm a huge Marvel fan! Who is your favourite character?,human_2 glue respond,glue
+2021-3-21T18:46:58.170Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Captain America is my fav,,USER
+2021-3-21T18:46:59.699Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,I'm really not into movies,,USER
+2021-3-21T18:47:4.854Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:47:14.150Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,but spider man is one my fav,,USER
+2021-3-21T18:47:17.85Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T18:47:19.151Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,Are you more of a TV shows person then?,,USER
+2021-3-21T18:47:23.507Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T18:47:34.146Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,What's your fav TV series?,,USER
+2021-3-21T18:47:38.216Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:47:39.621Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,yeah may be,,USER
+2021-3-21T18:47:42.608Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_1 glue keep quiet,glue
+2021-3-21T18:47:56.63Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,"what about you, ",,USER
+2021-3-21T18:47:59.349Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T18:48:20.207Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,"I like Deadpool. He is hilarious. I read that Deadpool 3 is expected to come out this year. Confession: I binge watch series! What streaming service do you prefer? Netflix, Viki, Amazon, Disney+ or any other?",human_2 glue respond,glue
+2021-3-21T18:49:5.28Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,"netflix, amazon",,USER
+2021-3-21T18:49:11.547Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,I have three of the streaming services ,,USER
+2021-3-21T18:49:15.834Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,silent_response,human_2 glue keep quiet,glue
+2021-3-21T18:49:34.812Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,Viki has the best collection of Korean romcoms while Netflix has a lot to offer in content and variety. Last Question! Have either of you watched any good series lately?,human_1 glue respond,glue
+2021-3-21T18:49:38.205Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,"interesting,",,USER
+2021-3-21T18:49:38.893Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,#covid,,USER
+2021-3-21T18:49:41.24Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,I'm so sorry test I get so many conversations at the same time. Could you repeat that please?,human_2 glue keep quiet,empty_bucket
+2021-3-21T18:50:4.81Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,Well that's all I'm programmed to do. I hope you enjoyed the GLUE experience. Bye!,human_1 glue respond,glue
+2021-3-21T18:50:24.473Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Amorous Camel,1,bye! i enjoyed as well ,,USER
+2021-3-21T18:50:31.39Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,Engaging Babyshark,1,I've been re-watching Modern Family lately ,,USER
+2021-3-21T18:50:33.567Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,Bye. Hope you enjoyed the GLUE expereince,human_2 glue keep quiet,glue
+2021-3-21T18:50:54.483Z,http://1cc9bf77f342.ngrok.io/webhooks/rest/webhook,GLUE,1,Well that's all I'm programmed to do. I hope you enjoyed the GLUE experience. Bye!,human_1 glue respond,glue
