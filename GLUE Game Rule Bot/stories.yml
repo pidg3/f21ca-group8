@@ -1,0 +1,26 @@
+version: "2.0"
+
+stories:
+
+#- story: greet
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+
+#- story: goodbyes
+#  steps:
+#  - intent: exit
+# - action: utter_goodbye
+
+#- story: location
+#  steps:
+#  - intent: location
+#  - action: custom_location_response
+
+ 
+
+
+
+
+
+

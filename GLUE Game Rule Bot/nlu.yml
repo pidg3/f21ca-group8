@@ -1,0 +1,1584 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - [human_1](human) hello
+    - [human_1](human) hi
+    - [human_1](human) hiya
+    - [human_1](human) holla
+    - [human_2](human) hello
+    - [human_2](human) hi
+    - [human_2](human) hiya
+    - [human_2](human) holla
+- intent: location
+  examples: |
+    - [human_1](human) [glue keep quiet](key) im in [edinburgh](location)
+    - [human_1](human) [glue keep quiet](key) i m in [london](location)
+    - [human_1](human) [glue keep quiet](key) im in [seattle](location)
+    - [human_1](human) [glue keep quiet](key) im in [washington](location)
+    - [human_1](human) [glue keep quiet](key) im in [toronto](location)
+    - [human_1](human) [glue keep quiet](key) im in [ghana](location)
+    - [human_1](human) [glue keep quiet](key) im in [elgin](location)
+    - [human_1](human) [glue keep quiet](key) im in [seattle](location) [usa](location)
+    - [human_1](human) [glue keep quiet](key) im in [edinburgh](location) [scotland](location)
+    - [human_1](human) [glue keep quiet](key) im in [london](location) [england](location)
+    - [human_1](human) [glue keep quiet](key) im in [madrid](location) [spain](location)
+    - [human_1](human) [glue keep quiet](key) im in [rome](location) [italy](location)
+    - [human_1](human) [glue keep quiet](key) im in the [livingroom](location)
+    - [human_1](human) [glue keep quiet](key) im in the [lounge](location)
+    - [human_1](human) [glue keep quiet](key) im in the [sitting room](location)
+    - [human_1](human) [glue keep quiet](key) im in the [kitchen](location)
+    - [human_1](human) [glue keep quiet](key) im in the [diningroom](location)
+    - [human_1](human) [glue keep quiet](key) im in the [bathroom](location)
+    - [human_1](human) [glue keep quiet](key) im in the [house](location)
+    - [human_1](human) [glue keep quiet](key) im in my [bedroom](location)
+    - [human_1](human) [glue keep quiet](key) im in my [room](location)
+    - [human_1](human) [glue keep quiet](key) im in my [flat](location) in [edinburgh](location)
+    - [human_1](human) [glue keep quiet](key) im working from [home](location)
+    - [human_1](human) [glue keep quiet](key) im in the [lab](location)
+    - [human_1](human) [glue keep quiet](key) im on the [loo](location)
+    - [human_1](human) [glue keep quiet](key) im on the [toilet](location)
+    - [human_1](human) [glue keep quiet](key) im on the [bus](location)
+    - [human_1](human) [glue keep quiet](key) im on the [floor](location)
+    - [human_1](human) [glue respond](key) i m in [london](location)
+    - [human_1](human) [glue respond](key) im in [edinburgh](location)
+    - [human_1](human) [glue respond](key) im in [seattle](location)
+    - [human_1](human) [glue respond](key) im in [washington](location)
+    - [human_1](human) [glue respond](key) im in [toronto](location)
+    - [human_1](human) [glue respond](key) im in [ghana](location)
+    - [human_1](human) [glue respond](key) im in [elgin](location)
+    - [human_1](human) [glue respond](key) im in [seattle](location) [usa](location)
+    - [human_1](human) [glue respond](key) im in [edinburgh](location) [scotland](location)
+    - [human_1](human) [glue respond](key) im in [london](location) [england](location)
+    - [human_1](human) [glue respond](key) im in [madrid](location) [spain](location)
+    - [human_1](human) [glue respond](key) im in [rome](location) [italy](location)
+    - [human_1](human) [glue respond](key) im in the [livingroom](location)
+    - [human_1](human) [glue respond](key) im in the [lounge](location)
+    - [human_1](human) [glue respond](key) im in the [sitting room](location)
+    - [human_1](human) [glue respond](key) im in the [kitchen](location)
+    - [human_1](human) [glue respond](key) im in the [diningroom](location)
+    - [human_1](human) [glue respond](key) im in the [bathroom](location)
+    - [human_1](human) [glue respond](key) im at my [house](location)
+    - [human_1](human) [glue respond](key) im in my [bedroom](location)
+    - [human_1](human) [glue respond](key) im in my [room](location)
+    - [human_1](human) [glue respond](key) im at my [flat](location) in [edinburgh](location)
+    - [human_1](human) [glue respond](key) im working from [home](location)
+    - [human_1](human) [glue respond](key) im in the [lab](location)
+    - [human_1](human) [glue respond](key) im on the [loo](location)
+    - [human_1](human) [glue respond](key) im on the [toilet](location)
+    - [human_1](human) [glue respond](key) im on the [bus](location)
+    - [human_1](human) [glue respond](key) im on the [floor](location)
+    - [human_2](human) [glue respond](key) i m in [london](location)
+    - [human_2](human) [glue keep quiet](key) i m in [london](location)
+    - [human_2](human) [glue keep quiet](key) im in [edinburgh](location)
+    - [human_2](human) [glue keep quiet](key) im in [seattle](location)
+    - [human_2](human) [glue keep quiet](key) im in [washington](location)
+    - [human_2](human) [glue keep quiet](key) im in [toronto](location)
+    - [human_2](human) [glue keep quiet](key) im in [ghana](location)
+    - [human_2](human) [glue keep quiet](key) im in [elgin](location)
+    - [human_2](human) [glue keep quiet](key) im in [seattle](location) [usa](location)
+    - [human_2](human) [glue keep quiet](key) im in [edinburgh](location) [scotland](location)
+    - [human_2](human) [glue keep quiet](key) im in [london](location) [england](location)
+    - [human_2](human) [glue keep quiet](key) im in [madrid](location) [spain](location)
+    - [human_2](human) [glue keep quiet](key) im in [rome](location) [italy](location)
+    - [human_2](human) [glue keep quiet](key) im in the [livingroom](location)
+    - [human_2](human) [glue keep quiet](key) im in the [lounge](location)
+    - [human_2](human) [glue keep quiet](key) im in the [sitting room](location)
+    - [human_2](human) [glue keep quiet](key) im in the [kitchen](location)
+    - [human_2](human) [glue keep quiet](key) im in the [diningroom](location)
+    - [human_2](human) [glue keep quiet](key) im in the [bathroom](location)
+    - [human_2](human) [glue keep quiet](key) im in the [house](location)
+    - [human_2](human) [glue keep quiet](key) im in my [bedroom](location)
+    - [human_2](human) [glue keep quiet](key) im in my [room](location)
+    - [human_2](human) [glue keep quiet](key) im in my [flat](location) in [edinburgh](location)
+    - [human_2](human) [glue keep quiet](key) im working from [home](location)
+    - [human_2](human) [glue keep quiet](key) im in the [lab](location)
+    - [human_2](human) [glue keep quiet](key) im on the [loo](location)
+    - [human_2](human) [glue keep quiet](key) im on the [toilet](location)
+    - [human_2](human) [glue keep quiet](key) im on the [bus](location)
+    - [human_2](human) [glue keep quiet](key) im on the [floor](location)
+    - [human_2](human) [glue respond](key) im in [edinburgh](location)
+    - [human_2](human) [glue respond](key) im in [seattle](location)
+    - [human_2](human) [glue respond](key) im in [washington](location)
+    - [human_2](human) [glue respond](key) im in [toronto](location)
+    - [human_2](human) [glue respond](key) im in [ghana](location)
+    - [human_2](human) [glue respond](key) im in [elgin](location)
+    - [human_2](human) [glue respond](key) im in [seattle](location) [usa](location)
+    - [human_2](human) [glue respond](key) im in [edinburgh](location) [scotland](location)
+    - [human_2](human) [glue respond](key) im in [london](location) [england](location)
+    - [human_2](human) [glue respond](key) im in [madrid](location) [spain](location)
+    - [human_2](human) [glue respond](key) im in [rome](location) [italy](location)
+    - [human_2](human) [glue respond](key) im in the [livingroom](location)
+    - [human_2](human) [glue respond](key) im in the [lounge](location)
+    - [human_2](human) [glue respond](key) im in the [sitting room](location)
+    - [human_2](human) [glue respond](key) im in the [kitchen](location)
+    - [human_2](human) [glue respond](key) im in the [diningroom](location)
+    - [human_2](human) [glue respond](key) im in the [bathroom](location)
+    - [human_2](human) [glue respond](key) im at my [house](location)
+    - [human_2](human) [glue respond](key) im in my [bedroom](location)
+    - [human_2](human) [glue respond](key) im in my [room](location)
+    - [human_2](human) [glue respond](key) im at my [flat](location) in [edinburgh](location)
+    - [human_2](human) [glue respond](key) im working from [home](location)
+    - [human_2](human) [glue respond](key) im in the [lab](location)
+    - [human_2](human) [glue respond](key) im on the [loo](location)
+    - [human_2](human) [glue respond](key) im on the [toilet](location)
+    - [human_2](human) [glue respond](key) im on the [bus](location)
+    - [human_2](human) [glue respond](key) im on the [floor](location)
+- intent: weather
+  examples: |
+    - [human_1](human) [glue keep quiet](key) it is [raining](weather)
+    - [human_1](human) [glue keep quiet](key) it is [foggy](weather)
+    - [human_1](human) [glue keep quiet](key) not bad, bright and [sunny](weather)
+    - [human_1](human) [glue keep quiet](key) its [pouring](weather) down
+    - [human_1](human) [glue keep quiet](key) it is [warm](weather)
+    - [human_1](human) [glue keep quiet](key) it is [snowing](weather)
+    - [human_1](human) [glue keep quiet](key) [raining](weather)
+    - [human_1](human) [glue keep quiet](key) its quite [windy](weather)
+    - [human_1](human) [glue keep quiet](key) its [blustery](weather) outside
+    - [human_1](human) [glue keep quiet](key) its quite [cold](weather) outside
+    - [human_1](human) [glue keep quiet](key) its kinda [cloudy](weather)
+    - [human_1](human) [glue keep quiet](key) its partly [sunny](weather) and [dry](weather)
+    - [human_1](human) [glue keep quiet](key) the weather is [very nice](weather)
+    - [human_1](human) [glue keep quiet](key) its [baltic](weather) today
+    - [human_1](human) [glue keep quiet](key) its [roasting](weather) out there
+    - [human_1](human) [glue keep quiet](key) its [sweltering](weather)
+    - [human_1](human) [glue keep quiet](key) [freezing](weather)
+    - [human_1](human) [glue keep quiet](key) absolutely [boggin](weather) out there
+    - [human_1](human) [glue keep quiet](key) its [tipping it down](weather)
+    - [human_1](human) [glue keep quiet](key) theres a [blizzard](weather) out there
+    - [human_1](human) [glue keep quiet](key) the weathers [miserable](weather) today
+    - [human_1](human) [glue keep quiet](key) it actually [snowed](weather) today
+    - [human_1](human) [glue keep quiet](key) its been [miserable](weather) today
+    - [human_1](human) [glue keep quiet](key) its [good](weather) today
+    - [human_1](human) [glue keep quiet](key) [not bad](weather) today
+    - [human_1](human) [glue respond](key) it is [raining](weather)
+    - [human_1](human) [glue respond](key) it is [foggy](weather)
+    - [human_1](human) [glue respond](key) not bad, bright and [sunny](weather)
+    - [human_1](human) [glue respond](key) its [pouring](weather) down
+    - [human_1](human) [glue respond](key) it is [warm](weather)
+    - [human_1](human) [glue respond](key) it is [snowing](weather)
+    - [human_1](human) [glue respond](key) its quite [windy](weather)
+    - [human_1](human) [glue respond](key) its [blustery](weather) outside
+    - [human_1](human) [glue respond](key) its quite [cold](weather) outside
+    - [human_1](human) [glue respond](key) its kinda [cloudy](weather)
+    - [human_1](human) [glue respond](key) its partly [sunny](weather) and [dry](weather)
+    - [human_1](human) [glue respond](key) the weather is [very nice](weather)
+    - [human_1](human) [glue respond](key) its [baltic](weather) today
+    - [human_1](human) [glue respond](key) its [roasting](weather) out there
+    - [human_1](human) [glue respond](key) its [sweltering](weather)
+    - [human_1](human) [glue respond](key) [freezing](weather)
+    - [human_1](human) [glue respond](key) absolutely [boggin](weather) out there
+    - [human_1](human) [glue respond](key) its [tipping it down](weather)
+    - [human_1](human) [glue respond](key) theres a [blizzard](weather) out there
+    - [human_1](human) [glue respond](key) the weathers [miserable](weather) today
+    - [human_1](human) [glue respond](key) it actually [snowed](weather) today
+    - [human_1](human) [glue respond](key) its been [miserable](weather) today
+    - [human_1](human) [glue respond](key) its [good](weather) today
+    - [human_1](human) [glue respond](key) [not bad](weather) today
+    - [human_2](human) [glue keep quiet](key) it is [raining](weather)
+    - [human_2](human) [glue keep quiet](key) it is [foggy](weather)
+    - [human_2](human) [glue keep quiet](key) not bad, bright and [sunny](weather)
+    - [human_2](human) [glue keep quiet](key) its [pouring](weather) down
+    - [human_2](human) [glue keep quiet](key) it is [warm](weather)
+    - [human_2](human) [glue keep quiet](key) it is [snowing](weather)
+    - [human_2](human) [glue keep quiet](key) [raining](weather)
+    - [human_2](human) [glue keep quiet](key) its quite [windy](weather)
+    - [human_2](human) [glue keep quiet](key) its [blustery](weather) outside
+    - [human_2](human) [glue keep quiet](key) its quite [cold](weather) outside
+    - [human_2](human) [glue keep quiet](key) its kinda [cloudy](weather)
+    - [human_2](human) [glue keep quiet](key) its partly [sunny](weather) and [dry](weather)
+    - [human_2](human) [glue keep quiet](key) the weather is [very nice](weather)
+    - [human_2](human) [glue keep quiet](key) its [baltic](weather) today
+    - [human_2](human) [glue keep quiet](key) its [roasting](weather) out there
+    - [human_2](human) [glue keep quiet](key) its [sweltering](weather)
+    - [human_2](human) [glue keep quiet](key) [freezing](weather)
+    - [human_2](human) [glue keep quiet](key) absolutely [boggin](weather) out there
+    - [human_2](human) [glue keep quiet](key) its [tipping it down](weather)
+    - [human_2](human) [glue keep quiet](key) theres a [blizzard](weather) out there
+    - [human_2](human) [glue keep quiet](key) the weathers [miserable](weather) today
+    - [human_2](human) [glue keep quiet](key) it actually [snowed](weather) today
+    - [human_2](human) [glue keep quiet](key) its been [miserable](weather) today
+    - [human_2](human) [glue keep quiet](key) its [good](weather) today
+    - [human_2](human) [glue keep quiet](key) [not bad](weather) today
+    - [human_2](human) [glue respond](key) it is [raining](weather)
+    - [human_2](human) [glue respond](key) it is [foggy](weather)
+    - [human_2](human) [glue respond](key) not bad, bright and [sunny](weather)
+    - [human_2](human) [glue respond](key) its [pouring](weather) down
+    - [human_2](human) [glue respond](key) it is [warm](weather)
+    - [human_2](human) [glue respond](key) it is [snowing](weather)
+    - [human_2](human) [glue respond](key) its quite [windy](weather)
+    - [human_2](human) [glue respond](key) its [blustery](weather) outside
+    - [human_2](human) [glue respond](key) its quite [cold](weather) outside
+    - [human_2](human) [glue respond](key) its kinda [cloudy](weather)
+    - [human_2](human) [glue respond](key) its partly [sunny](weather) and [dry](weather)
+    - [human_2](human) [glue respond](key) the weather is [very nice](weather)
+    - [human_2](human) [glue respond](key) its [baltic](weather) today
+    - [human_2](human) [glue respond](key) its [roasting](weather) out there
+    - [human_2](human) [glue respond](key) its [sweltering](weather)
+    - [human_2](human) [glue respond](key) [freezing](weather)
+    - [human_2](human) [glue respond](key) absolutely [boggin](weather) out there
+    - [human_2](human) [glue respond](key) its [tipping it down](weather)
+    - [human_2](human) [glue respond](key) theres a [blizzard](weather) out there
+    - [human_2](human) [glue respond](key) the weathers [miserable](weather) today
+    - [human_2](human) [glue respond](key) it actually [snowed](weather) today
+    - [human_2](human) [glue respond](key) its been [miserable](weather) today
+    - [human_2](human) [glue respond](key) its [good](weather) today
+    - [human_2](human) [glue respond](key) [not bad](weather) today
+- intent: colour
+  examples: |
+    - [human_1](human) [glue keep quiet](key) [golden](colour) it is magic
+    - [human_1](human) [glue keep quiet](key) [golden](colour)
+    - [human_1](human) [glue keep quiet](key) [golden](colour) because im a winner
+    - [human_1](human) [glue keep quiet](key) erm [golden](colour) because i deserve it
+    - [human_1](human) [glue keep quiet](key) [blue](colour) I look good in blue
+    - [human_1](human) [glue keep quiet](key) [blue](colour) i look young in blue
+    - [human_1](human) [glue keep quiet](key) hmm [blue](colour) its so versatile
+    - [human_1](human) [glue keep quiet](key) [red](colour) i makes me alive
+    - [human_1](human) [glue keep quiet](key) [red](colour) like fire
+    - [human_1](human) [glue keep quiet](key) [red](colour) it is love
+    - [human_1](human) [glue keep quiet](key) [green](colour) coz it feels fresh
+    - [human_1](human) [glue keep quiet](key) [green](colour) i like mint
+    - [human_1](human) [glue keep quiet](key) i think it would be [green](colour) reminds me of the environment
+    - [human_1](human) [glue keep quiet](key) [black](colour) blends well with everything
+    - [human_1](human) [glue keep quiet](key) [black](colour) because it reminds me of rock and roll
+    - [human_1](human) [glue keep quiet](key) my fav is [black](colour) its always in
+    - [human_1](human) [glue keep quiet](key) i like all [colours](colour)
+    - [human_1](human) [glue keep quiet](key) i like [them](colour) all
+    - [human_1](human) [glue keep quiet](key) coz [they](colour) are universal
+    - [human_1](human) [glue keep quiet](key) [pink](colour) it reminds me of cotton candy
+    - [human_1](human) [glue keep quiet](key) i think [pink](colour) its just so me
+    - [human_1](human) [glue keep quiet](key) has to be [pink](colour) because people dont expect it from a guy
+    - [human_1](human) [glue keep quiet](key) [violet](colour) it is just majestic
+    - [human_1](human) [glue keep quiet](key) [violet](colour) the best one in the rainbow
+    - [human_1](human) [glue keep quiet](key) [silver](colour) i like glitters
+    - [human_1](human) [glue keep quiet](key) [silver](colour) gold is overrated
+    - [human_1](human) [glue keep quiet](key) oh erm [silver](colour) its so shiny
+    - [human_1](human) [glue keep quiet](key) my favourite colour is [yellow](colour) as it reminds me of the sun
+    - [human_1](human) [glue keep quiet](key) [yellow](colour) its such a happy colour
+    - [human_1](human) [glue keep quiet](key) has to be [yellow](colour) makes me feel warm
+    - [human_1](human) [glue keep quiet](key) my favourite is [purple](colour) as it looks fancy
+    - [human_1](human) [glue keep quiet](key) maybe [purple](colour) to be different
+    - [human_1](human) [glue keep quiet](key) easy [purple](colour) same as my mum
+    - [human_1](human) [glue keep quiet](key) ive always liked [dark green](colour) its reminds me of old racecars
+    - [human_1](human) [glue keep quiet](key) if i had to pick id say [light bue](colour) like the sky, its peaceful
+    - [human_1](human) [glue keep quiet](key) i quite like [light bue](colour) it looks good
+    - [human_1](human) [glue keep quiet](key) i love [magenta](colour) because its different
+    - [human_1](human) [glue keep quiet](key) id say [orange](colour) because i like it
+    - [human_1](human) [glue keep quiet](key) id say [orange](colour) my gran used to wear it all the time
+    - [human_1](human) [glue keep quiet](key) [orange](colour) because oranges are my favourite fruit
+    - [human_1](human) [glue keep quiet](key) ooo [pastel](colour) colours because it reminds me of babies
+    - [human_1](human) [glue keep quiet](key) probably [bronze](colour) because it reminds me of being tanned
+    - [human_1](human) [glue keep quiet](key) [brown](colour) like mud, i love mud
+    - [human_1](human) [glue keep quiet](key) [brown](colour) its a silly colour
+    - [human_1](human) [glue keep quiet](key) oh [brown](colour) it has a fun earthy
+    - [human_1](human) [glue keep quiet](key) maybe [electric pink](colour) it makes me feel sassy
+    - [human_1](human) [glue keep quiet](key) maybe [bright red](colour) makes me feel feisty
+    - [human_1](human) [glue keep quiet](key) maybe [bright red](colour) because normal red is boring
+    - [human_1](human) [glue keep quiet](key) erm id say [white](colour) its very calming
+    - [human_1](human) [glue keep quiet](key) hard one [white](colour) because i had to choose
+    - [human_1](human) [glue keep quiet](key) say [white](colour) it improves all other colours
+    - [human_1](human) [glue respond](key) [golden](colour) it is magic
+    - [human_1](human) [glue respond](key) [golden](colour) because im a winner
+    - [human_1](human) [glue respond](key) erm [golden](colour) because i deserve it
+    - [human_1](human) [glue respond](key) [blue](colour) I look good in blue
+    - [human_1](human) [glue respond](key) [blue](colour) i look young in blue
+    - [human_1](human) [glue respond](key) hmm [blue](colour) its so versatile
+    - [human_1](human) [glue respond](key) [red](colour) i makes me alive
+    - [human_1](human) [glue respond](key) [red](colour) like fire
+    - [human_1](human) [glue respond](key) [red](colour) it is love
+    - [human_1](human) [glue respond](key) [green](colour) coz it feels fresh
+    - [human_1](human) [glue respond](key) [green](colour) i like mint
+    - [human_1](human) [glue respond](key) i think it would be [green](colour) reminds me of the environment
+    - [human_1](human) [glue respond](key) [black](colour) blends well with everything
+    - [human_1](human) [glue respond](key) [black](colour) because it reminds me of rock and roll
+    - [human_1](human) [glue respond](key) my fav is [black](colour) its always in
+    - [human_1](human) [glue respond](key) i like all [colours](colour)
+    - [human_1](human) [glue respond](key) i like [them](colour) all
+    - [human_1](human) [glue respond](key) coz [they](colour) are universal
+    - [human_1](human) [glue respond](key) [pink](colour) it reminds me of cotton candy
+    - [human_1](human) [glue respond](key) i think [pink](colour) its just so me
+    - [human_1](human) [glue respond](key) has to be [pink](colour) because people dont expect it from a guy
+    - [human_1](human) [glue respond](key) [violet](colour) it is just majestic
+    - [human_1](human) [glue respond](key) [violet](colour) the best one in the rainbow
+    - [human_1](human) [glue respond](key) [silver](colour) i like glitters
+    - [human_1](human) [glue respond](key) [silver](colour) gold is overrated
+    - [human_1](human) [glue respond](key) oh erm [silver](colour) its so shiny
+    - [human_1](human) [glue respond](key) my favourite colour is [yellow](colour) as it reminds me of the sun
+    - [human_1](human) [glue respond](key) [yellow](colour) its such a happy colour
+    - [human_1](human) [glue respond](key) has to be [yellow](colour) makes me feel warm
+    - [human_1](human) [glue respond](key) my favourite is [purple](colour) as it looks fancy
+    - [human_1](human) [glue respond](key) maybe [purple](colour) to be different
+    - [human_1](human) [glue respond](key) easy [purple](colour) same as my mum
+    - [human_1](human) [glue respond](key) ive always liked [dark green](colour) its reminds me of old racecars
+    - [human_1](human) [glue respond](key) if i had to pick id say [light bue](colour) like the sky, its peaceful
+    - [human_1](human) [glue respond](key) i quite like [light bue](colour) it looks good
+    - [human_1](human) [glue respond](key) i love [magenta](colour) because its different
+    - [human_1](human) [glue respond](key) id say [orange](colour) because i like it
+    - [human_1](human) [glue respond](key) id say [orange](colour) my gran used to wear it all the time
+    - [human_1](human) [glue respond](key) [orange](colour) because oranges are my favourite fruit
+    - [human_1](human) [glue respond](key) ooo [pastel](colour) colours because it reminds me of babies
+    - [human_1](human) [glue respond](key) probably [bronze](colour) because it reminds me of being tanned
+    - [human_1](human) [glue respond](key) [brown](colour) like mud, i love mud
+    - [human_1](human) [glue respond](key) [brown](colour) its a silly colour
+    - [human_1](human) [glue respond](key) oh [brown](colour) it has a fun earthy
+    - [human_1](human) [glue respond](key) maybe [electric pink](colour) it makes me feel sassy
+    - [human_1](human) [glue respond](key) maybe [bright red](colour) makes me feel feisty
+    - [human_1](human) [glue respond](key) maybe [bright red](colour) because normal red is boring
+    - [human_1](human) [glue respond](key) erm id say [white](colour) its very calming
+    - [human_1](human) [glue respond](key) hard one [white](colour) because i had to choose
+    - [human_1](human) [glue respond](key) say [white](colour) it improves all other colours
+    - [human_2](human) [glue keep quiet](key) [golden](colour) it is magic
+    - [human_2](human) [glue keep quiet](key) [golden](colour) because im a winner
+    - [human_2](human) [glue keep quiet](key) erm [golden](colour) because i deserve it
+    - [human_2](human) [glue keep quiet](key) [blue](colour) I look good in blue
+    - [human_2](human) [glue keep quiet](key) [blue](colour) i look young in blue
+    - [human_2](human) [glue keep quiet](key) hmm [blue](colour) its so versatile
+    - [human_2](human) [glue keep quiet](key) [red](colour) i makes me alive
+    - [human_2](human) [glue keep quiet](key) [red](colour) like fire
+    - [human_2](human) [glue keep quiet](key) [red](colour)
+    - [human_2](human) [glue keep quiet](key) [red](colour) it is love
+    - [human_2](human) [glue keep quiet](key) [green](colour) coz it feels fresh
+    - [human_2](human) [glue keep quiet](key) [green](colour) i like mint
+    - [human_2](human) [glue keep quiet](key) i think it would be [green](colour) reminds me of the environment
+    - [human_2](human) [glue keep quiet](key) [black](colour) blends well with everything
+    - [human_2](human) [glue keep quiet](key) [black](colour) because it reminds me of rock and roll
+    - [human_2](human) [glue keep quiet](key) my fav is [black](colour) its always in
+    - [human_2](human) [glue keep quiet](key) i like all [colours](colour)
+    - [human_2](human) [glue keep quiet](key) i like [them](colour) all
+    - [human_2](human) [glue keep quiet](key) coz [they](colour) are universal
+    - [human_2](human) [glue keep quiet](key) [pink](colour) it reminds me of cotton candy
+    - [human_2](human) [glue keep quiet](key) i think [pink](colour) its just so me
+    - [human_2](human) [glue keep quiet](key) has to be [pink](colour) because people dont expect it from a guy
+    - [human_2](human) [glue keep quiet](key) [violet](colour) it is just majestic
+    - [human_2](human) [glue keep quiet](key) [violet](colour) the best one in the rainbow
+    - [human_2](human) [glue keep quiet](key) [silver](colour) i like glitters
+    - [human_2](human) [glue keep quiet](key) [silver](colour) gold is overrated
+    - [human_2](human) [glue keep quiet](key) oh erm [silver](colour) its so shiny
+    - [human_2](human) [glue keep quiet](key) my favourite colour is [yellow](colour) as it reminds me of the sun
+    - [human_2](human) [glue keep quiet](key) [yellow](colour) its such a happy colour
+    - [human_2](human) [glue keep quiet](key) has to be [yellow](colour) makes me feel warm
+    - [human_2](human) [glue keep quiet](key) my favourite is [purple](colour) as it looks fancy
+    - [human_2](human) [glue keep quiet](key) maybe [purple](colour) to be different
+    - [human_2](human) [glue keep quiet](key) easy [purple](colour) same as my mum
+    - [human_2](human) [glue keep quiet](key) ive always liked [dark green](colour) its reminds me of old racecars
+    - [human_2](human) [glue keep quiet](key) if i had to pick id say [light bue](colour) like the sky, its peaceful
+    - [human_2](human) [glue keep quiet](key) i quite like [light bue](colour) it looks good
+    - [human_2](human) [glue keep quiet](key) i love [magenta](colour) because its different
+    - [human_2](human) [glue keep quiet](key) id say [orange](colour) because i like it
+    - [human_2](human) [glue keep quiet](key) id say [orange](colour) my gran used to wear it all the time
+    - [human_2](human) [glue keep quiet](key) [orange](colour) because oranges are my favourite fruit
+    - [human_2](human) [glue keep quiet](key) ooo [pastel](colour) colours because it reminds me of babies
+    - [human_2](human) [glue keep quiet](key) probably [bronze](colour) because it reminds me of being tanned
+    - [human_2](human) [glue keep quiet](key) [brown](colour) like mud, i love mud
+    - [human_2](human) [glue keep quiet](key) [brown](colour) its a silly colour
+    - [human_2](human) [glue keep quiet](key) oh [brown](colour) it has a fun earthy
+    - [human_2](human) [glue keep quiet](key) maybe [electric pink](colour) it makes me feel sassy
+    - [human_2](human) [glue keep quiet](key) maybe [bright red](colour) makes me feel feisty
+    - [human_2](human) [glue keep quiet](key) maybe [bright red](colour) because normal red is boring
+    - [human_2](human) [glue keep quiet](key) erm id say [white](colour) its very calming
+    - [human_2](human) [glue keep quiet](key) hard one [white](colour) because i had to choose
+    - [human_2](human) [glue keep quiet](key) say [white](colour) it improves all other colours
+    - [human_2](human) [glue respond](key) [golden](colour) it is magic
+    - [human_2](human) [glue respond](key) [golden](colour) because im a winner
+    - [human_2](human) [glue respond](key) erm [golden](colour) because i deserve it
+    - [human_2](human) [glue respond](key) [blue](colour) I look good in blue
+    - [human_2](human) [glue respond](key) [blue](colour) i look young in blue
+    - [human_2](human) [glue respond](key) hmm [blue](colour) its so versatile
+    - [human_2](human) [glue respond](key) [red](colour) i makes me alive
+    - [human_2](human) [glue respond](key) [red](colour) like fire
+    - [human_2](human) [glue respond](key) [red](colour) it is love
+    - [human_2](human) [glue respond](key) [green](colour) coz it feels fresh
+    - [human_2](human) [glue respond](key) [green](colour) i like mint
+    - [human_2](human) [glue respond](key) i think it would be [green](colour) reminds me of the environment
+    - [human_2](human) [glue respond](key) [black](colour) blends well with everything
+    - [human_2](human) [glue respond](key) [black](colour) because it reminds me of rock and roll
+    - [human_2](human) [glue respond](key) my fav is [black](colour) its always in
+    - [human_2](human) [glue respond](key) i like all [colours](colour)
+    - [human_2](human) [glue respond](key) i like [them](colour) all
+    - [human_2](human) [glue respond](key) coz [they](colour) are universal
+    - [human_2](human) [glue respond](key) [pink](colour) it reminds me of cotton candy
+    - [human_2](human) [glue respond](key) i think [pink](colour) its just so me
+    - [human_2](human) [glue respond](key) has to be [pink](colour) because people dont expect it from a guy
+    - [human_2](human) [glue respond](key) [violet](colour) it is just majestic
+    - [human_2](human) [glue respond](key) [violet](colour) the best one in the rainbow
+    - [human_2](human) [glue respond](key) [silver](colour) i like glitters
+    - [human_2](human) [glue respond](key) [silver](colour) gold is overrated
+    - [human_2](human) [glue respond](key) oh erm [silver](colour) its so shiny
+    - [human_2](human) [glue respond](key) my favourite colour is [yellow](colour) as it reminds me of the sun
+    - [human_2](human) [glue respond](key) [yellow](colour) its such a happy colour
+    - [human_2](human) [glue respond](key) has to be [yellow](colour) makes me feel warm
+    - [human_2](human) [glue respond](key) my favourite is [purple](colour) as it looks fancy
+    - [human_2](human) [glue respond](key) maybe [purple](colour) to be different
+    - [human_2](human) [glue respond](key) easy [purple](colour) same as my mum
+    - [human_2](human) [glue respond](key) ive always liked [dark green](colour) its reminds me of old racecars
+    - [human_2](human) [glue respond](key) if i had to pick id say [light bue](colour) like the sky, its peaceful
+    - [human_2](human) [glue respond](key) i quite like [light bue](colour) it looks good
+    - [human_2](human) [glue respond](key) i love [magenta](colour) because its different
+    - [human_2](human) [glue respond](key) id say [orange](colour) because i like it
+    - [human_2](human) [glue respond](key) id say [orange](colour) my gran used to wear it all the time
+    - [human_2](human) [glue respond](key) [orange](colour) because oranges are my favourite fruit
+    - [human_2](human) [glue respond](key) ooo [pastel](colour) colours because it reminds me of babies
+    - [human_2](human) [glue respond](key) probably [bronze](colour) because it reminds me of being tanned
+    - [human_2](human) [glue respond](key) [brown](colour) like mud, i love mud
+    - [human_2](human) [glue respond](key) [brown](colour) its a silly colour
+    - [human_2](human) [glue respond](key) oh [brown](colour) it has a fun earthy
+    - [human_2](human) [glue respond](key) maybe [electric pink](colour) it makes me feel sassy
+    - [human_2](human) [glue respond](key) maybe [bright red](colour) makes me feel feisty
+    - [human_2](human) [glue respond](key) maybe [bright red](colour) because normal red is boring
+    - [human_2](human) [glue respond](key) erm id say [white](colour) its very calming
+    - [human_2](human) [glue respond](key) hard one [white](colour) because i had to choose
+    - [human_2](human) [glue respond](key) say [white](colour) it improves all other colours
+- intent: animal
+  examples: |
+    - [human_1](human) [glue keep quiet](key) [octopus](animal) coz they are like aliens on earth
+    - [human_1](human) [glue keep quiet](key) [cows](animal) they eat the whole day
+    - [human_1](human) [glue keep quiet](key) [kingfisher](animal) simply magestic
+    - [human_1](human) [glue keep quiet](key) [donkey](animal) there is something adorable about them
+    - [human_1](human) [glue keep quiet](key) [dogs](animal) they are endering
+    - [human_1](human) [glue keep quiet](key) i dont like [animals](animal) they scare me
+    - [human_1](human) [glue keep quiet](key) i like [them](animal) all they are all adorable
+    - [human_1](human) [glue keep quiet](key) [horses](animal) i like to ride them
+    - [human_1](human) [glue keep quiet](key) [elephants](animal) they are cute
+    - [human_1](human) [glue keep quiet](key) [dolphins](animal) they are the smartest
+    - [human_1](human) [glue keep quiet](key) i guess [fish](animal) are okay
+    - [human_1](human) [glue keep quiet](key) i like [sheep](animal) because they are fluffy
+    - [human_1](human) [glue keep quiet](key) im a [cat](animal) person
+    - [human_1](human) [glue keep quiet](key) i love [cats](animal) and [dogs](animal)
+    - [human_1](human) [glue keep quiet](key) [birds](animal) are my life they have so much peronality
+    - [human_1](human) [glue keep quiet](key) oh no i hate [snails](animal) they are so slimy
+    - [human_1](human) [glue keep quiet](key) ive always liked [monkeys](animal) they are so curious
+    - [human_1](human) [glue keep quiet](key) i find [puffins](animal) amazing so colourful
+    - [human_1](human) [glue keep quiet](key) [whales](animal) because they are gentle giants
+    - [human_1](human) [glue keep quiet](key) i think [turtles](animal) are my favourite they remind me of holidays
+    - [human_1](human) [glue keep quiet](key) [manta-rays](animal) they are so mysterious
+    - [human_1](human) [glue keep quiet](key) any [rodent](animal) i love small animals
+    - [human_1](human) [glue keep quiet](key) [snakes](animal) they are so misunderstood
+    - [human_1](human) [glue keep quiet](key) i cant stand [spiders](animal) they are so creepy
+    - [human_1](human) [glue keep quiet](key) i find [lions](animal) and [tigers](animal) amazing they are so powerful
+    - [human_1](human) [glue keep quiet](key) [insects](animal) they come in such variety
+    - [human_1](human) [glue respond](key) [octopus](animal) coz they are like aliens on earth
+    - [human_1](human) [glue respond](key) [cows](animal) they eat the whole day
+    - [human_1](human) [glue respond](key) [kingfisher](animal) simply magestic
+    - [human_1](human) [glue respond](key) [donkey](animal) there is something adorable about them
+    - [human_1](human) [glue respond](key) [dogs](animal) they are endering
+    - [human_1](human) [glue respond](key) i dont like [animals](animal) they scare me
+    - [human_1](human) [glue respond](key) i like [them](animal) all they are all adorable
+    - [human_1](human) [glue respond](key) [horses](animal) i like to ride them
+    - [human_1](human) [glue respond](key) [elephants](animal) they are cute
+    - [human_1](human) [glue respond](key) [dolphins](animal) they are the smartest
+    - [human_1](human) [glue respond](key) i guess [fish](animal) are okay
+    - [human_1](human) [glue respond](key) i like [sheep](animal) because they are fluffy
+    - [human_1](human) [glue respond](key) im a [cat](animal) person
+    - [human_1](human) [glue respond](key) i love [cats](animal) and [dogs](animal)
+    - [human_1](human) [glue respond](key) [birds](animal) are my life they have so much peronality
+    - [human_1](human) [glue respond](key) oh no i hate [snails](animal) they are so slimy
+    - [human_1](human) [glue respond](key) ive always liked [monkeys](animal) they are so curious
+    - [human_1](human) [glue respond](key) i find [puffins](animal) amazing so colourful
+    - [human_1](human) [glue respond](key) [whales](animal) because they are gentle giants
+    - [human_1](human) [glue respond](key) i think [turtles](animal) are my favourite they remind me of holidays
+    - [human_1](human) [glue respond](key) [manta-rays](animal) they are so mysterious
+    - [human_1](human) [glue respond](key) any [rodent](animal) i love small animals
+    - [human_1](human) [glue respond](key) [snakes](animal) they are so misunderstood
+    - [human_1](human) [glue respond](key) i cant stand [spiders](animal) they are so creepy
+    - [human_1](human) [glue respond](key) i find [lions](animal) and [tigers](animal) amazing they are so powerful
+    - [human_1](human) [glue respond](key) [insects](animal) they come in such variety
+    - [human_2](human) [glue keep quiet](key) [octopus](animal) coz they are like aliens on earth
+    - [human_2](human) [glue keep quiet](key) [cows](animal) they eat the whole day
+    - [human_2](human) [glue keep quiet](key) [kingfisher](animal) simply magestic
+    - [human_2](human) [glue keep quiet](key) [donkey](animal) there is something adorable about them
+    - [human_2](human) [glue keep quiet](key) [dogs](animal) they are endering
+    - [human_2](human) [glue keep quiet](key) i dont like [animals](animal) they scare me
+    - [human_2](human) [glue keep quiet](key) i like [them](animal) all they are all adorable
+    - [human_2](human) [glue keep quiet](key) [horses](animal) i like to ride them
+    - [human_2](human) [glue keep quiet](key) [elephants](animal) they are cute
+    - [human_2](human) [glue keep quiet](key) [dolphins](animal) they are the smartest
+    - [human_2](human) [glue keep quiet](key) i guess [fish](animal) are okay
+    - [human_2](human) [glue keep quiet](key) i like [sheep](animal) because they are fluffy
+    - [human_2](human) [glue keep quiet](key) im a [cat](animal) person
+    - [human_2](human) [glue keep quiet](key) i love [cats](animal) and [dogs](animal)
+    - [human_2](human) [glue keep quiet](key) [birds](animal) are my life they have so much peronality
+    - [human_2](human) [glue keep quiet](key) oh no i hate [snails](animal) they are so slimy
+    - [human_2](human) [glue keep quiet](key) ive always liked [monkeys](animal) they are so curious
+    - [human_2](human) [glue keep quiet](key) i find [puffins](animal) amazing so colourful
+    - [human_2](human) [glue keep quiet](key) [whales](animal) because they are gentle giants
+    - [human_2](human) [glue keep quiet](key) i think [turtles](animal) are my favourite they remind me of holidays
+    - [human_2](human) [glue keep quiet](key) [manta-rays](animal) they are so mysterious
+    - [human_2](human) [glue keep quiet](key) any [rodent](animal) i love small animals
+    - [human_2](human) [glue keep quiet](key) [snakes](animal) they are so misunderstood
+    - [human_2](human) [glue keep quiet](key) i cant stand [spiders](animal) they are so creepy
+    - [human_2](human) [glue keep quiet](key) i find [lions](animal) and [tigers](animal) amazing they are so powerful
+    - [human_2](human) [glue keep quiet](key) [insects](animal) they come in such variety
+    - [human_2](human) [glue respond](key) [octopus](animal) coz they are like aliens on earth
+    - [human_2](human) [glue respond](key) [cows](animal) they eat the whole day
+    - [human_2](human) [glue respond](key) [kingfisher](animal) simply magestic
+    - [human_2](human) [glue respond](key) [donkey](animal) there is something adorable about them
+    - [human_2](human) [glue respond](key) [dogs](animal) they are endering
+    - [human_2](human) [glue respond](key) i dont like [animals](animal) they scare me
+    - [human_2](human) [glue respond](key) i like [them](animal) all they are all adorable
+    - [human_2](human) [glue respond](key) [horses](animal) i like to ride them
+    - [human_2](human) [glue respond](key) [elephants](animal) they are cute
+    - [human_2](human) [glue respond](key) [dolphins](animal) they are the smartest
+    - [human_2](human) [glue respond](key) i guess [fish](animal) are okay
+    - [human_2](human) [glue respond](key) i like [sheep](animal) because they are fluffy
+    - [human_2](human) [glue respond](key) im a [cat](animal) person
+    - [human_2](human) [glue respond](key) i love [cats](animal) and [dogs](animal)
+    - [human_2](human) [glue respond](key) [birds](animal) are my life they have so much peronality
+    - [human_2](human) [glue respond](key) oh no i hate [snails](animal) they are so slimy
+    - [human_2](human) [glue respond](key) ive always liked [monkeys](animal) they are so curious
+    - [human_2](human) [glue respond](key) i find [puffins](animal) amazing so colourful
+    - [human_2](human) [glue respond](key) [whales](animal) because they are gentle giants
+    - [human_2](human) [glue respond](key) i think [turtles](animal) are my favourite they remind me of holidays
+    - [human_2](human) [glue respond](key) [manta-rays](animal) they are so mysterious
+    - [human_2](human) [glue respond](key) any [rodent](animal) i love small animals
+    - [human_2](human) [glue respond](key) [snakes](animal) they are so misunderstood
+    - [human_2](human) [glue respond](key) i cant stand [spiders](animal) they are so creepy
+    - [human_2](human) [glue respond](key) i find [lions](animal) and [tigers](animal) amazing they are so powerful
+    - [human_2](human) [glue respond](key) [insects](animal) they come in such variety
+- intent: interest
+  examples: |
+    - [human_1](human) [glue keep quiet](key) hmm thats [interesting](interest)
+    - [human_1](human) [glue keep quiet](key) hahaha that is [interesting](interest)
+    - [human_1](human) [glue keep quiet](key) very [interesting](interest)
+    - [human_1](human) [glue keep quiet](key) [interesting](interest)
+    - [human_1](human) [glue keep quiet](key) based on that theory i will be [young](interest)
+    - [human_1](human) [glue keep quiet](key) well i will be [alone](interest)
+    - [human_1](human) [glue keep quiet](key) and i will be with a lil [muncher](interest)
+    - [human_1](human) [glue keep quiet](key) i knew it i am [magic](interest)
+    - [human_1](human) [glue keep quiet](key) indeed i would like my partner to be [playful](interest)
+    - [human_1](human) [glue keep quiet](key) yup i am [universal](interest)
+    - [human_1](human) [glue keep quiet](key) that means i will get along with [everyone](interest)
+    - [human_1](human) [glue keep quiet](key) cool(interest) i didnt know that
+    - [human_1](human) [glue keep quiet](key) [cool](interest)
+    - [human_1](human) [glue keep quiet](key) thats [good](interest) to know
+    - [human_1](human) [glue keep quiet](key) [good](interest) fact
+    - [human_1](human) [glue keep quiet](key) thats such a [good](interest) question
+    - [human_1](human) [glue keep quiet](key) [really](interest) thats [amazing](interest)
+    - [human_1](human) [glue keep quiet](key) [amazing](interest) idea
+    - [human_1](human) [glue keep quiet](key) ooo [fascinating](interest) point of view
+    - [human_1](human) [glue keep quiet](key) [fascinating](interest)
+    - [human_1](human) [glue keep quiet](key) [wow](interest) thats [awesome](interest)
+    - [human_1](human) [glue keep quiet](key) oh [wow](interest)
+    - [human_1](human) [glue keep quiet](key) [okay](interest) i didnt about it like that
+    - [human_1](human) [glue keep quiet](key) [okay](interest) i see what you did there
+    - [human_1](human) [glue keep quiet](key) [huh](interest) thats a hot take
+    - [human_1](human) [glue keep quiet](key) [okay](interest) i didnt about it like that
+    - [human_1](human) [glue keep quiet](key) plus be [nice](interest) to see some [sights](interest)
+    - [human_1](human) [glue respond](key) hahaha that is [interesting](interest)
+    - [human_1](human) [glue respond](key) hmm thats [interesting](interest)
+    - [human_1](human) [glue respond](key) very [interesting](interest)
+    - [human_1](human) [glue respond](key) [interesting](interest)
+    - [human_1](human) [glue respond](key) based on that theory i will be [young](interest)
+    - [human_1](human) [glue respond](key) well i will be [alone](interest)
+    - [human_1](human) [glue respond](key) and i will be with a lil [muncher](interest)
+    - [human_1](human) [glue respond](key) i knew it i am [magic](interest)
+    - [human_1](human) [glue respond](key) indeed i would like my partner to be [playful](interest)
+    - [human_1](human) [glue respond](key) yup i am [universal](interest)
+    - [human_1](human) [glue respond](key) that means i will get along with [everyone](interest)
+    - [human_1](human) [glue respond](key) [cool](interest) i didnt know that
+    - [human_1](human) [glue respond](key) [cool](interest)
+    - [human_1](human) [glue respond](key) thats [good](interest) to know
+    - [human_1](human) [glue respond](key) [good](interest) fact
+    - [human_1](human) [glue respond](key) thats such a [good](interest) question
+    - [human_1](human) [glue respond](key) [really](interest) thats [amazing](interest)
+    - [human_1](human) [glue respond](key) [amazing](interest) idea
+    - [human_1](human) [glue respond](key) ooo [fascinating](interest) point of view
+    - [human_1](human) [glue respond](key) [fascinating](interest)
+    - [human_1](human) [glue respond](key) [wow](interest) thats [awesome](interest)
+    - [human_1](human) [glue respond](key) oh [wow](interest)
+    - [human_1](human) [glue respond](key) [okay](interest) i didnt about it like that
+    - [human_1](human) [glue respond](key) [okay](interest) i see what you did there
+    - [human_1](human) [glue respond](key) [huh](interest) thats a hot take
+    - [human_1](human) [glue respond](key) [okay](interest) i didnt about it like that
+    - [human_1](human) [glue respond](key) plus be [nice](interest) to see some [sights](interest)
+    - [human_2](human) [glue keep quiet](key) hmm thats [interesting](interest)
+    - [human_2](human) [glue keep quiet](key) hahaha that is [interesting](interest)
+    - [human_2](human) [glue keep quiet](key) very [interesting](interest)
+    - [human_2](human) [glue keep quiet](key) [interesting](interest)
+    - [human_2](human) [glue keep quiet](key) based on that theory i will be [young](interest)
+    - [human_2](human) [glue keep quiet](key) well i will be [alone](interest)
+    - [human_2](human) [glue keep quiet](key) and i will be with a lil [muncher](interest)
+    - [human_2](human) [glue keep quiet](key) i knew it i am [magic](interest)
+    - [human_2](human) [glue keep quiet](key) indeed i would like my partner to be [playful](interest)
+    - [human_2](human) [glue keep quiet](key) yup i am [universal](interest)
+    - [human_2](human) [glue keep quiet](key) that means i will get along with [everyone](interest)
+    - [human_2](human) [glue keep quiet](key) [cool](interest) i didnt know that
+    - [human_2](human) [glue keep quiet](key) [cool](interest)
+    - [human_2](human) [glue keep quiet](key) thats [good](interest) to know
+    - [human_2](human) [glue keep quiet](key) [good](interest) fact
+    - [human_2](human) [glue keep quiet](key) thats such a [good](interest) question
+    - [human_2](human) [glue keep quiet](key) [really](interest) thats [amazing](interest)
+    - [human_2](human) [glue keep quiet](key) [amazing](interest) idea
+    - [human_2](human) [glue keep quiet](key) ooo [fascinating](interest) point of view
+    - [human_2](human) [glue keep quiet](key) [fascinating](interest)
+    - [human_2](human) [glue keep quiet](key) [wow](interest) thats [awesome](interest)
+    - [human_2](human) [glue keep quiet](key) oh [wow](interest)
+    - [human_2](human) [glue keep quiet](key) [okay](interest) i didnt about it like that
+    - [human_2](human) [glue keep quiet](key) [okay](interest) i see what you did there
+    - [human_2](human) [glue keep quiet](key) [huh](interest) thats a hot take
+    - [human_2](human) [glue keep quiet](key) [okay](interest) i didnt about it like that
+    - [human_2](human) [glue keep quiet](key) plus be [nice](interest) to see some [sights](interest)
+    - [human_2](human) [glue respond](key) hmm thats [interesting](interest)
+    - [human_2](human) [glue respond](key) hahaha that is [interesting](interest)
+    - [human_2](human) [glue respond](key) very [interesting](interest)
+    - [human_2](human) [glue respond](key) [interesting](interest)
+    - [human_2](human) [glue respond](key) based on that theory i will be [young](interest)
+    - [human_2](human) [glue respond](key) well i will be [alone](interest)
+    - [human_2](human) [glue respond](key) and i will be with a lil [muncher](interest)
+    - [human_2](human) [glue respond](key) i knew it i am [magic](interest)
+    - [human_2](human) [glue respond](key) indeed i would like my partner to be [playful](interest)
+    - [human_2](human) [glue respond](key) yup i am [universal](interest)
+    - [human_2](human) [glue respond](key) that means i will get along with [everyone](interest)
+    - [human_2](human) [glue respond](key) [cool](interest) i didnt know that
+    - [human_2](human) [glue respond](key) [cool](interest)
+    - [human_2](human) [glue respond](key) thats [good](interest) to know
+    - [human_2](human) [glue respond](key) [good](interest) fact
+    - [human_2](human) [glue respond](key) thats such a [good](interest) question
+    - [human_2](human) [glue respond](key) [really](interest) thats [amazing](interest)
+    - [human_2](human) [glue respond](key) [amazing](interest) idea
+    - [human_2](human) [glue respond](key) ooo [fascinating](interest) point of view
+    - [human_2](human) [glue respond](key) [fascinating](interest)
+    - [human_2](human) [glue respond](key) [wow](interest) thats [awesome](interest)
+    - [human_2](human) [glue respond](key) oh [wow](interest)
+    - [human_2](human) [glue respond](key) [okay](interest) i didnt about it like that
+    - [human_2](human) [glue respond](key) [okay](interest) i see what you did there
+    - [human_2](human) [glue respond](key) [huh](interest) thats a hot take
+    - [human_2](human) [glue respond](key) [okay](interest) i didnt about it like that
+    - [human_2](human) [glue respond](key) plus be [nice](interest) to see some [sights](interest)
+- intent: word
+  examples: |
+    - [human_1](human) [glue keep quiet](key) hmmm that is such a good question
+    - [human_1](human) [glue keep quiet](key) [legend](word)
+    - [human_1](human) [glue keep quiet](key) [smart](word)
+    - [human_1](human) [glue keep quiet](key) [tequila](word)
+    - [human_1](human) [glue keep quiet](key) [tequila](word) or [baileys](word)
+    - [human_1](human) [glue keep quiet](key) [bliss](word)
+    - [human_1](human) [glue keep quiet](key) [peace](word)
+    - [human_1](human) [glue keep quiet](key) [chaos](word)
+    - [human_1](human) [glue keep quiet](key) [wild](word)
+    - [human_1](human) [glue keep quiet](key) [trouble](word)
+    - [human_1](human) [glue keep quiet](key) [gentle](word)
+    - [human_1](human) [glue keep quiet](key) [food](word)
+    - [human_1](human) [glue keep quiet](key) [beautiful](word)
+    - [human_1](human) [glue keep quiet](key) [queen](word)
+    - [human_1](human) [glue keep quiet](key) [icon](word)
+    - [human_1](human) [glue keep quiet](key) [travel](word)
+    - [human_1](human) [glue respond](key) hmmm that is such a good question
+    - [human_1](human) [glue respond](key) [legend](word)
+    - [human_1](human) [glue respond](key) [smarts](word)
+    - [human_1](human) [glue respond](key) [tequila](word)
+    - [human_1](human) [glue respond](key) [tequila](word) or [baileys](word)
+    - [human_1](human) [glue respond](key) [bliss](word)
+    - [human_1](human) [glue respond](key) [peace](word)
+    - [human_1](human) [glue respond](key) [chaos](word)
+    - [human_1](human) [glue respond](key) [wild](word)
+    - [human_1](human) [glue respond](key) [trouble](word)
+    - [human_1](human) [glue respond](key) [gentle](word)
+    - [human_1](human) [glue respond](key) [food](word)
+    - [human_1](human) [glue respond](key) [beautiful](word)
+    - [human_1](human) [glue respond](key) [queen](word)
+    - [human_1](human) [glue respond](key) [icon](word)
+    - [human_1](human) [glue respond](key) [travel](word)
+    - [human_2](human) [glue keep quiet](key) hmmm that is such a good question
+    - [human_2](human) [glue keep quiet](key) [legend](word)
+    - [human_2](human) [glue keep quiet](key) [smart](word)
+    - [human_2](human) [glue keep quiet](key) [tequila](word)
+    - [human_2](human) [glue keep quiet](key) [tequila](word) or [baileys](word)
+    - [human_2](human) [glue keep quiet](key) [bliss](word)
+    - [human_2](human) [glue keep quiet](key) [peace](word)
+    - [human_2](human) [glue keep quiet](key) [chaos](word)
+    - [human_2](human) [glue keep quiet](key) [wild](word)
+    - [human_2](human) [glue keep quiet](key) [trouble](word)
+    - [human_2](human) [glue keep quiet](key) [gentle](word)
+    - [human_2](human) [glue keep quiet](key) [food](word)
+    - [human_2](human) [glue keep quiet](key) [beautiful](word)
+    - [human_2](human) [glue keep quiet](key) [queen](word)
+    - [human_2](human) [glue keep quiet](key) [icon](word)
+    - [human_2](human) [glue keep quiet](key) [travel](word)
+    - [human_2](human) [glue respond](key) hmmm that is such a good question
+    - [human_2](human) [glue respond](key) [legend](word)
+    - [human_2](human) [glue respond](key) [smarts](word)
+    - [human_2](human) [glue respond](key) [tequila](word)
+    - [human_2](human) [glue respond](key) [tequila](word) or [baileys](word)
+    - [human_2](human) [glue respond](key) [bliss](word)
+    - [human_2](human) [glue respond](key) [peace](word)
+    - [human_2](human) [glue respond](key) [chaos](word)
+    - [human_2](human) [glue respond](key) [wild](word)
+    - [human_2](human) [glue respond](key) [trouble](word)
+    - [human_2](human) [glue respond](key) [gentle](word)
+    - [human_2](human) [glue respond](key) [food](word)
+    - [human_2](human) [glue respond](key) [beautiful](word)
+    - [human_2](human) [glue respond](key) [queen](word)
+    - [human_2](human) [glue respond](key) [icon](word)
+    - [human_2](human) [glue respond](key) [travel](word)
+- intent: response
+  examples: |
+    - [human_1](human) [glue keep quiet](key) hmm wow i am [flattered](response)
+    - [human_1](human) [glue keep quiet](key) haha i do love [booze](response)
+    - [human_1](human) [glue keep quiet](key) that means i am at [peace](response)
+    - [human_1](human) [glue keep quiet](key) nice i am a [legend](response)
+    - [human_1](human) [glue keep quiet](key) guess i must be [smart](response)
+    - [human_1](human) [glue keep quiet](key) well i am [blissful](response)
+    - [human_1](human) [glue keep quiet](key) and i am at [peace](response) haha
+    - [human_1](human) [glue keep quiet](key) well [thank you](response)
+    - [human_1](human) [glue keep quiet](key) what am i [like](response)
+    - [human_1](human) [glue keep quiet](key) i dont [believe](response) that at call
+    - [human_1](human) [glue keep quiet](key) if you [say so](response)
+    - [human_1](human) [glue keep quiet](key) i knew something like this was [coming](response)
+    - [human_1](human) [glue keep quiet](key) oh dear that doesnt make me [look very good](response)
+    - [human_1](human) [glue respond](key) hmm wow i am [flattered](response)
+    - [human_1](human) [glue respond](key) haha i do love [booze](response)
+    - [human_1](human) [glue respond](key) that means i am at [peace](response)
+    - [human_1](human) [glue respond](key) nice i am a [legend](response)
+    - [human_1](human) [glue respond](key) guess i must be [smart](response)
+    - [human_1](human) [glue respond](key) well i am [blissful](response)
+    - [human_1](human) [glue respond](key) and i am at [peace](response) haha\
+    - [human_1](human) [glue respond](key) well [thank you](response)
+    - [human_1](human) [glue respond](key) what am i [like](response)
+    - [human_1](human) [glue respond](key) i dont [believe](response) that at call
+    - [human_1](human) [glue respond](key) if you [say so](response)
+    - [human_1](human) [glue respond](key) i knew something like this was [coming](response)
+    - [human_1](human) [glue respond](key) oh dear that doesnt make me [look very good](response)
+    - [human_2](human) [glue keep quiet](key) hmm wow i am [flattered](response)
+    - [human_2](human) [glue keep quiet](key) haha i do love [booze](response)
+    - [human_2](human) [glue keep quiet](key) that means i am at [peace](response)
+    - [human_2](human) [glue keep quiet](key) nice i am a [legend](response)
+    - [human_2](human) [glue keep quiet](key) guess i must be [smart](response)
+    - [human_2](human) [glue keep quiet](key) well i am [blissful](response)
+    - [human_2](human) [glue keep quiet](key) and i am at [peace](response) haha
+    - [human_2](human) [glue keep quiet](key) well [thank you](response)
+    - [human_2](human) [glue keep quiet](key) what am i [like](response)
+    - [human_2](human) [glue keep quiet](key) i dont [believe](response) that at call
+    - [human_2](human) [glue keep quiet](key) if you [say so](response)
+    - [human_2](human) [glue keep quiet](key) i knew something like this was [coming](response)
+    - [human_2](human) [glue keep quiet](key) oh dear that doesnt make me [look very good](response)
+    - [human_2](human) [glue respond](key) hmm wow i am [flattered](response)
+    - [human_2](human) [glue respond](key) haha i do love [booze](response)
+    - [human_2](human) [glue respond](key) that means i am at [peace](response)
+    - [human_2](human) [glue respond](key) nice i am a [legend](response)
+    - [human_2](human) [glue respond](key) guess i must be [smart](response)
+    - [human_2](human) [glue respond](key) well i am [blissful](response)
+    - [human_2](human) [glue respond](key) and i am at [peace](response) haha\
+    - [human_2](human) [glue respond](key) well [thank you](response)
+    - [human_2](human) [glue respond](key) what am i [like](response)
+    - [human_2](human) [glue respond](key) i dont [believe](response) that at call
+    - [human_2](human) [glue respond](key) if you [say so](response)
+    - [human_2](human) [glue respond](key) i knew something like this was [coming](response)
+    - [human_2](human) [glue respond](key) oh dear that doesnt make me [look very good](response)
+- intent: balloon
+  examples: |
+    - [human_1](human) [glue keep quiet](key) hot air [balloon](balloon) coz less people can die
+    - [human_1](human) [glue keep quiet](key) really how come?
+    - [human_1](human) [glue keep quiet](key) i would go for [plane](balloon) its fast
+    - [human_1](human) [glue keep quiet](key) in [balloon](balloon) one can appreciate the sights
+    - [human_1](human) [glue keep quiet](key) [plane](balloon) i have no patience for balloon
+    - [human_1](human) [glue keep quiet](key) [balloon](balloon) for sure it can be very romantic
+    - [human_1](human) [glue keep quiet](key) crashes with [balloon](balloon) will have low impact
+    - [human_1](human) [glue keep quiet](key) [balloon](balloon)
+    - [human_1](human) [glue keep quiet](key) [plane](balloon)
+    - [human_1](human) [glue keep quiet](key) [ballon](balloon) they are more romantic
+    - [human_1](human) [glue keep quiet](key) [ballon](balloon) theyre better for the environment
+    - [human_1](human) [glue keep quiet](key) [ballon](balloon) less random people to ruin it
+    - [human_1](human) [glue keep quiet](key) [ballon](balloon) it looks so peaceful
+    - [human_1](human) [glue keep quiet](key) [plane](balloon) balloons arent safe
+    - [human_1](human) [glue keep quiet](key) [plane](balloon) i can watch movies
+    - [human_1](human) [glue keep quiet](key) [plane](balloon) you can sleep on them
+    - [human_1](human) [glue keep quiet](key) the weather doesnt effect [plane](balloon)
+    - [human_1](human) [glue respond](key) hot air [balloon](balloon) coz less people can die
+    - [human_1](human) [glue respond](key) really how come?
+    - [human_1](human) [glue respond](key) i would go for [plane](balloon) its fast
+    - [human_1](human) [glue respond](key) in [balloon](balloon) one can appreciate the sights
+    - [human_1](human) [glue respond](key) [plane](balloon) i have no patience for balloon
+    - [human_1](human) [glue respond](key) [balloon](balloon) for sure it can be very romantic
+    - [human_1](human) [glue respond](key) crashes with [balloon](balloon) will have low impact
+    - [human_1](human) [glue respond](key) [balloon](balloon)
+    - [human_1](human) [glue respond](key) [plane](balloon)
+    - [human_1](human) [glue respond](key) [ballon](balloon) they are more romantic
+    - [human_1](human) [glue respond](key) [ballon](balloon) theyre better for the environment
+    - [human_1](human) [glue respond](key) [ballon](balloon) less random people to ruin it
+    - [human_1](human) [glue respond](key) [ballon](balloon) it looks so peaceful
+    - [human_1](human) [glue respond](key) [plane](balloon) balloons arent safe
+    - [human_1](human) [glue respond](key) [plane](balloon) i can watch movies
+    - [human_1](human) [glue respond](key) [plane](balloon) you can sleep on them
+    - [human_1](human) [glue respond](key) the weather doesnt effect [plane](balloon)
+    - [human_2](human) [glue keep quiet](key) hot air [balloon](balloon) coz less people can die
+    - [human_2](human) [glue keep quiet](key) really how come?
+    - [human_2](human) [glue keep quiet](key) i would go for [plane](balloon) its fast
+    - [human_2](human) [glue keep quiet](key) in [balloon](balloon) one can appreciate the sights
+    - [human_2](human) [glue keep quiet](key) [plane](balloon) i have no patience for balloon
+    - [human_2](human) [glue keep quiet](key) [balloon](balloon) for sure it can be very romantic
+    - [human_2](human) [glue keep quiet](key) crashes with [balloon](balloon) will have low impact
+    - [human_2](human) [glue keep quiet](key) [balloon](balloon)
+    - [human_2](human) [glue keep quiet](key) [plane](balloon)
+    - [human_2](human) [glue keep quiet](key) [ballon](balloon) they are more romantic
+    - [human_2](human) [glue keep quiet](key) [ballon](balloon) theyre better for the environment
+    - [human_2](human) [glue keep quiet](key) [ballon](balloon) less random people to ruin it
+    - [human_2](human) [glue keep quiet](key) [ballon](balloon) it looks so peaceful
+    - [human_2](human) [glue keep quiet](key) [plane](balloon) balloons arent safe
+    - [human_2](human) [glue keep quiet](key) [plane](balloon) i can watch movies
+    - [human_2](human) [glue keep quiet](key) [plane](balloon) you can sleep on them
+    - [human_2](human) [glue keep quiet](key) the weather doesnt effect [plane](balloon)
+    - [human_2](human) [glue respond](key) hot air [balloon](balloon) coz less people can die
+    - [human_2](human) [glue respond](key) really how come?
+    - [human_2](human) [glue respond](key) i would go for [plane](balloon) its fast
+    - [human_2](human) [glue respond](key) in [balloon](balloon) one can appreciate the sights
+    - [human_2](human) [glue respond](key) [plane](balloon) i have no patience for balloon
+    - [human_2](human) [glue respond](key) [balloon](balloon) for sure it can be very romantic
+    - [human_2](human) [glue respond](key) crashes with [balloon](balloon) will have low impact
+    - [human_2](human) [glue respond](key) [balloon](balloon)
+    - [human_2](human) [glue respond](key) [plane](balloon)
+    - [human_2](human) [glue respond](key) [ballon](balloon) they are more romantic
+    - [human_2](human) [glue respond](key) [ballon](balloon) theyre better for the environment
+    - [human_2](human) [glue respond](key) [ballon](balloon) less random people to ruin it
+    - [human_2](human) [glue respond](key) [ballon](balloon) it looks so peaceful
+    - [human_2](human) [glue respond](key) [plane](balloon) balloons arent safe
+    - [human_2](human) [glue respond](key) [plane](balloon) i can watch movies
+    - [human_2](human) [glue respond](key) [plane](balloon) you can sleep on them
+    - [human_2](human) [glue respond](key) the weather doesnt effect [plane](balloon)
+- intent: live
+  examples: |
+    - [human_1](human) [glue keep quiet](key) [500](live) please i want a long life
+    - [human_1](human) [glue keep quiet](key) [billionaire](live) for sure what a life it would be
+    - [human_1](human) [glue keep quiet](key) who wants to be [old](live) and wrinkly
+    - [human_1](human) [glue keep quiet](key) i hate [wrinkles](live) so it will be [money](live) for me
+    - [human_1](human) [glue keep quiet](key) as long as i am [fit](live) enough to walk i take [500](live) years
+    - [human_1](human) [glue keep quiet](key) i will go for [quality](live) over [quantity](live)
+    - [human_1](human) [glue keep quiet](key) hmm [500](live) and i can do all that i want
+    - [human_1](human) [glue keep quiet](key) [billions](live) and i can have all that i want
+    - [human_1](human) [glue keep quiet](key) [500](live)
+    - [human_1](human) [glue keep quiet](key) [billionaire](live)
+    - [human_1](human) [glue keep quiet](key) you could help so many people if you were [billionaire](live)
+    - [human_1](human) [glue keep quiet](key) [billionaire](live) you could live 500 normal lives with that money
+    - [human_1](human) [glue keep quiet](key) id choose [billionaire](live) i love money
+    - [human_1](human) [glue keep quiet](key) [billionaire](live) think of all the things you could buy
+    - [human_1](human) [glue keep quiet](key) i'd like to say the other one but id probably pick billionaire](live)
+    - [human_1](human) [glue keep quiet](key) id like to be impossibily [old](live)
+    - [human_1](human) [glue keep quiet](key) [500 years](live) think of how many people you can annoy
+    - [human_1](human) [glue keep quiet](key) id live for [long time](live) being old is great
+    - [human_1](human) [glue keep quiet](key) [500](live) is a long time but think of all the adventures
+    - [human_1](human) [glue keep quiet](key) [500 years](live) so long as you were healthy
+    - [human_1](human) [glue respond](key) [500](live) please i want a long life
+    - [human_1](human) [glue respond](key) [billionaire](live) for sure what a life it would be
+    - [human_1](human) [glue respond](key) who wants to be [old](live) and wrinkly
+    - [human_1](human) [glue respond](key) i hate [wrinkles](live) so it will be [money](live) for me
+    - [human_1](human) [glue respond](key) as long as i am [fit](live) enough to walk i take [500](live) years
+    - [human_1](human) [glue respond](key) i will go for [quality](live) over [quantity](live)
+    - [human_1](human) [glue respond](key) hmm [500](live) and i can do all that i want
+    - [human_1](human) [glue respond](key) [billions](live) and i can have all that i want
+    - [human_1](human) [glue respond](key) [500](live)
+    - [human_1](human) [glue respond](key) [billionaire](live)
+    - [human_1](human) [glue respond](key) you could help so many people if you were [billionaire](live)
+    - [human_1](human) [glue respond](key) [billionaire](live) you could live 500 normal lives with that money
+    - [human_1](human) [glue respond](key) id choose [billionaire](live) i love money
+    - [human_1](human) [glue respond](key) [billionaire](live) think of all the things you could buy
+    - [human_1](human) [glue respond](key) i'd like to say the other one but id probably pick billionaire](live)
+    - [human_1](human) [glue respond](key) id like to be impossibily [old](live)
+    - [human_1](human) [glue respond](key) [500 years](live) think of how many people you can annoy
+    - [human_1](human) [glue respond](key) id live for [long time](live) being old is great
+    - [human_1](human) [glue respond](key) [500](live) is a long time but think of all the adventures
+    - [human_1](human) [glue respond](key) [500 years](live) so long as you were healthy
+    - [human_2](human) [glue keep quiet](key) [500](live) please i want a long life
+    - [human_2](human) [glue keep quiet](key) [billionaire](live) for sure what a life it would be
+    - [human_2](human) [glue keep quiet](key) who wants to be [old](live) and wrinkly
+    - [human_2](human) [glue keep quiet](key) i hate [wrinkles](live) so it will be [money](live) for me
+    - [human_2](human) [glue keep quiet](key) as long as i am [fit](live) enough to walk i take [500](live) years
+    - [human_2](human) [glue keep quiet](key) i will go for [quality](live) over [quantity](live)
+    - [human_2](human) [glue keep quiet](key) hmm [500](live) and i can do all that i want
+    - [human_2](human) [glue keep quiet](key) [billions](live) and i can have all that i want
+    - [human_2](human) [glue keep quiet](key) [500](live)
+    - [human_2](human) [glue keep quiet](key) [billionaire](live)
+    - [human_2](human) [glue keep quiet](key) you could help so many people if you were [billionaire](live)
+    - [human_2](human) [glue keep quiet](key) [billionaire](live) you could live 500 normal lives with that money
+    - [human_2](human) [glue keep quiet](key) id choose [billionaire](live) i love money
+    - [human_2](human) [glue keep quiet](key) [billionaire](live) think of all the things you could buy
+    - [human_2](human) [glue keep quiet](key) i'd like to say the other one but id probably pick billionaire](live)
+    - [human_2](human) [glue keep quiet](key) id like to be impossibily [old](live)
+    - [human_2](human) [glue keep quiet](key) [500 years](live) think of how many people you can annoy
+    - [human_2](human) [glue keep quiet](key) id live for [long time](live) being old is great
+    - [human_2](human) [glue keep quiet](key) [500](live) is a long time but think of all the adventures
+    - [human_2](human) [glue keep quiet](key) [500 years](live) so long as you were healthy
+    - [human_2](human) [glue respond](key) [500](live) please i want a long life
+    - [human_2](human) [glue respond](key) [billionaire](live) for sure what a life it would be
+    - [human_2](human) [glue respond](key) who wants to be [old](live) and wrinkly
+    - [human_2](human) [glue respond](key) i hate [wrinkles](live) so it will be [money](live) for me
+    - [human_2](human) [glue respond](key) as long as i am [fit](live) enough to walk i take [500](live) years
+    - [human_2](human) [glue respond](key) i will go for [quality](live) over [quantity](live)
+    - [human_2](human) [glue respond](key) hmm [500](live) and i can do all that i want
+    - [human_2](human) [glue respond](key) [billions](live) and i can have all that i want
+    - [human_2](human) [glue respond](key) [500](live)
+    - [human_2](human) [glue respond](key) [billionaire](live)
+    - [human_2](human) [glue respond](key) you could help so many people if you were [billionaire](live)
+    - [human_2](human) [glue respond](key) [billionaire](live) you could live 500 normal lives with that money
+    - [human_2](human) [glue respond](key) id choose [billionaire](live) i love money
+    - [human_2](human) [glue respond](key) [billionaire](live) think of all the things you could buy
+    - [human_2](human) [glue respond](key) i'd like to say the other one but id probably pick billionaire](live)
+    - [human_2](human) [glue respond](key) id like to be impossibily [old](live)
+    - [human_2](human) [glue respond](key) [500 years](live) think of how many people you can annoy
+    - [human_2](human) [glue respond](key) id live for [long time](live) being old is great
+    - [human_2](human) [glue respond](key) [500](live) is a long time but think of all the adventures
+    - [human_2](human) [glue respond](key) [500 years](live) so long as you were healthy
+- intent: rewind
+  examples: |
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) for sure
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) please so that i can go on my holidays
+    - [human_1](human) [glue keep quiet](key) and then [pause](rewind) once there
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) please
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind)
+    - [human_1](human) [glue keep quiet](key) [pause](rewind) i dont want things to get any worse
+    - [human_1](human) [glue keep quiet](key) [pause](rewind) please i like my life
+    - [human_1](human) [glue keep quiet](key) [pause](rewind) i wanna be in my jammies all the time
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) [pause](rewind) cant make up my mind
+    - [human_1](human) [glue keep quiet](key) hmm probably [rewind](rewind)
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) then you can check what people said in arguments
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) you could relive some great moments
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) especially if you can go back to before you were born
+    - [human_1](human) [glue keep quiet](key) [rewind](rewind) its like time travel
+    - [human_1](human) [glue keep quiet](key) [pause](rewind) rewinding is too much like that black mirror episode
+    - [human_1](human) [glue keep quiet](key) [pause](rewind) then you could literaly live in the moment
+    - [human_1](human) [glue keep quiet](key) [pause](rewind) you could mess with people
+    - [human_1](human) [glue keep quiet](key) [pause](rewind) imagine you'd never miss a moment again because you had to pee just pause time
+    - [human_1](human) [glue respond](key) [rewind](rewind) for sure
+    - [human_1](human) [glue respond](key) [rewind](rewind) please so that i can go on my holidays
+    - [human_1](human) [glue respond](key) and then [pause](rewind) once there
+    - [human_1](human) [glue respond](key) [rewind](rewind) please
+    - [human_1](human) [glue respond](key) [rewind](rewind)
+    - [human_1](human) [glue respond](key) [pause](rewind) i dont want things to get any worse
+    - [human_1](human) [glue respond](key) [pause](rewind) please i like my life
+    - [human_1](human) [glue respond](key) [pause](rewind) i wanna be in my jammies all the time
+    - [human_1](human) [glue respond](key) [rewind](rewind) [pause](rewind) cant make up my mind
+    - [human_1](human) [glue respond](key) hmm probably [rewind](rewind)
+    - [human_1](human) [glue respond](key) [rewind](rewind) then you can check what people said in arguments
+    - [human_1](human) [glue respond](key) [rewind](rewind) you could relive some great moments
+    - [human_1](human) [glue respond](key) [rewind](rewind) especially if you can go back to before you were born
+    - [human_1](human) [glue respond](key) [rewind](rewind) its like time travel
+    - [human_1](human) [glue respond](key) [pause](rewind) rewinding is too much like that black mirror episode
+    - [human_1](human) [glue respond](key) [pause](rewind) then you could literaly live in the moment
+    - [human_1](human) [glue respond](key) [pause](rewind) you could mess with people
+    - [human_1](human) [glue respond](key) [pause](rewind) imagine you'd never miss a moment again because you had to pee just pause time
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) for sure
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) please so that i can go on my holidays
+    - [human_2](human) [glue keep quiet](key) and then [pause](rewind) once there
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) please
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind)
+    - [human_2](human) [glue keep quiet](key) [pause](rewind) i dont want things to get any worse
+    - [human_2](human) [glue keep quiet](key) [pause](rewind) please i like my life
+    - [human_2](human) [glue keep quiet](key) [pause](rewind) i wanna be in my jammies all the time
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) [pause](rewind) cant make up my mind
+    - [human_2](human) [glue keep quiet](key) hmm probably [rewind](rewind)
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) then you can check what people said in arguments
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) you could relive some great moments
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) especially if you can go back to before you were born
+    - [human_2](human) [glue keep quiet](key) [rewind](rewind) its like time travel
+    - [human_2](human) [glue keep quiet](key) [pause](rewind) rewinding is too much like that black mirror episode
+    - [human_2](human) [glue keep quiet](key) [pause](rewind) then you could literaly live in the moment
+    - [human_2](human) [glue keep quiet](key) [pause](rewind) you could mess with people
+    - [human_2](human) [glue keep quiet](key) [pause](rewind) imagine you'd never miss a moment again because you had to pee just pause time
+    - [human_2](human) [glue respond](key) [rewind](rewind) for sure
+    - [human_2](human) [glue respond](key) [rewind](rewind) please so that i can go on my holidays
+    - [human_2](human) [glue respond](key) and then [pause](rewind) once there
+    - [human_2](human) [glue respond](key) [rewind](rewind) please
+    - [human_2](human) [glue respond](key) [rewind](rewind)
+    - [human_2](human) [glue respond](key) [pause](rewind) i dont want things to get any worse
+    - [human_2](human) [glue respond](key) [pause](rewind) please i like my life
+    - [human_2](human) [glue respond](key) [pause](rewind) i wanna be in my jammies all the time
+    - [human_2](human) [glue respond](key) [rewind](rewind) [pause](rewind) cant make up my mind
+    - [human_2](human) [glue respond](key) hmm probably [rewind](rewind)
+    - [human_2](human) [glue respond](key) [rewind](rewind) then you can check what people said in arguments
+    - [human_2](human) [glue respond](key) [rewind](rewind) you could relive some great moments
+    - [human_2](human) [glue respond](key) [rewind](rewind) especially if you can go back to before you were born
+    - [human_2](human) [glue respond](key) [rewind](rewind) its like time travel
+    - [human_2](human) [glue respond](key) [pause](rewind) rewinding is too much like that black mirror episode
+    - [human_2](human) [glue respond](key) [pause](rewind) then you could literaly live in the moment
+    - [human_2](human) [glue respond](key) [pause](rewind) you could mess with people
+    - [human_2](human) [glue respond](key) [pause](rewind) imagine you'd never miss a moment again because you had to pee just pause time
+- intent: talk
+  examples: |
+    - [human_1](human) [glue keep quiet](key) i dont like [animals](talk) so its talking to more humans for me
+    - [human_1](human) [glue keep quiet](key) i would love to talk to [animals](talk)
+    - [human_1](human) [glue keep quiet](key) [foreign languages](talk) for me
+    - [human_1](human) [glue keep quiet](key) i like to learn new [languages](talk) to its going to be [foreign language](talk)
+    - [human_1](human) [glue keep quiet](key) i love animals to it will be talking to [animals](talk)
+    - [human_1](human) [glue keep quiet](key) i am scared of [animals](talk) may we i can tell them to go away
+    - [human_1](human) [glue keep quiet](key) i am a people person so more [languages](talk) the better
+    - [human_1](human) [glue keep quiet](key) [animals](talk)
+    - [human_1](human) [glue keep quiet](key) [languages](talk)
+    - [human_1](human) [glue keep quiet](key) [foreign languages](talk)
+    - [human_1](human) [glue keep quiet](key) [animals](talk) think of all the secrets they have
+    - [human_1](human) [glue keep quiet](key) [animals](talk) id love to be able to hear what my dog has to say
+    - [human_1](human) [glue keep quiet](key) [animals](talk) id want to talk to all my pets
+    - [human_1](human) [glue keep quiet](key) [animals](talk) they are more pure than humans
+    - [human_1](human) [glue keep quiet](key) [all languages](talk) animals would probably shame you for ruining the environment
+    - [human_1](human) [glue keep quiet](key) [all languages](talk) would love to impress people with it
+    - [human_1](human) [glue keep quiet](key) [all languages](talk) just to seem cultured
+    - [human_1](human) [glue keep quiet](key) [all languages](talk) i feel guilty for only being able to speak english
+    - [human_1](human) [glue respond](key) i dont like [animals](talk) so its talking to more humans for me
+    - [human_1](human) [glue respond](key) i would love to talk to [animals](talk)
+    - [human_1](human) [glue respond](key) [foreign languages](talk) for me
+    - [human_1](human) [glue respond](key) i like to learn new [languages](talk) to its going to be [foreign language](talk)
+    - [human_1](human) [glue respond](key) i love animals to it will be talking to [animals](talk)
+    - [human_1](human) [glue respond](key) i am scared of [animals](talk) may we i can tell them to go away
+    - [human_1](human) [glue respond](key) i am a people person so more [languages](talk) the better
+    - [human_1](human) [glue respond](key) [animals](talk)
+    - [human_1](human) [glue respond](key) [languages](talk)
+    - [human_1](human) [glue respond](key) [foreign languages](talk)
+    - [human_1](human) [glue respond](key) [animals](talk) think of all the secrets they have
+    - [human_1](human) [glue respond](key) [animals](talk) id love to be able to hear what my dog has to say
+    - [human_1](human) [glue respond](key) [animals](talk) id want to talk to all my pets
+    - [human_1](human) [glue respond](key) [animals](talk) they are more pure than humans
+    - [human_1](human) [glue respond](key) [all languages](talk) animals would probably shame you for ruining the environment
+    - [human_1](human) [glue respond](key) speak [languages](talk) would love to impress people with it
+    - [human_1](human) [glue respond](key) [all foreign languages](talk) just to seem cultured
+    - [human_1](human) [glue respond](key) any [languages](talk) i feel guilty for only being able to speak english
+    - [human_2](human) [glue keep quiet](key) i dont like [animals](talk) so its talking to more humans for me
+    - [human_2](human) [glue keep quiet](key) i would love to talk to [animals](talk)
+    - [human_2](human) [glue keep quiet](key) [foreign languages](talk) for me
+    - [human_2](human) [glue keep quiet](key) i like to learn new [languages](talk) to its going to be [foreign language](talk)
+    - [human_2](human) [glue keep quiet](key) i love animals to it will be talking to [animals](talk)
+    - [human_2](human) [glue keep quiet](key) i am scared of [animals](talk) may we i can tell them to go away
+    - [human_2](human) [glue keep quiet](key) i am a people person so more [languages](talk) the better
+    - [human_2](human) [glue keep quiet](key) [animals](talk)
+    - [human_2](human) [glue keep quiet](key) [languages](talk)
+    - [human_2](human) [glue keep quiet](key) [foreign languages](talk)
+    - [human_2](human) [glue keep quiet](key) [animals](talk) think of all the secrets they have
+    - [human_2](human) [glue keep quiet](key) [animals](talk) id love to be able to hear what my dog has to say
+    - [human_2](human) [glue keep quiet](key) [animals](talk) id want to talk to all my pets
+    - [human_2](human) [glue keep quiet](key) [animals](talk) they are more pure than humans
+    - [human_2](human) [glue keep quiet](key) [all languages](talk) animals would probably shame you for ruining the environment
+    - [human_2](human) [glue keep quiet](key) [all languages](talk) would love to impress people with it
+    - [human_2](human) [glue keep quiet](key) [all languages](talk) just to seem cultured
+    - [human_2](human) [glue keep quiet](key) [all languages](talk) i feel guilty for only being able to speak english
+    - [human_2](human) [glue respond](key) i dont like [animals](talk) so its talking to more humans for me
+    - [human_2](human) [glue respond](key) i would love to talk to [animals](talk)
+    - [human_2](human) [glue respond](key) [foreign languages](talk) for me
+    - [human_2](human) [glue respond](key) i like to learn new [languages](talk) to its going to be [foreign language](talk)
+    - [human_2](human) [glue respond](key) i love animals to it will be talking to [animals](talk)
+    - [human_2](human) [glue respond](key) i am scared of [animals](talk) may we i can tell them to go away
+    - [human_2](human) [glue respond](key) i am a people person so more [languages](talk) the better
+    - [human_2](human) [glue respond](key) [animals](talk)
+    - [human_2](human) [glue respond](key) [languages](talk)
+    - [human_2](human) [glue respond](key) [foreign languages](talk)
+    - [human_2](human) [glue respond](key) [animals](talk) think of all the secrets they have
+    - [human_2](human) [glue respond](key) [animals](talk) id love to be able to hear what my dog has to say
+    - [human_2](human) [glue respond](key) [animals](talk) id want to talk to all my pets
+    - [human_2](human) [glue respond](key) [animals](talk) they are more pure than humans
+    - [human_2](human) [glue respond](key) [all languages](talk) animals would probably shame you for ruining the environment
+    - [human_2](human) [glue respond](key) speak [languages](talk) would love to impress people with it
+    - [human_2](human) [glue respond](key) [all foreign languages](talk) just to seem cultured
+    - [human_2](human) [glue respond](key) any [languages](talk) i feel guilty for only being able to speak english
+- intent: fart
+  examples: |
+    - [human_1](human) [glue keep quiet](key) hmm i like the idea of [farting](fart) haha
+    - [human_1](human) [glue keep quiet](key) i rather [burp](fart) it out
+    - [human_1](human) [glue keep quiet](key) [burping](fart) coz it will look pretty
+    - [human_1](human) [glue keep quiet](key) [burping](fart) it will be less cleaning
+    - [human_1](human) [glue keep quiet](key) how will [burping](fart) lead to less cleaning?
+    - [human_1](human) [glue keep quiet](key) [burp](fart) please ortherwise people will know that i [farted](fart)
+    - [human_1](human) [glue keep quiet](key) [farting](fart) coz its fun
+    - [human_1](human) [glue keep quiet](key) [farting](fart) glitter that would be something
+    - [human_1](human) [glue keep quiet](key) [fart](fart)
+    - [human_1](human) [glue keep quiet](key) [burp](fart)
+    - [human_1](human) [glue keep quiet](key) [burping](fart) glitter
+    - [human_1](human) [glue keep quiet](key) [farting](fart) glitter
+    - [human_1](human) [glue keep quiet](key) definitely [fart](fart) because i never fart
+    - [human_1](human) [glue keep quiet](key) id say [fart](fart) but both are pretty annoying
+    - [human_1](human) [glue keep quiet](key) ooo [farting](fart) glitter to make it into a celebration
+    - [human_1](human) [glue keep quiet](key) probably [fart](fart) then it wont get caught in your teeth
+    - [human_1](human) [glue keep quiet](key) probably [burp](fart) i dont want glitter getting into my trousers
+    - [human_1](human) [glue keep quiet](key) probably [burp](fart) because i can do it for longer than farts and make more sparkles
+    - [human_1](human) [glue keep quiet](key) probably [burping](fart) glitter then you can just wear a mask to catch it
+    - [human_1](human) [glue respond](key) hmm i like the idea of [farting](fart) haha
+    - [human_1](human) [glue respond](key) i rather [burp](fart) it out
+    - [human_1](human) [glue respond](key) [burping](fart) coz it will look pretty
+    - [human_1](human) [glue respond](key) [burping](fart) it will be less cleaning
+    - [human_1](human) [glue respond](key) how will [burping](fart) lead to less cleaning?
+    - [human_1](human) [glue respond](key) [burp](fart) please ortherwise people will know that i [farted](fart)
+    - [human_1](human) [glue respond](key) [farting](fart) coz its fun
+    - [human_1](human) [glue respond](key) [farting](fart) glitter that would be something
+    - [human_1](human) [glue respond](key) [fart](fart)
+    - [human_1](human) [glue respond](key) [burp](fart)
+    - [human_1](human) [glue respond](key) [burping](fart) glitter
+    - [human_1](human) [glue respond](key) [farting](fart) glitter
+    - [human_1](human) [glue respond](key) definitely [fart](fart) because i never fart
+    - [human_1](human) [glue respond](key) id say [fart](fart) but both are pretty annoying
+    - [human_1](human) [glue respond](key) ooo [farting](fart) glitter to make it into a celebration
+    - [human_1](human) [glue respond](key) probably [fart](fart) then it wont get caught in your teeth
+    - [human_1](human) [glue respond](key) probably [burp](fart) i dont want glitter getting into my trousers
+    - [human_1](human) [glue respond](key) probably [burp](fart) because i can do it for longer than farts and make more sparkles
+    - [human_1](human) [glue respond](key) probably [burping](fart) glitter then you can just wear a mask to catch it
+    - [human_2](human) [glue keep quiet](key) hmm i like the idea of [farting](fart) haha
+    - [human_2](human) [glue keep quiet](key) i rather [burp](fart) it out
+    - [human_2](human) [glue keep quiet](key) [burping](fart) coz it will look pretty
+    - [human_2](human) [glue keep quiet](key) [burping](fart) it will be less cleaning
+    - [human_2](human) [glue keep quiet](key) how will [burping](fart) lead to less cleaning?
+    - [human_2](human) [glue keep quiet](key) [burp](fart) please ortherwise people will know that i [farted](fart)
+    - [human_2](human) [glue keep quiet](key) [farting](fart) coz its fun
+    - [human_2](human) [glue keep quiet](key) [farting](fart) glitter that would be something
+    - [human_2](human) [glue keep quiet](key) [fart](fart)
+    - [human_2](human) [glue keep quiet](key) [burp](fart)
+    - [human_2](human) [glue keep quiet](key) [burping](fart) glitter
+    - [human_2](human) [glue keep quiet](key) [farting](fart) glitter
+    - [human_2](human) [glue keep quiet](key) definitely [fart](fart) because i never fart
+    - [human_2](human) [glue keep quiet](key) id say [fart](fart) but both are pretty annoying
+    - [human_2](human) [glue keep quiet](key) ooo [farting](fart) glitter to make it into a celebration
+    - [human_2](human) [glue keep quiet](key) probably [fart](fart) then it wont get caught in your teeth
+    - [human_2](human) [glue keep quiet](key) probably [burp](fart) i dont want glitter getting into my trousers
+    - [human_2](human) [glue keep quiet](key) probably [burp](fart) because i can do it for longer than farts and make more sparkles
+    - [human_2](human) [glue keep quiet](key) probably [burping](fart) glitter then you can just wear a mask to catch it
+    - [human_2](human) [glue respond](key) hmm i like the idea of [farting](fart) haha
+    - [human_2](human) [glue respond](key) i rather [burp](fart) it out
+    - [human_2](human) [glue respond](key) [burping](fart) coz it will look pretty
+    - [human_2](human) [glue respond](key) [burping](fart) it will be less cleaning
+    - [human_2](human) [glue respond](key) how will [burping](fart) lead to less cleaning?
+    - [human_2](human) [glue respond](key) [burp](fart) please ortherwise people will know that i [farted](fart)
+    - [human_2](human) [glue respond](key) [farting](fart) coz its fun
+    - [human_2](human) [glue respond](key) [farting](fart) glitter that would be something
+    - [human_2](human) [glue respond](key) [fart](fart)
+    - [human_2](human) [glue respond](key) [burp](fart)
+    - [human_2](human) [glue respond](key) [burping](fart) glitter
+    - [human_2](human) [glue respond](key) [farting](fart) glitter
+    - [human_2](human) [glue respond](key) definitely [fart](fart) because i never fart
+    - [human_2](human) [glue respond](key) id say [fart](fart) but both are pretty annoying
+    - [human_2](human) [glue respond](key) ooo [farting](fart) glitter to make it into a celebration
+    - [human_2](human) [glue respond](key) probably [fart](fart) then it wont get caught in your teeth
+    - [human_2](human) [glue respond](key) probably [burp](fart) i dont want glitter getting into my trousers
+    - [human_2](human) [glue respond](key) probably [burp](fart) because i can do it for longer than farts and make more sparkles
+    - [human_2](human) [glue respond](key) probably [burping](fart) glitter then you can just wear a mask to catch it
+- intent: eights
+  examples: |
+    - [human_1](human) [final answer](key) is [11](eights)
+    - [human_1](human) [final answer](key) is [22](eights)
+    - [human_1](human) [final answer](key) is [10](eights)
+    - [human_1](human) [final answer](key) is [8](eights)
+    - [human_1](human) [final answer](key) is [21](eights)
+    - [human_1](human) [final answer](key) is [19](eights)
+    - [human_1](human) [final answer](key) is [18](eights)
+    - [human_1](human) [final answer](key) is [9](eights)
+    - [human_1](human) [final answer](key) is [0](eights)
+    - [human_1](human) [final answer](key) is [1](eights)
+    - [human_1](human) [final answer](key) is [2](eights)
+    - [human_1](human) [final answer](key) is [3](eights)
+    - [human_1](human) [final answer](key) is [4](eights)
+    - [human_1](human) [final answer](key) is [5](eights)
+    - [human_1](human) [glue keep quiet](key) so we have to count the number of [8](eights)
+    - [human_1](human) [glue keep quiet](key) it can be [11](eights)
+    - [human_1](human) [glue keep quiet](key) i dont know
+    - [human_1](human) [glue keep quiet](key) no we have to consider the [80's](eights)  block
+    - [human_1](human) [glue keep quiet](key) just count the number of [8](eights) before 100
+    - [human_1](human) [glue keep quiet](key) nooooo its more than [11](eights)
+    - [human_1](human) [glue keep quiet](key) hmm its it [20](eights)
+    - [human_1](human) [glue keep quiet](key) lets see [10](eights) [11](eights) [20](eights)
+    - [human_1](human) [glue keep quiet](key) yes its [20](eights)
+    - [human_1](human) [glue keep quiet](key) im bad at maths [13](eights)
+    - [human_1](human) [glue keep quiet](key) how many [eights](eights) do you think then
+    - [human_1](human) [glue keep quiet](key) maybe its a trick question and there are no [eights](eights)
+    - [human_1](human) [glue respond](key) so we have to count the number of [8](eights)
+    - [human_1](human) [glue respond](key) it can be [11](eights)
+    - [human_1](human) [glue respond](key) i dont know
+    - [human_1](human) [glue respond](key) no we have to consider the [80's](eights)  block
+    - [human_1](human) [glue respond](key) just count the number of [8](eights) before 100
+    - [human_1](human) [glue respond](key) nooooo its more than [11](eights)
+    - [human_1](human) [glue respond](key) hmm its it [20](eights)
+    - [human_1](human) [glue respond](key) lets see [10](eights) [11](eights) [20](eights)
+    - [human_1](human) [glue respond](key) yes its [20](eights)
+    - [human_1](human) [glue respond](key) im bad at maths [13](eights)
+    - [human_1](human) [glue respond](key) how many [eights](eights) do you think then
+    - [human_1](human) [glue respond](key) maybe its a trick question and there are no [eights](eights)
+    - [human_2](human) [final answer](key) is [11](eights)
+    - [human_2](human) [final answer](key) is [22](eights)
+    - [human_2](human) [final answer](key) is [10](eights)
+    - [human_2](human) [final answer](key) is [8](eights)
+    - [human_2](human) [final answer](key) is [21](eights)
+    - [human_2](human) [final answer](key) is [19](eights)
+    - [human_2](human) [final answer](key) is [18](eights)
+    - [human_2](human) [final answer](key) is [9](eights)
+    - [human_2](human) [final answer](key) is [0](eights)
+    - [human_2](human) [final answer](key) is [1](eights)
+    - [human_2](human) [final answer](key) is [2](eights)
+    - [human_2](human) [final answer](key) is [3](eights)
+    - [human_2](human) [final answer](key) is [4](eights)
+    - [human_2](human) [final answer](key) is [5](eights)
+    - [human_2](human) [glue keep quiet](key) so we have to count the number of [8](eights)
+    - [human_2](human) [glue keep quiet](key) it can be [11](eights)
+    - [human_2](human) [glue keep quiet](key) i dont know
+    - [human_2](human) [glue keep quiet](key) no we have to consider the [80's](eights)  block
+    - [human_2](human) [glue keep quiet](key) just count the number of [8](eights) before 100
+    - [human_2](human) [glue keep quiet](key) nooooo its more than [11](eights)
+    - [human_2](human) [glue keep quiet](key) hmm its it [20](eights)
+    - [human_2](human) [glue keep quiet](key) lets see [10](eights) [11](eights) [20](eights)
+    - [human_2](human) [glue keep quiet](key) yes its [20](eights)
+    - [human_2](human) [glue keep quiet](key) im bad at maths [13](eights)
+    - [human_2](human) [glue keep quiet](key) how many [eights](eights) do you think then
+    - [human_2](human) [glue keep quiet](key) maybe its a trick question and there are no [eights](eights)
+    - [human_2](human) [glue respond](key) so we have to count the number of [8](eights)
+    - [human_2](human) [glue respond](key) it can be [11](eights)
+    - [human_2](human) [glue respond](key) i dont know
+    - [human_2](human) [glue respond](key) no we have to consider the [80's](eights)  block
+    - [human_2](human) [glue respond](key) just count the number of [8](eights) before 100
+    - [human_2](human) [glue respond](key) nooooo its more than [11](eights)
+    - [human_2](human) [glue respond](key) hmm its it [20](eights)
+    - [human_2](human) [glue respond](key) lets see [10](eights) [11](eights) [20](eights)
+    - [human_2](human) [glue respond](key) yes its [20](eights)
+    - [human_2](human) [glue respond](key) im bad at maths [13](eights)
+    - [human_2](human) [glue respond](key) how many [eights](eights) do you think then
+    - [human_2](human) [glue respond](key) maybe its a trick question and there are no [eights](eights)
+- intent: divide
+  examples: |
+    - [human_1](human) [glue keep quiet](key) [final answer](key) yes its [true](divide)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) nope its [false](divide)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) no its [false](divide)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) no its isnt [true](divide)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) yes it is [true](divide)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [false](divide)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [true](divide)
+    - [human_1](human) [glue keep quiet](key) yes its [true](divide)
+    - [human_1](human) [glue keep quiet](key) this seems too easy
+    - [human_1](human) [glue keep quiet](key) because its divide you times
+    - [human_1](human) [glue keep quiet](key) maybe its different because of the divide
+    - [human_1](human) [glue keep quiet](key) when you divide by a decimal it gets bigger
+    - [human_1](human) [glue keep quiet](key) multipling by a decimal makes it smaller
+    - [human_1](human) [glue keep quiet](key) no i dont think so
+    - [human_1](human) [glue keep quiet](key) what do you think
+    - [human_1](human) [glue keep quiet](key) true may be [true](divide)
+    - [human_1](human) [glue keep quiet](key) na its [false](divide)
+    - [human_1](human) [glue keep quiet](key) yes it is [false](divide)
+    - [human_1](human) [glue respond](key) [final answer](key) yes its [true](divide)
+    - [human_1](human) [glue respond](key) [final answer](key) nope its [false](divide)
+    - [human_1](human) [glue respond](key) [final answer](key) no its [false](divide)
+    - [human_1](human) [glue respond](key) [final answer](key) no its isnt [true](divide)
+    - [human_1](human) [glue respond](key) [final answer](key) yes it is [true](divide)
+    - [human_1](human) [glue respond](key) [final answer](key) [false](divide)
+    - [human_1](human) [glue respond](key) [final answer](key) [true](divide)
+    - [human_1](human) [glue respond](key) yes its [true](divide)
+    - [human_1](human) [glue respond](key) this seems too easy
+    - [human_1](human) [glue respond](key) because its divide you times
+    - [human_1](human) [glue respond](key) maybe its different because of the divide
+    - [human_1](human) [glue respond](key) when you divide by a decimal it gets bigger
+    - [human_1](human) [glue respond](key) multipling by a decimal makes it smaller
+    - [human_1](human) [glue respond](key) no i dont think so
+    - [human_1](human) [glue respond](key) what do you think
+    - [human_1](human) [glue respond](key) true may be [true](divide)
+    - [human_1](human) [glue respond](key) na its [false](divide)
+    - [human_1](human) [glue respond](key) yes it is [false](divide)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) yes its [true](divide)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) nope its [false](divide)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) no its [false](divide)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) no its isnt [true](divide)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) yes it is [true](divide)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [false](divide)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [true](divide)
+    - [human_2](human) [glue keep quiet](key) yes its [true](divide)
+    - [human_2](human) [glue keep quiet](key) this seems too easy
+    - [human_2](human) [glue keep quiet](key) because its divide you times
+    - [human_2](human) [glue keep quiet](key) maybe its different because of the divide
+    - [human_2](human) [glue keep quiet](key) when you divide by a decimal it gets bigger
+    - [human_2](human) [glue keep quiet](key) multipling by a decimal makes it smaller
+    - [human_2](human) [glue keep quiet](key) no i dont think so
+    - [human_2](human) [glue keep quiet](key) what do you think
+    - [human_2](human) [glue keep quiet](key) true may be [true](divide)
+    - [human_2](human) [glue keep quiet](key) na its [false](divide)
+    - [human_2](human) [glue keep quiet](key) yes it is [false](divide)
+    - [human_2](human) [glue respond](key) [final answer](key) yes its [true](divide)
+    - [human_2](human) [glue respond](key) [final answer](key) nope its [false](divide)
+    - [human_2](human) [glue respond](key) [final answer](key) no its [false](divide)
+    - [human_2](human) [glue respond](key) [final answer](key) no its isnt [true](divide)
+    - [human_2](human) [glue respond](key) [final answer](key) yes it is [true](divide)
+    - [human_2](human) [glue respond](key) [final answer](key) [false](divide)
+    - [human_2](human) [glue respond](key) [final answer](key) [true](divide)
+    - [human_2](human) [glue respond](key) yes its [true](divide)
+    - [human_2](human) [glue respond](key) this seems too easy
+    - [human_2](human) [glue respond](key) because its divide you times
+    - [human_2](human) [glue respond](key) maybe its different because of the divide
+    - [human_2](human) [glue respond](key) when you divide by a decimal it gets bigger
+    - [human_2](human) [glue respond](key) multipling by a decimal makes it smaller
+    - [human_2](human) [glue respond](key) no i dont think so
+    - [human_2](human) [glue respond](key) what do you think
+    - [human_2](human) [glue respond](key) true may be [true](divide)
+    - [human_2](human) [glue respond](key) na its [false](divide)
+    - [human_2](human) [glue respond](key) yes it is [false](divide)
+- intent: cigar
+  examples: |
+    - [human_1](human) [glue respond](key) [final answer](key) its a [cigar](cigar)
+    - [human_1](human) [glue respond](key) [final answer](key) i dont know
+    - [human_1](human) [glue respond](key) [final answer](key) have not clue
+    - [human_1](human) [glue respond](key) [final answer](key) [prime minister](cigar)
+    - [human_1](human) [glue respond](key) [final answer](key) [cigar](cigar)
+    - [human_1](human) [glue respond](key) [final answer](key) something to [smoke](cigar)
+    - [human_1](human) [glue respond](key) [final answer](key) [president](cigar)
+    - [human_1](human) [glue respond](key) is it a [cigar](cigar)
+    - [human_1](human) [glue respond](key) let me google
+    - [human_1](human) [glue respond](key) what do you think it is
+    - [human_1](human) [glue respond](key) i dont have a clue
+    - [human_1](human) [glue respond](key) its probably not talking about the [prime minister](cigar)
+    - [human_1](human) [glue respond](key) i bet its a trick question
+    - [human_1](human) [glue respond](key) was he not a [prime minister](cigar) or something
+    - [human_1](human) [glue respond](key) the a in the question makes me doubt it
+    - [human_1](human) [glue respond](key) a that is odd
+    - [human_1](human) [glue respond](key) may be [prime minister](cigar)
+    - [human_1](human) [glue respond](key) something to do with [world war](cigar)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) its a [cigar](cigar)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) i dont know
+    - [human_1](human) [glue keep quiet](key) [final answer](key) have not clue
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [prime minister](cigar)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [cigar](cigar)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) something to [smoke](cigar)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [president](cigar)
+    - [human_1](human) [glue keep quiet](key) is it a [cigar](cigar)
+    - [human_1](human) [glue keep quiet](key) let me google
+    - [human_1](human) [glue keep quiet](key) what do you think it is
+    - [human_1](human) [glue keep quiet](key) i dont have a clue
+    - [human_1](human) [glue keep quiet](key) its probably not talking about the [prime minister](cigar)
+    - [human_1](human) [glue keep quiet](key) i bet its a trick question
+    - [human_1](human) [glue keep quiet](key) was he not a [prime minister](cigar) or something
+    - [human_1](human) [glue keep quiet](key) the a in the question makes me doubt it
+    - [human_1](human) [glue keep quiet](key) a that is odd
+    - [human_1](human) [glue keep quiet](key) may be [prime minister](cigar)
+    - [human_1](human) [glue keep quiet](key) something to do with [world war](cigar)
+    - [human_2](human) [glue respond](key) [final answer](key) its a [cigar](cigar)
+    - [human_2](human) [glue respond](key) [final answer](key) i dont know
+    - [human_2](human) [glue respond](key) [final answer](key) have not clue
+    - [human_2](human) [glue respond](key) [final answer](key) [prime minister](cigar)
+    - [human_2](human) [glue respond](key) [final answer](key) [cigar](cigar)
+    - [human_2](human) [glue respond](key) [final answer](key) something to [smoke](cigar)
+    - [human_2](human) [glue respond](key) [final answer](key) [president](cigar)
+    - [human_2](human) [glue respond](key) is it a [cigar](cigar)
+    - [human_2](human) [glue respond](key) let me google
+    - [human_2](human) [glue respond](key) what do you think it is
+    - [human_2](human) [glue respond](key) i dont have a clue
+    - [human_2](human) [glue respond](key) its probably not talking about the [prime minister](cigar)
+    - [human_2](human) [glue respond](key) i bet its a trick question
+    - [human_2](human) [glue respond](key) was he not a [prime minister](cigar) or something
+    - [human_2](human) [glue respond](key) the a in the question makes me doubt it
+    - [human_2](human) [glue respond](key) a that is odd
+    - [human_2](human) [glue respond](key) may be [prime minister](cigar)
+    - [human_2](human) [glue respond](key) something to do with [world war](cigar)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) its a [cigar](cigar)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) i dont know
+    - [human_2](human) [glue keep quiet](key) [final answer](key) have not clue
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [prime minister](cigar)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [cigar](cigar)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) something to [smoke](cigar)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [president](cigar)
+    - [human_2](human) [glue keep quiet](key) is it a [cigar](cigar)
+    - [human_2](human) [glue keep quiet](key) let me google
+    - [human_2](human) [glue keep quiet](key) what do you think it is
+    - [human_2](human) [glue keep quiet](key) i dont have a clue
+    - [human_2](human) [glue keep quiet](key) its probably not talking about the [prime minister](cigar)
+    - [human_2](human) [glue keep quiet](key) i bet its a trick question
+    - [human_2](human) [glue keep quiet](key) was he not a [prime minister](cigar) or something
+    - [human_2](human) [glue keep quiet](key) the a in the question makes me doubt it
+    - [human_2](human) [glue keep quiet](key) a that is odd
+    - [human_2](human) [glue keep quiet](key) may be [prime minister](cigar)
+    - [human_2](human) [glue keep quiet](key) something to do with [world war](cigar)
+- intent: nobel
+  examples: |
+    - [human_1](human) [glue respond](key) [final answer](key) [dynamite](nobel)
+    - [human_1](human) [glue respond](key) [final answer](key) [bomb](nobel)
+    - [human_1](human) [glue respond](key) [final answer](key) invented [dynamite](nobel)
+    - [human_1](human) [glue respond](key) [final answer](key) [inventions](nobel)
+    - [human_1](human) [glue respond](key) [final answer](key) [dynamites](nobel)
+    - [human_1](human) [glue respond](key) [final answer](key) something to [blowup](nobel)
+    - [human_1](human) [glue respond](key) [final answer](key) his many [inventions](nobel)
+    - [human_1](human) [glue respond](key) i know hes [swedish](nobel) but thats it
+    - [human_1](human) [glue respond](key) well he was a [chemist](nobel)
+    - [human_1](human) [glue respond](key) i have no idea
+    - [human_1](human) [glue respond](key) may be [dynamite](nobel)
+    - [human_1](human) [glue respond](key) wiki says [dynamite](nobel)
+    - [human_1](human) [glue respond](key) ok lets go with that then
+    - [human_1](human) [glue respond](key) the word nobel
+    - [human_1](human) [glue respond](key) probably a writer
+    - [human_1](human) [glue respond](key) a philosopher maybe
+    - [human_1](human) [glue respond](key) what do you think
+    - [human_1](human) [glue respond](key) yes may be [dynamite](nobel)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [dynamite](nobel)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [bomb](nobel)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) invented [dynamite](nobel)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [inventions](nobel)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [dynamites](nobel)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) something to [blowup](nobel)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) his many [inventions](nobel)
+    - [human_1](human) [glue keep quiet](key) i know hes [swedish](nobel) but thats it
+    - [human_1](human) [glue keep quiet](key) well he was a [chemist](nobel)
+    - [human_1](human) [glue keep quiet](key) i have no idea
+    - [human_1](human) [glue keep quiet](key) may be [dynamite](nobel)
+    - [human_1](human) [glue keep quiet](key) wiki says [dynamite](nobel)
+    - [human_1](human) [glue keep quiet](key) ok lets go with that then
+    - [human_1](human) [glue keep quiet](key) the word nobel
+    - [human_1](human) [glue keep quiet](key) probably a writer
+    - [human_1](human) [glue keep quiet](key) a philosopher maybe
+    - [human_1](human) [glue keep quiet](key) what do you think
+    - [human_1](human) [glue keep quiet](key) yes may be [dynamite](nobel)
+    - [human_2](human) [glue respond](key) [final answer](key) [dynamite](nobel)
+    - [human_2](human) [glue respond](key) [final answer](key) [bomb](nobel)
+    - [human_2](human) [glue respond](key) [final answer](key) invented [dynamite](nobel)
+    - [human_2](human) [glue respond](key) [final answer](key) [inventions](nobel)
+    - [human_2](human) [glue respond](key) [final answer](key) [dynamites](nobel)
+    - [human_2](human) [glue respond](key) [final answer](key) something to [blowup](nobel)
+    - [human_2](human) [glue respond](key) [final answer](key) his many [inventions](nobel)
+    - [human_2](human) [glue respond](key) i know hes [swedish](nobel) but thats it
+    - [human_2](human) [glue respond](key) well he was a [chemist](nobel)
+    - [human_2](human) [glue respond](key) i have no idea
+    - [human_2](human) [glue respond](key) may be [dynamite](nobel)
+    - [human_2](human) [glue respond](key) wiki says [dynamite](nobel)
+    - [human_2](human) [glue respond](key) ok lets go with that then
+    - [human_2](human) [glue respond](key) the word nobel
+    - [human_2](human) [glue respond](key) probably a writer
+    - [human_2](human) [glue respond](key) a philosopher maybe
+    - [human_2](human) [glue respond](key) what do you think
+    - [human_2](human) [glue respond](key) yes may be [dynamite](nobel)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [dynamite](nobel)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [bomb](nobel)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) invented [dynamite](nobel)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [inventions](nobel)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [dynamites](nobel)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) something to [blowup](nobel)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) his many [inventions](nobel)
+    - [human_2](human) [glue keep quiet](key) i know hes [swedish](nobel) but thats it
+    - [human_2](human) [glue keep quiet](key) well he was a [chemist](nobel)
+    - [human_2](human) [glue keep quiet](key) i have no idea
+    - [human_2](human) [glue keep quiet](key) may be [dynamite](nobel)
+    - [human_2](human) [glue keep quiet](key) wiki says [dynamite](nobel)
+    - [human_2](human) [glue keep quiet](key) ok lets go with that then
+    - [human_2](human) [glue keep quiet](key) the word nobel
+    - [human_2](human) [glue keep quiet](key) probably a writer
+    - [human_2](human) [glue keep quiet](key) a philosopher maybe
+    - [human_2](human) [glue keep quiet](key) what do you think
+    - [human_2](human) [glue keep quiet](key) yes may be [dynamite](nobel)
+- intent: river
+  examples: |
+    - [human_1](human) [glue respond](key) [final answer](key) [Po](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [Dee](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [Stye](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [Lek](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [Tay](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [Kay](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [Oka](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [roe](river)
+    - [human_1](human) [glue respond](key) [final answer](key) [dye](river)
+    - [human_1](human) [glue respond](key) theres the river [ore](river) in scotland
+    - [human_1](human) [glue respond](key) i have no idea
+    - [human_1](human) [glue respond](key) theres a river [d](river) in the usa but not sure about there
+    - [human_1](human) [glue respond](key) i know the [roe](river) is the shortest river in the world
+    - [human_1](human) [glue respond](key) im terrible with geogrpahy
+    - [human_1](human) [glue respond](key) i dont know much about [rivers](river) other than the amazon
+    - [human_1](human) [glue respond](key) dont know mant [rivers](river)
+    - [human_1](human) [glue respond](key) do you know any [rivers](river)
+    - [human_1](human) [glue respond](key) i am rubbish with [geogrpahy](river)
+    - [human_1](human) [glue respond](key) wiki here i come
+    - [human_1](human) [glue respond](key) this is a tough one
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [Po](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [Dee](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [Stye](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [Lek](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [Tay](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [Kay](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [Oka](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [roe](river)
+    - [human_1](human) [glue keep quiet](key) [final answer](key) [dye](river)
+    - [human_1](human) [glue keep quiet](key) theres the river [ore](river) in scotland
+    - [human_1](human) [glue keep quiet](key) i have no idea
+    - [human_1](human) [glue keep quiet](key) theres a river [d](river) in the usa but not sure about there
+    - [human_1](human) [glue keep quiet](key) i know the [roe](river) is the shortest river in the world
+    - [human_1](human) [glue keep quiet](key) im terrible with geogrpahy
+    - [human_1](human) [glue keep quiet](key) i dont know much about [rivers](river) other than the amazon
+    - [human_1](human) [glue keep quiet](key) dont know mant [rivers](river)
+    - [human_1](human) [glue keep quiet](key) do you know any [rivers](river)
+    - [human_1](human) [glue keep quiet](key) i am rubbish with [geogrpahy](river)
+    - [human_1](human) [glue keep quiet](key) wiki here i come
+    - [human_1](human) [glue keep quiet](key) this is a tough one
+    - [human_2](human) [glue respond](key) [final answer](key) [Po](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [Dee](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [Stye](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [Lek](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [Tay](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [Kay](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [Oka](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [roe](river)
+    - [human_2](human) [glue respond](key) [final answer](key) [dye](river)
+    - [human_2](human) [glue respond](key) theres the river [ore](river) in scotland
+    - [human_2](human) [glue respond](key) i have no idea
+    - [human_2](human) [glue respond](key) theres a river [d](river) in the usa but not sure about there
+    - [human_2](human) [glue respond](key) i know the [roe](river) is the shortest river in the world
+    - [human_2](human) [glue respond](key) im terrible with geogrpahy
+    - [human_2](human) [glue respond](key) i dont know much about [rivers](river) other than the amazon
+    - [human_2](human) [glue respond](key) dont know mant [rivers](river)
+    - [human_2](human) [glue respond](key) do you know any [rivers](river)
+    - [human_2](human) [glue respond](key) i am rubbish with [geogrpahy](river)
+    - [human_2](human) [glue respond](key) wiki here i come
+    - [human_2](human) [glue respond](key) this is a tough one
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [Po](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [Dee](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [Stye](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [Lek](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [Tay](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [Kay](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [Oka](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [roe](river)
+    - [human_2](human) [glue keep quiet](key) [final answer](key) [dye](river)
+    - [human_2](human) [glue keep quiet](key) theres the river [ore](river) in scotland
+    - [human_2](human) [glue keep quiet](key) i have no idea
+    - [human_2](human) [glue keep quiet](key) theres a river [d](river) in the usa but not sure about there
+    - [human_2](human) [glue keep quiet](key) i know the [roe](river) is the shortest river in the world
+    - [human_2](human) [glue keep quiet](key) im terrible with geogrpahy
+    - [human_2](human) [glue keep quiet](key) i dont know much about [rivers](river) other than the amazon
+    - [human_2](human) [glue keep quiet](key) dont know mant [rivers](river)
+    - [human_2](human) [glue keep quiet](key) do you know any [rivers](river)
+    - [human_2](human) [glue keep quiet](key) i am rubbish with [geogrpahy](river)
+    - [human_2](human) [glue keep quiet](key) wiki here i come
+    - [human_2](human) [glue keep quiet](key) this is a tough one
+- intent: profanity
+  examples: |
+    - [human_1](human) [glue keep quiet](key) [fuck](profanity)
+    - [human_1](human) [glue keep quiet](key) [shit](profanity)
+    - [human_1](human) [glue keep quiet](key) [cunt](profanity)
+    - [human_1](human) [glue keep quiet](key) [nigger](profanity)
+    - [human_1](human) [glue keep quiet](key) [crap](profanity)
+    - [human_1](human) [glue keep quiet](key) [shite](profanity)
+    - [human_1](human) [glue keep quiet](key) [arse](profanity)
+    - [human_1](human) [glue keep quiet](key) [fucker](profanity)
+    - [human_1](human) [glue keep quiet](key) [cock](profanity)
+    - [human_1](human) [glue keep quiet](key) [bitch](profanity)
+    - [human_1](human) [glue keep quiet](key) [dick](profanity)
+    - [human_1](human) [glue keep quiet](key) [asshole](profanity)
+    - [human_1](human) [glue keep quiet](key) [fag](profanity)
+    - [human_1](human) [glue keep quiet](key) [bastard](profanity)
+    - [human_2](human) [glue respond](key) [fuck](profanity)
+    - [human_2](human) [glue respond](key) [shit](profanity)
+    - [human_2](human) [glue respond](key) [cunt](profanity)
+    - [human_2](human) [glue respond](key) [nigger](profanity)
+    - [human_2](human) [glue respond](key) [crap](profanity)
+    - [human_2](human) [glue respond](key) [shite](profanity)
+    - [human_2](human) [glue respond](key) [arse](profanity)
+    - [human_2](human) [glue respond](key) [fucker](profanity)
+    - [human_2](human) [glue respond](key) [cock](profanity)
+    - [human_2](human) [glue respond](key) [bitch](profanity)
+    - [human_2](human) [glue respond](key) [dick](profanity)
+    - [human_2](human) [glue respond](key) [asshole](profanity)
+    - [human_2](human) [glue respond](key) [fag](profanity)
+    - [human_2](human) [glue respond](key) [bastard](profanity)
+    - [human_1](human) [glue keep quiet](key) [fuck](profanity)
+    - [human_1](human) [glue keep quiet](key) [shit](profanity)
+    - [human_1](human) [glue keep quiet](key) [cunt](profanity)
+    - [human_1](human) [glue keep quiet](key) [nigger](profanity)
+    - [human_1](human) [glue keep quiet](key) [crap](profanity)
+    - [human_1](human) [glue keep quiet](key) [shite](profanity)
+    - [human_1](human) [glue keep quiet](key) [arse](profanity)
+    - [human_1](human) [glue keep quiet](key) [fucker](profanity)
+    - [human_1](human) [glue keep quiet](key) [cock](profanity)
+    - [human_1](human) [glue keep quiet](key) [bitch](profanity)
+    - [human_1](human) [glue keep quiet](key) [dick](profanity)
+    - [human_1](human) [glue keep quiet](key) [asshole](profanity)
+    - [human_1](human) [glue keep quiet](key) [fag](profanity)
+    - [human_1](human) [glue keep quiet](key) [bastard](profanity)
+    - [human_2](human) [glue respond](key) [fuck](profanity)
+    - [human_2](human) [glue respond](key) [shit](profanity)
+    - [human_2](human) [glue respond](key) [cunt](profanity)
+    - [human_2](human) [glue respond](key) [nigger](profanity)
+    - [human_2](human) [glue respond](key) [crap](profanity)
+    - [human_2](human) [glue respond](key) [shite](profanity)
+    - [human_2](human) [glue respond](key) [arse](profanity)
+    - [human_2](human) [glue respond](key) [fucker](profanity)
+    - [human_2](human) [glue respond](key) [cock](profanity)
+    - [human_2](human) [glue respond](key) [bitch](profanity)
+    - [human_2](human) [glue respond](key) [dick](profanity)
+    - [human_2](human) [glue respond](key) [asshole](profanity)
+    - [human_2](human) [glue respond](key) [fag](profanity)
+    - [human_2](human) [glue respond](key) [bastard](profanity)
